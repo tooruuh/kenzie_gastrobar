@@ -1,18 +1,22 @@
-import Product from '../Product'
 import {Button, ButtonProduct, ButtonEmployee, TitleList, Content, Showcase} from './style'
 
+import { useContext } from 'react'
+import { ModalContext } from '../../Providers/modal'
+import Product from '../Product'
+
 function AdminList ({setIsOpen, setModal}) {
+    const {setEmployee, setProduct} = useContext(ModalContext)
     return (
         <>
         <Content>
             <TitleList>Lista de Produtos</TitleList>
-            <ButtonProduct onClick={() => setIsOpen(true)}>Adicionar Produto</ButtonProduct>
+            <ButtonProduct onClick={() => setProduct(true)}>Adicionar Produto</ButtonProduct>
             <Showcase>
                 <Product/>
                 <Product/>
             </Showcase>
             <Button>Lançamento</Button>
-            <ButtonEmployee onClick={() => setModal(true)}>Adicionar Funcionario</ButtonEmployee>
+            <ButtonEmployee onClick={() => setEmployee(true)}>Adicionar Funcionario</ButtonEmployee>
         </Content>
         </>
     )

@@ -4,8 +4,8 @@ import GlobalStyle from "./Styles/global";
 function App() {
   return (
     <>
-      <Routes/>
-      <GlobalStyle />
+        <Routes/>
+        <GlobalStyle />
     </>
   )
 }
