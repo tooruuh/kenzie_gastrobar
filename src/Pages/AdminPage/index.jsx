@@ -3,24 +3,25 @@ import Header from "../../components/Header"
 import AdminList from "../../components/AdminList"
 import ModalProduct from "../../components/ModalProduct"
 import ModalEmployee from "../../components/ModalEmployee"
-import { useState } from "react"
+import { useContext} from "react"
+import { ModalContext} from "../../Providers/modal"
 
 
 function AdminPage () {
-    const [isOpen, setIsOpen] = useState(false)
 
-    const [modal, setModal] = useState(false)
+    const {employee, product} = useContext(ModalContext)
+
     return (
         <>
         <Header/>
         <main>
             {
-                isOpen === false ? null : <ModalProduct setIsOpen={setIsOpen}/>
+                product === false ? null : <ModalProduct/>
             }
                         {
-                modal === false ? null : <ModalEmployee setIsOpen={setModal}/>
+                employee === false ? null : <ModalEmployee/>
             }
-            <AdminList setIsOpen={setIsOpen} setModal={setModal}/>
+            <AdminList/>
         </main>
         </>
     )
