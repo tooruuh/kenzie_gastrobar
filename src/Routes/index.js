@@ -1,6 +1,7 @@
 import { Route, Switch } from "react-router-dom";
 import LoginPage from "../Pages/LoginPage";
 import AdminPage from "../Pages/AdminPage";
+import RegisterPage from "../Pages/RegisterPage";
 
 
 export default function Routes() {
@@ -17,6 +18,9 @@ export default function Routes() {
     
       <Route path="/login">
         <LoginPage />
+      </Route>
+      <Route path="/register">
+        <RegisterPage/>
       </Route>
     </Switch>
   )

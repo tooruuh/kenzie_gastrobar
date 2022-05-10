@@ -1,4 +1,4 @@
-import { ContentHeader, Title, AdminName } from "./styles";
+import { ContentHeader, Title, AdminName } from "./style";
 
 import {FaUserAlt} from 'react-icons/fa';
 
