@@ -1,5 +1,4 @@
-import { Route } from "react-router-dom";
-import { Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import LoginPage from "../Pages/LoginPage";
 import AdminPage from "../Pages/AdminPage";
 
@@ -19,4 +18,7 @@ export default function Routes() {
       <Route path="/login">
         <LoginPage />
       </Route>
+    </Switch>
+  )
+}
 
