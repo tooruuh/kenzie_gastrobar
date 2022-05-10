@@ -1,4 +1,5 @@
 import { Route, Switch } from "react-router-dom";
+
 import LoginPage from "../Pages/LoginPage";
 import CapturePage from "../Pages/CapturePage"
 import AdminPage from "../Pages/AdminPage";
@@ -11,11 +12,11 @@ export default function Routes() {
         <CapturePage/>
       </Route>
     
-      <Route exact path='/Admin'>
+      <Route exact path='/admin'>
           <AdminPage/>
       </Route>
     
-      <Route path="/login">
+      <Route exact path="/login">
         <LoginPage />
       </Route>
     </Switch>

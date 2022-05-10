@@ -14,6 +14,12 @@ export const Item = styled.article`
         color: #fff;
         margin-right: 20px;
         font-size: 20px;
+        cursor: pointer;
+    }
+    @media (min-width: 768px) {
+        margin-right: 5px;
+        margin-left: 5px;
+        height: 90px;
     }
 `
 
@@ -28,6 +34,9 @@ export const Name = styled.p`
     line-height: 18px;
     text-align: left;
     color: #fff;
+    @media (min-width: 768px) {
+        width: 180px;
+    }
 `
 
 export const Price = styled.p`
@@ -38,6 +47,9 @@ export const Price = styled.p`
     letter-spacing: 0em;
     text-align: left;
     color: #fff;
+    @media (min-width: 768px) {
+        margin-top: 5px;
+    }
 `
 
 export const Li = styled.li`
