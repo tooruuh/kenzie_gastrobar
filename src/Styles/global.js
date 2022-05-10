@@ -14,6 +14,10 @@ export default createGlobalStyle`
         //add cores para padronizar o codigo
         //ex: --black: #121214;
         //na hora de definir a cor e so usar o var(-- Nome da cor)
+        --orange-dark: #BC4124;
+        --orange-light: #E7946D;
+        --brown: #5B1206;
+        --brown-light: #F4EDE6;
     }
 
     button {
