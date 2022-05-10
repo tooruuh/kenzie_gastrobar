@@ -19,9 +19,11 @@ export default function Routes() {
       <Route exact path="/login">
         <LoginPage />
       </Route>
+
       <Route path="/register">
         <RegisterPage/>
       </Route>
+      
     </Switch>
   )
 }
