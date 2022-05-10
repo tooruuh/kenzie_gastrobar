@@ -11,17 +11,26 @@ export const ContentHeader = styled.header`
         display: inline-block;
     }
 
-    .p-admin-name {
-        display: inline-block;
-        font-family: 'Arimo';
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 16px;
-        letter-spacing: 0em;
-        text-align: left;
-        color: #fff;
-        margin-left: 11px;
+    @media (min-width: 768px) {
+        background-color: #fff;
+        .icon-user {
+            color: var(--orange-dark);
+            font-size:10px;
+            width: 50px;
+        }
     }
+`
+
+export const AdminName = styled.p`
+    display: inline-block;
+    font-family: 'Arimo';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #fff;
+    margin-left: 11px;
 `
 
 export const Title = styled.h1`
