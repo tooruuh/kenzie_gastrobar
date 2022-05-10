@@ -18,8 +18,13 @@ export const TitleList = styled.h2`
 export const Showcase = styled.section`
     height: 368px;
     width: 281px;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 6px;
     background-color: var(--orange-light);
 `
 
@@ -49,7 +54,11 @@ export const Button = styled.button`
     line-height: 24px;
     text-align: center;
     border: none;
-    margin-right: 40px;
+    margin-right: 15px;
+    height: 40px;
+    width: 98px;
+    margin-top: 16px;
+    border-radius: 5px;
 `
 
 export const ButtonEmployee = styled.button`
@@ -61,4 +70,8 @@ export const ButtonEmployee = styled.button`
     line-height: 24px;
     text-align: center;
     border: none;
+    height: 40px;
+    width: 168px;
+    margin-top: 16px;
+    border-radius: 5px;
 `
