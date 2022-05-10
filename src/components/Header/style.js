@@ -5,18 +5,19 @@ export const ContentHeader = styled.header`
     height: 78px;
     .icon-user {
         color: #fff;
-        margin-left: 20px;
+        margin-left: -95px;
         font-size: 22px;
         margin-top: 8px;
         display: inline-block;
     }
 
     @media (min-width: 768px) {
-        background-color: #fff;
+        display: flex;
         .icon-user {
-            color: var(--orange-dark);
-            font-size:10px;
-            width: 50px;
+            font-size: 35px;
+            margin-top: 15px;
+            margin-left: 20px;
+            margin-right: 40px;
         }
     }
 `
@@ -30,7 +31,14 @@ export const AdminName = styled.p`
     letter-spacing: 0em;
     text-align: left;
     color: #fff;
-    margin-left: 11px;
+    margin-left: 52px;
+    @media (min-width: 768px) {
+        font-family: 'Source Sans Pro';
+        font-size: 32px;
+        line-height: 40px;
+        margin-top: 15px;
+        margin-left: auto;
+    }
 `
 
 export const Title = styled.h1`
@@ -41,4 +49,9 @@ export const Title = styled.h1`
     color: #fff;
     margin-left: 20px;
     padding-top: 16px;
+    @media (min-width: 768px) {
+        font-size: 32px;
+        line-height: 37px;
+        text-align: left;
+    }
 `

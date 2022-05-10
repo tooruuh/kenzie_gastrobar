@@ -6,8 +6,8 @@ function Header ({children}) {
     return (
         <ContentHeader>
             <Title>Kenzie Gastrobar</Title>
+            <AdminName>Wellington</AdminName>
             <FaUserAlt className="icon-user"/>
-            <AdminName>name</AdminName>
             {children}
         </ContentHeader>
     )

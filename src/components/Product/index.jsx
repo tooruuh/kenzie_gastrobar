@@ -9,8 +9,6 @@ function Product () {
                 <Li><Name>Pão com queijo</Name></Li>
                 <Li><Price>R$ 5</Price></Li>
             </ul>
-            {/* <Name>Pão com queijo</Name> */}
-            {/* <Price>R$ 5</Price> */}
             <BsFillTrashFill className='icon-product'/>
         </Item>
     )
