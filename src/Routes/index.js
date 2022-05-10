@@ -1,5 +1,5 @@
 import { Route, Switch } from "react-router-dom";
-
+import RegisterPage from "../Pages/Register";
 import LoginPage from "../Pages/Login";
 import CapturePage from "../Pages/Capture"
 import AdminPage from "../Pages/AdminPage";
@@ -18,6 +18,9 @@ export default function Routes() {
     
       <Route exact path="/login">
         <LoginPage />
+      </Route>
+      <Route path="/register">
+        <RegisterPage/>
       </Route>
     </Switch>
   )
