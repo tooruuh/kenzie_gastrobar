@@ -1,12 +1,12 @@
 import Product from '../Product'
 import {Button, ButtonProduct, ButtonEmployee, TitleList, Content, Showcase} from './style'
 
-function AdminList () {
+function AdminList ({setIsOpen}) {
     return (
         <>
         <Content>
             <TitleList>Lista de Produtos</TitleList>
-            <ButtonProduct>Adicionar Produto</ButtonProduct>
+            <ButtonProduct onClick={() => setIsOpen(true)}>Adicionar Produto</ButtonProduct>
             <Showcase>
                 <Product/>
                 <Product/>

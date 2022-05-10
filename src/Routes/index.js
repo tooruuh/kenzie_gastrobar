@@ -1,4 +1,5 @@
 import { Route, Switch } from "react-router-dom";
+
 import RegisterPage from "../Pages/Register";
 import LoginPage from "../Pages/Login";
 import CapturePage from "../Pages/Capture"
