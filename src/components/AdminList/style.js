@@ -21,7 +21,8 @@ export const Showcase = styled.section`
     overflow: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    align-content: flex-start;
+    justify-content: center;
     margin-left: auto;
     margin-right: auto;
     border-radius: 6px;
