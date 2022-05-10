@@ -1,11 +1,11 @@
 import {ContainerProduct, Modal, ButtonModal, ButtonRegister} from './style'
 
-function ModalEmployee ({setIsOpen}) {
+function ModalProduct ({setIsOpen}) {
     return (
         <ContainerProduct>
             <Modal>
                 <section>
-                    <h3>ADICIONAR NOVO FUNCIONÁRIO</h3>
+                    <h3>ADICIONAR NOVO PRODUTO</h3>
                     <ButtonModal onClick={() => setIsOpen(false)}>X</ButtonModal>
                 </section>
                 <input type="text" placeholder='Nome' />
@@ -22,4 +22,4 @@ function ModalEmployee ({setIsOpen}) {
     )
 }
 
-export default ModalEmployee
+export default ModalProduct
