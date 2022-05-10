@@ -12,16 +12,21 @@ export const Item = styled.article`
     border-radius: 10px;
     .icon-product {
         color: #fff;
-        margin-right: 10px;
+        margin-right: 20px;
         font-size: 20px;
     }
 `
 
 export const Name = styled.p`
     font-family: 'Arimo';
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 155px;
+    height: 18px;
     font-size: 16px;
     font-weight: 400;
     line-height: 18px;
+    text-align: left;
     color: #fff;
 `
 

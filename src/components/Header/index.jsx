@@ -1,4 +1,4 @@
-import { ContentHeader, Title } from "./styles";
+import { ContentHeader, Title, AdminName } from "./styles";
 
 import {FaUserAlt} from 'react-icons/fa';
 
@@ -7,7 +7,7 @@ function Header ({children}) {
         <ContentHeader>
             <Title>Kenzie Gastrobar</Title>
             <FaUserAlt className="icon-user"/>
-            <p className="p-admin-name">name</p>
+            <AdminName>name</AdminName>
             {children}
         </ContentHeader>
     )

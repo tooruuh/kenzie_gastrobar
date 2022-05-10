@@ -12,7 +12,7 @@ function AdminList () {
                 <Product/>
                 <Product/>
             </Showcase>
-            <Button>lançamento</Button>
+            <Button>Lançamento</Button>
             <ButtonEmployee>Adicionar Funcionario</ButtonEmployee>
         </Content>
         </>
