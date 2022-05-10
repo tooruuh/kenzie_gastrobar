@@ -79,6 +79,7 @@ export const Button = styled.button`
         height: 40px;
         width: 243px;
         margin-right: 61px;
+        margin-top: 30px;
     }
 `
 

@@ -29,7 +29,7 @@ function CapturePage () {
                     da nossa ferramenta ?
                     </Description>
                 <ButtonContainer>
-                    <Button onClick={() => handleNavigation('/singup')}>Experimente grátis</Button>
+                    <Button onClick={() => handleNavigation('/register')}>Experimente grátis</Button>
                 </ButtonContainer>
             </DescriptionContainer>
             <ImgContainer>
