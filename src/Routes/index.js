@@ -1,7 +1,7 @@
 import { Route, Switch } from "react-router-dom";
 
-import LoginPage from "../Pages/LoginPage";
-import CapturePage from "../Pages/CapturePage"
+import LoginPage from "../Pages/Login";
+import CapturePage from "../Pages/Capture"
 import AdminPage from "../Pages/AdminPage";
 
 export default function Routes() {
@@ -13,7 +13,7 @@ export default function Routes() {
       </Route>
     
       <Route exact path='/admin'>
-          <AdminPage/>
+        <AdminPage/>
       </Route>
     
       <Route exact path="/login">
