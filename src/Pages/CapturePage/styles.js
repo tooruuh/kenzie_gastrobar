@@ -47,8 +47,9 @@ export const Content = styled.div`
     align-content: center;
     background: var(--orange-dark);
 
-    @media(min-width: 1024px){
-
+    @media(min-width: 1600px){
+        align-content: space-around;
+        padding: 0px 70px 0px 70px;
     }
 
 `
@@ -77,8 +78,8 @@ export const DescriptionContainer = styled.div`
 
     }
 
-    @media(min-width: 1440px){
-
+    @media(min-width: 1600px){
+        height: 40rem;
         width: 34%;
 
     }
@@ -126,6 +127,10 @@ export const ImgContainer = styled.div`
 
     @media(min-width: 768px){
         display: flex;
+    }
+
+    @media(min-width: 1600px){
+        width: 23%;
     }
 
 `
