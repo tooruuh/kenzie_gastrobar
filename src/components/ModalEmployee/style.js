@@ -28,7 +28,6 @@ export const Modal = styled.section`
     color: #fff;
     margin-bottom: 10px;
     margin-top: 10px;
-    margin-left: 10px;
   }
 
   input {

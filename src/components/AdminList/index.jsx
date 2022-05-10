@@ -1,7 +1,7 @@
 import Product from '../Product'
 import {Button, ButtonProduct, ButtonEmployee, TitleList, Content, Showcase} from './style'
 
-function AdminList ({setIsOpen}) {
+function AdminList ({setIsOpen, setModal}) {
     return (
         <>
         <Content>
@@ -12,7 +12,7 @@ function AdminList ({setIsOpen}) {
                 <Product/>
             </Showcase>
             <Button>Lançamento</Button>
-            <ButtonEmployee>Adicionar Funcionario</ButtonEmployee>
+            <ButtonEmployee onClick={() => setModal(true)}>Adicionar Funcionario</ButtonEmployee>
         </Content>
         </>
     )
