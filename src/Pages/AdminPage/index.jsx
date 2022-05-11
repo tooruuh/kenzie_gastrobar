@@ -5,20 +5,21 @@ import ModalProduct from "../../components/ModalProduct"
 import ModalEmployee from "../../components/ModalEmployee"
 import { useContext} from "react"
 import { ModalContext} from "../../Providers/modal"
-import { Redirect } from "react-router-dom"
-import { toast } from "react-toastify"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
+import ModalId from "../../components/ModalId"
 
 
 function AdminPage () {
     const token = localStorage.getItem('@token')
-    const {employee, product} = useContext(ModalContext)
+
+    const {employee, product, modalId} = useContext(ModalContext)
 
     const history = useHistory()
 
     if (!token) {
         history.push('/register')
     }
+
 
     return (
         <>
@@ -30,6 +31,9 @@ function AdminPage () {
             }
                         {
                 employee === false ? '' : <ModalEmployee/>
+            }
+            {
+                modalId === false ? '' : <ModalId/>
             }
         </main>
         </>
