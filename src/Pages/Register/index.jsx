@@ -34,8 +34,7 @@ function RegisterPage() {
   } = useForm({ resolver: yupResolver(schema) });
 
   function onSubmitFunction(data) {
-    api
-      .post("/register", data)
+    api.post("/register", data)
       .then((response) => {
         toast.success('Conta criada com sucesso! ', {
           position: "top-right",
@@ -49,6 +48,7 @@ function RegisterPage() {
         history.push("/login")
       })
       .catch((err) => {
+        console.log(err)
         toast.error('Ocorreu um erro no registro!', {
           position: "top-right",
           autoClose: 5000,
@@ -57,8 +57,10 @@ function RegisterPage() {
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-          });
+        })
+      })
   }
+  
 
   return (
     <>
