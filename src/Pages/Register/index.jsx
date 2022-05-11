@@ -35,30 +35,30 @@ function RegisterPage() {
 
   function onSubmitFunction(data) {
     api.post("/register", data)
-      .then((response) => {
-        toast.success('Conta criada com sucesso! ', {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          });
-        history.push("/login")
+    .then((response) => {
+      toast.success('Conta criada com sucesso! ', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+      history.push("/login")
+    })
+    .catch((err) => {
+      console.log(err)
+      toast.error('Ocorreu um erro no registro!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
       })
-      .catch((err) => {
-        console.log(err)
-        toast.error('Ocorreu um erro no registro!', {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        })
-      })
+    })
   }
   
 

@@ -1,30 +1,26 @@
+import { Container, ChangeForms } from "./style";
+
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { api } from "../../Services/api";
-import { useHistory } from "react-router-dom";
 
-import { Container, ChangeForms } from "./style";
 import Header from "../../components/Header";
 import { useState } from "react";
 import Button from "../../components/Button";
 import { Link } from "react-router-dom";
 import { Redirection } from "../Register/styles";
+import { useContext } from "react";
+import { LoginContext } from "../../Providers/login";
 
 function LoginPage() {
-  const [condition, setCondition] = useState(false);
-  const history = useHistory();
+  const { loginCompany, loginEmployee } = useContext(LoginContext);
 
-  const handleNavigation = (path) => {
-    return history.push(path);
-  };
+  const [condition, setCondition] = useState(false);
+  const [employeeId, setEmployeeId] = useState("");
 
   const schema = yup.object().shape({
     email: yup.string().email("Email Inválido").required("Campo obrigatório!"),
-    password: yup
-      .string()
-      .min(8, "Mínimo de 8 digitos")
-      .required("Campo obrigatório!"),
+    password: yup.string().required("Campo obrigatório!"),
   });
 
   const {
@@ -35,14 +31,13 @@ function LoginPage() {
 
   function onSubmitFunction(data) {
     if (condition === false) {
-      api
-        .get("/login", data)
-        .then((response) => {
-          history.push("/admin");
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      loginCompany(data);
+    }
+  }
+
+  function handleLoginEmployee(id) {
+    if (condition === true) {
+      loginEmployee(id);
     }
   }
 
@@ -90,39 +85,44 @@ function LoginPage() {
         {condition === true && (
           <section className="section-login-employee">
             <input
+              onChange={(event) => setEmployeeId(event.target.value)}
               className="input-login"
               name="idFuncionario"
               placeholder="ID do funcionário"
+              type="number"
             />
           </section>
         )}
 
-        {condition === false && (
-          <form
-            className="form-login-company"
-            onSubmit={handleSubmit(onSubmitFunction)}
-          >
-            <input
-              className="input-login"
-              name="Email"
-              placeholder="Email"
-              {...register("email")}
-            />
-            <input
-              className="input-login"
-              name="password"
-              placeholder="Senha"
-              {...register("password")}
-            />
-          </form>
-        )}
-
-        <Button
-          onClick={() => handleNavigation("/admin")}
-          className="btn-login"
+        <form
+          className="form-login-company"
+          onSubmit={handleSubmit(onSubmitFunction)}
         >
-          Entrar
-        </Button>
+          {condition === false && (
+            <>
+              <input
+                className="input-login"
+                name="Email"
+                placeholder="Email"
+                {...register("email")}
+              />
+              <input
+                className="input-login"
+                name="password"
+                type='password'
+                placeholder="Senha"
+                {...register("password")}
+              />
+            </>
+          )}
+          <Button
+            type="submit"
+            onClick={() => handleLoginEmployee(employeeId)}
+            className="btn-login"
+          >
+            Entrar
+          </Button>
+        </form>
 
         <Redirection>
           <p>

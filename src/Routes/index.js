@@ -14,11 +14,11 @@ export default function Routes() {
         <CapturePage/>
       </Route>
     
-      <Route exact path='/admin'>
+      <Route path='/admin'>
         <AdminPage/>
       </Route>
     
-      <Route exact path="/login">
+      <Route path="/login">
         <LoginPage />
       </Route>
 
@@ -26,7 +26,7 @@ export default function Routes() {
         <RegisterPage/>
       </Route>
 
-"     <Route exact path='/Table'>
+"     <Route path='/table'>
         <TablePage />
       </Route>"
         
