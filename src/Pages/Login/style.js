@@ -5,7 +5,7 @@ export const Container = styled.div`
   height: 230px;
   width: 285px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   margin: 0 auto;
   border-radius: 8px;
 
@@ -25,6 +25,84 @@ export const Container = styled.div`
 
     color: #ffffff;
   }
+  .form-login-company {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .section-login-employee {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 40px;
+  }
+
+  .input-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin: 0px 0px 11px;
+    width: 269px;
+    height: 48px;
+    border-radius: 8px;
+    padding: 12px 16px;
+    border: none;
+  }
+
+  .input-login::placeholder {
+    color: var(--grey);
+    font-family: "Source Sans Pro";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    opacity: 0.8;
+  }
+
+  .btn-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: 42px;
+    width: 269px;
+    background-color: #bc4124;
+  }
+
+  @media screen and (min-width: 768px) {
+    height: 430px;
+    width: 585px;
+
+    .input-login {
+      width: 369px;
+      height: 48px;
+    }
+
+    .form-login-company {
+      margin-top: 80px;
+    }
+
+    .section-login-employee {
+      margin-top: 120px;
+    }
+  }
+
+  @media screen and (min-width: 1240px) {
+    height: 410px;
+    width: 640px;
+    .form-login-company {
+      margin-top: 100px;
+    }
+    .input-login {
+      width: 369px;
+      height: 48px;
+    }
+  }
 `;
 
 export const ChangeForms = styled.div`
@@ -34,6 +112,7 @@ export const ChangeForms = styled.div`
   margin: 0 auto;
   width: 260px;
   margin-top: 20px;
+  margin-bottom: 5px;
 
   font-family: "Source Sans Pro";
   font-style: normal;
@@ -43,5 +122,30 @@ export const ChangeForms = styled.div`
 
   .change-user-login:hover {
     color: #bc4124;
+    cursor: pointer;
+  }
+
+  .employee-true {
+    color: #bc4124;
+  }
+
+  .company-false {
+    color: #000000;
+  }
+
+  .employee-false {
+    color: #000000;
+  }
+
+  .company-true {
+    color: #bc4124;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 540px;
+  }
+
+  @media screen and (min-width: 1100px) {
+    width: 560px;
   }
 `;
