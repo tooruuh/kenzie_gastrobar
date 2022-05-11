@@ -5,6 +5,7 @@ import LoginPage from "../Pages/Login";
 import CapturePage from "../Pages/Capture"
 import AdminPage from "../Pages/AdminPage";
 import TablePage from "../Pages/Table";
+import ReleasesPage from "../Pages/ Releases"
 
 export default function Routes() {
   return (
@@ -26,10 +27,15 @@ export default function Routes() {
         <RegisterPage/>
       </Route>
 
-"     <Route exact path='/Table'>
+     <Route exact path='/table'>
         <TablePage />
-      </Route>"
-        
+      </Route>
+
+     <Route exact path='/releases'>
+        <ReleasesPage />
+      </Route>
+
+      
     </Switch>
   )
 }
