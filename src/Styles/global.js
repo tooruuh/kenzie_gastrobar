@@ -2,7 +2,6 @@ import { createGlobalStyle } from "styled-components";
 
 //AQUI COLOQUEI OS STYLES GLOBAIS PARA PADRONIZAR A APLICACAO
 
-
 export default createGlobalStyle`
     * {
         margin: 0;
@@ -24,4 +23,4 @@ export default createGlobalStyle`
     button {
         cursor: pointer;
     }
-`
+`;

@@ -1,17 +1,16 @@
-import { ContentHeader, Title } from "./style";
+import { ContentHeader, Title, AdminName } from "./style";
 
 import { FaUserAlt } from "react-icons/fa";
 
-function Header() {
-  return (
-    <ContentHeader>
-      <Title>Kenzie Gastrobar</Title>
-      <div>
-        <FaUserAlt className="icon-user" />
-        <p className="p-admin-name">name</p>
-      </div>
-    </ContentHeader>
-  );
+function Header ({children}) {
+    return (
+        <ContentHeader>
+            <Title>Kenzie Gastrobar</Title>
+            <AdminName>Wellington</AdminName>
+            <FaUserAlt className="icon-user"/>
+            {children}
+        </ContentHeader>
+    )
 }
 
 export default Header;

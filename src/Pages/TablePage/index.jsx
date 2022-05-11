@@ -1,6 +1,5 @@
 import Header from "../../components/Header";
 import { CardTable, Container, VitrineTable } from "./styles";
-import BackgroundImg from "../../Assets/garcom.svg";
 
 const mesas = [
   {

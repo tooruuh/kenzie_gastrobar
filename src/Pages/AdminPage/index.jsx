@@ -1,19 +1,26 @@
-import { Header, Title } from "./styles"
 
-import {FaUserAlt} from 'react-icons/fa'
+import Header from "../../components/Header"
 import AdminList from "../../components/AdminList"
+import ModalProduct from "../../components/ModalProduct"
+import ModalEmployee from "../../components/ModalEmployee"
+import { useContext} from "react"
+import { ModalContext} from "../../Providers/modal"
 
 
 function AdminPage () {
 
+    const {employee, product} = useContext(ModalContext)
+
     return (
         <>
-        <Header>
-            <Title>Kenzie Gastrobar</Title>
-            <FaUserAlt className="icon-user"/>
-            <p className="p-admin-name">name</p>
-        </Header>
+        <Header/>
         <main>
+            {
+                product === false ? null : <ModalProduct/>
+            }
+                        {
+                employee === false ? null : <ModalEmployee/>
+            }
             <AdminList/>
         </main>
         </>
