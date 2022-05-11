@@ -4,7 +4,7 @@ import { useContext } from 'react'
 import { ModalContext } from '../../Providers/modal'
 import Product from '../Product'
 
-function AdminList ({setIsOpen, setModal}) {
+function AdminList () {
     const {setEmployee, setProduct} = useContext(ModalContext)
     return (
         <>

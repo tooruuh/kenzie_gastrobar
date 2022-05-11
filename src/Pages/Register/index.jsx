@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
 import { Container, Redirection, RegisterHeader } from "./styles";
+
+import { Link } from "react-router-dom";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { api } from "../../Services/api";
 import { useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function RegisterPage() {
   const history = useHistory();
@@ -34,8 +36,30 @@ function RegisterPage() {
   function onSubmitFunction(data) {
     api
       .post("/register", data)
-      .then((response) => history.push("/login"))
-      .catch((err) => console.log(err));
+      .then((response) => {
+        toast.success('Conta criada com sucesso! ', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          });
+        history.push("/login")
+      })
+      .catch((err) => {
+        toast.error('Ocorreu um erro no registro!', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          });
+        console.log(err)
+      });
   }
 
   return (
