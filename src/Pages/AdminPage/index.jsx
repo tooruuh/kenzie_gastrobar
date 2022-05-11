@@ -18,7 +18,6 @@ function AdminPage () {
 
     if (!token) {
         history.push('/register')
-        toast.error('Cadastre-se para poder acessar')
     }
 
     return (
