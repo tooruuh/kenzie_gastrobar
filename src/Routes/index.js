@@ -4,6 +4,7 @@ import RegisterPage from "../Pages/Register";
 import LoginPage from "../Pages/Login";
 import CapturePage from "../Pages/Capture"
 import AdminPage from "../Pages/AdminPage";
+import TablePage from "../Pages/Table";
 
 export default function Routes() {
   return (
@@ -24,7 +25,11 @@ export default function Routes() {
       <Route path="/register">
         <RegisterPage/>
       </Route>
-      
+
+"     <Route exact path='/Table'>
+        <TablePage />
+      </Route>"
+        
     </Switch>
   )
 }

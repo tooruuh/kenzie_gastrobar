@@ -39,6 +39,11 @@ export const AdminName = styled.p`
         margin-top: 15px;
         margin-left: auto;
     }
+
+    div {
+        display: flex;
+        align-items: center;
+    }
 `
 
 export const Title = styled.h1`

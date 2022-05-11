@@ -1,6 +1,6 @@
 import { ContentHeader, Title, AdminName } from "./style";
 
-import {FaUserAlt} from 'react-icons/fa';
+import { FaUserAlt } from "react-icons/fa";
 
 function Header ({children}) {
     return (
@@ -13,4 +13,4 @@ function Header ({children}) {
     )
 }
 
-export default Header
+export default Header;
