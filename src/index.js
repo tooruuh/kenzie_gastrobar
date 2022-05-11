@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 ReactDOM.render(
   <React.StrictMode>
     <ModalProviders>
+      <ToastContainer />
       <BrowserRouter>
         <ToastContainer/>
         <App />
