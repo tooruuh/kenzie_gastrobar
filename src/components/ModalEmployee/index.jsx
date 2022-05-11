@@ -4,7 +4,9 @@ import { useContext } from 'react'
 import { ModalContext } from '../../Providers/modal'
 
 function ModalEmployee () {
+    
     const {setEmployee} = useContext(ModalContext)
+
     return (
         <ContainerProduct>
         <Modal>

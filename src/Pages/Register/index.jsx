@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { api } from "../../Services/api";
 import { useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function RegisterPage() {
   const history = useHistory();
@@ -34,8 +35,14 @@ function RegisterPage() {
   function onSubmitFunction(data) {
     api
       .post("/register", data)
-      .then((response) => history.push("/login"))
-      .catch((err) => console.log(err));
+      .then((response) => {
+        toast.success('Registrado com sucesso!')
+        history.push("/login")
+    })
+      .catch((err) => {
+        toast.error('Ocorreu um erro ao realizar o registro')
+        console.log(err)
+      });
   }
 
   return (

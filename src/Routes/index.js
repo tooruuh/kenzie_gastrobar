@@ -9,7 +9,7 @@ import TablePage from "../Pages/Table";
 export default function Routes() {
   return (
     <Switch>
-      {/* a rota / ela essencialmnete vem por ultimo */}
+      
       <Route exact path="/">
         <CapturePage/>
       </Route>
