@@ -15,13 +15,13 @@ function AdminPage () {
         <>
         <Header/>
         <main>
+            <AdminList/>
             {
-                product === false ? null : <ModalProduct/>
+                product === false ? '' : <ModalProduct/>
             }
                         {
-                employee === false ? null : <ModalEmployee/>
+                employee === false ? '' : <ModalEmployee/>
             }
-            <AdminList/>
         </main>
         </>
     )

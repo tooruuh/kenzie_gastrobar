@@ -6,6 +6,7 @@ import Product from '../Product'
 
 function AdminList () {
     const {setEmployee, setProduct} = useContext(ModalContext)
+    
     return (
         <>
         <Content>

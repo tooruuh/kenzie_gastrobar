@@ -58,8 +58,6 @@ function RegisterPage() {
           draggable: true,
           progress: undefined,
           });
-        console.log(err)
-      });
   }
 
   return (

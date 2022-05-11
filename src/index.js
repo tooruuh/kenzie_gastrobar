@@ -11,6 +11,7 @@ ReactDOM.render(
     <ModalProviders>
       <ToastContainer />
       <BrowserRouter>
+        <ToastContainer/>
         <App />
       </BrowserRouter>
     </ModalProviders>
