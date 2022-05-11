@@ -5,7 +5,8 @@ export const ContentHeader = styled.header`
     height: 78px;
     .icon-user {
         color: #fff;
-        margin-left: -95px;
+        position: absolute;
+        left: 20px;
         font-size: 22px;
         margin-top: 8px;
         display: inline-block;
@@ -14,10 +15,11 @@ export const ContentHeader = styled.header`
     @media (min-width: 768px) {
         display: flex;
         .icon-user {
+            position: relative;
             font-size: 35px;
             margin-top: 15px;
             margin-left: 20px;
-            margin-right: 40px;
+            margin-right: 70px;
         }
     }
 `
@@ -30,6 +32,7 @@ export const AdminName = styled.p`
     line-height: 16px;
     letter-spacing: 0em;
     text-align: left;
+    margin-top: 15px;
     color: #fff;
     margin-left: 52px;
     @media (min-width: 768px) {

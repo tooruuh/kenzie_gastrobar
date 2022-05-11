@@ -7,14 +7,14 @@ import { Providers } from "./Providers";
 import "react-toastify/dist/ReactToastify.css";
 
 ReactDOM.render(
+<BrowserRouter>
   <React.StrictMode>
     <Providers>
       <ToastContainer />
-      <BrowserRouter>
         <ToastContainer />
         <App />
-      </BrowserRouter>
     </Providers>
-  </React.StrictMode>,
+  </React.StrictMode>
+</BrowserRouter>,
   document.getElementById("root")
 );
