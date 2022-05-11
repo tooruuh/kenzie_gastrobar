@@ -76,10 +76,12 @@ export const Title = styled.h1`
 export const InfoContainer = styled.div`
 
     @media (min-width: 768px){
-        width: 335px;width: 90%;
+        width: 90%;
         display: flex;
         align-items: center;
-        justify-content: space-around;    
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        flex-direction: row;    
 
         h1{
             font-size: 30px;
@@ -105,18 +107,29 @@ export const InfoContainer = styled.div`
     @media (min-width: 1024px){
         .icon-user{
 
-            margin-left: -220px;
+            margin-left: -165px;
         }
 
     }
 
     @media (min-width: 1440px){
+
+        .icon-user{
+            margin-left: -150px;
+        }
+
         p{
             margin-left: 435px;
         }
 
     }
 
+    @media (min-width: 1600px){
+
+        .icon-user{
+            margin-left: -190px;
+        }
+    }
 
 
 
@@ -134,13 +147,9 @@ export const Content = styled.div`
         flex-direction: column;
         padding: 11px 8px;
         align-items: center;
-        width: 283px;
+        width: 290px;
         height: 383px;
         margin-top: 10px;
-
-    @media (min-width: 375px){
-        width: 335px;
-    }
 
     @media (min-width: 768px) {
         width: 450px;
@@ -157,52 +166,38 @@ export const SectionContainer = styled.div`
 
     padding: 1px 1px 1px 1px;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     align-content: center;
     background: var(--brown-light);
     margin: auto;
-    width: 283px;
+    width: 285px;
     margin-top: 15px;
-    margin-left: 10px;
 
     button{
         font-family: 'Archivo';
         font-style: normal;
         color: var(--black);
         background: transparent;
-        width: 70px;
         height: 25px;
         font-size: 14px;
     }
 
-    @media (min-width: 375px){
-        margin-left: 7px;
-        width: 340px;
-    }
-
-    @media (min-width: 425px){
-        margin-left: 35px;
-    }
-
     @media (min-width: 768px) {
-        width: 450px;
-        margin-left: 140px;
+
+        width: 445px;
 
         button{
             font-size: 18px;
         }
     }
 
-    @media (min-width: 1024px){
-        margin-left: 270px;
-    }
 
     @media (min-width: 1440px){
-        margin-left: auto;
-        width: 650px;
+
+        width: 640px;
 
         button{
             width: 120px;
@@ -210,16 +205,12 @@ export const SectionContainer = styled.div`
         }
     }
 
-    @media (min-width: 1600px){
-        margin-left: 460px;
-    }
-
-
 
 `
 
 export const ButtonContainer = styled.div`
-    margin: 25px 5px 5px 19px;
+   margin-top: 25px ;
+   width: 290px;
     
     button{
   
@@ -239,43 +230,31 @@ export const ButtonContainer = styled.div`
 
     }
 
-    @media (min-width: 375px){
-        margin-left: 20px;
-    }
-
-    @media (min-width: 425px){
-        margin-left: 43px;
-
-    }
-
     @media (min-width: 768px){
-        
-        margin-left: 155px;
-
-    }
-
-    @media (min-width: 1024px){
-        
-        margin-left: 285px;
+        width: 450px;
 
     }
 
     @media (min-width: 1440px){
         
-        margin-left: 395px;
+        width: 650px;
 
     }
-
-    @media (min-width: 1600px){
-        
-        margin-left: 470px;
-
-    }
-
 
   
 `
 
 export const CardProduct = styled.div`
+
+`
+
+export const GeneralContainer = styled.div`
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
 
 `
