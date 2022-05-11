@@ -22,6 +22,11 @@ export const ContentHeader = styled.header`
         color: #fff;
         margin-left: 11px;
     }
+
+    div {
+        display: flex;
+        align-items: center;
+    }
 `
 
 export const Title = styled.h1`
