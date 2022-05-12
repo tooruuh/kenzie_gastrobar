@@ -1,15 +1,18 @@
 import {Item, Name, Price, Li} from './style'
 
 import {BsFillTrashFill} from 'react-icons/bs'
+import { useContext } from 'react'
+import { AdminContext } from '../../Providers/admin'
 
-function Product () {
+function Product ({info}) {
+    const {deleteProduct} = useContext(AdminContext)
     return (
         <Item>
             <ul>
-                <Li><Name>Pão com queijo</Name></Li>
-                <Li><Price>R$ 5</Price></Li>
+                <Li><Name>{info.name}</Name></Li>
+                <Li><Price>R$ {info.price}</Price></Li>
             </ul>
-            <BsFillTrashFill className='icon-product'/>
+            <BsFillTrashFill onClick={() => deleteProduct(info.id)} className='icon-product'/>
         </Item>
     )
 }

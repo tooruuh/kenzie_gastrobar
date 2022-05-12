@@ -38,19 +38,36 @@ export const Content = styled.div`
 
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    
     text-align: center;
-    height: 100vh;
-    margin-top: 20px;;
-    flex-direction: column;
+    height: 85vh;
+    margin-top: 15px;
     flex-wrap: wrap;
-    align-content: center;
     background: var(--orange-dark);
+    align-content: space-between;
+    flex-direction: row;
+    justify-content: space-around;
+
+    @media(min-width: 1024px){
+
+        justify-content: center;
+    }
+
+    @media(min-width: 1440px){
+
+        margin-top: 4px;
+        height: 90vh;
+    }
 
     @media(min-width: 1600px){
+
         align-content: space-around;
         padding: 0px 70px 0px 70px;
+        margin-top: 0px;
+        height: 89vh;
+
     }
+
 
 `
 
@@ -73,13 +90,19 @@ export const DescriptionContainer = styled.div`
     margin-top: 10px;
 
     @media(min-width: 768px){
-        height: 35rem;
         width: 50% ;
 
     }
 
+    @media(min-width: 1440px){
+
+        width: 40%;
+
+    }
+
+
     @media(min-width: 1600px){
-        height: 40rem;
+
         width: 34%;
 
     }
@@ -92,7 +115,7 @@ export const Description = styled.p`
     font-family: 'Inika';
     font-style: normal;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 23px;
     line-height: 26px;
     color: var(--brown);
     text-align: left;
@@ -127,6 +150,10 @@ export const ImgContainer = styled.div`
 
     @media(min-width: 768px){
         display: flex;
+    }
+
+    @media(min-width: 1024px){
+        width: 35%;
     }
 
     @media(min-width: 1600px){

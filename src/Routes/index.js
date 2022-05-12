@@ -5,11 +5,12 @@ import LoginPage from "../Pages/Login";
 import CapturePage from "../Pages/Capture"
 import AdminPage from "../Pages/AdminPage";
 import TablePage from "../Pages/Table";
+import ReleasesPage from "../Pages/ Releases"
 
 export default function Routes() {
   return (
     <Switch>
-      {/* a rota / ela essencialmnete vem por ultimo */}
+      
       <Route exact path="/">
         <CapturePage />
       </Route>
