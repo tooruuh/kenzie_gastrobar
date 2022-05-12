@@ -22,6 +22,7 @@ export const Title = styled.h1`
     font-weight: 400;
     font-size: 32px;
     line-height: 37px;
+    color: #fff;
 
     @media(min-width: 425px){
         font-size: 40px
@@ -38,9 +39,7 @@ export const Content = styled.div`
 
     display: flex;
     align-items: center;
-    
     text-align: center;
-    height: 85vh;
     margin-top: 15px;
     flex-wrap: wrap;
     background: var(--orange-dark);
@@ -56,7 +55,6 @@ export const Content = styled.div`
     @media(min-width: 1440px){
 
         margin-top: 4px;
-        height: 90vh;
     }
 
     @media(min-width: 1600px){
@@ -64,7 +62,6 @@ export const Content = styled.div`
         align-content: space-around;
         padding: 0px 70px 0px 70px;
         margin-top: 0px;
-        height: 89vh;
 
     }
 
@@ -74,7 +71,7 @@ export const Content = styled.div`
 export const Container = styled.div`
 
     background: var(--orange-dark);
-
+    height: 100vh;
 `
 
 export const DescriptionContainer = styled.div`
@@ -175,7 +172,11 @@ export const Image = styled.img`
 
     @media(min-width: 768px){
         display: flex;
-        
+        width: 250px;
+    }
+
+    @media(min-width: 1024px){
+        width: 400px;
     }
 
 `
