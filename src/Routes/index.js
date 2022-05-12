@@ -12,19 +12,15 @@ export default function Routes() {
     <Switch>
       
       <Route exact path="/">
-        <CapturePage/>
-      </Route>
-    
-      <Route path='/admin'>
-        <AdminPage/>
-      </Route>
-    
-      <Route path="/login">
-        <LoginPage />
+        <CapturePage />
       </Route>
 
-      <Route path="/register">
-        <RegisterPage/>
+      <Route exact path='/admin'>
+        <AdminPage />
+      </Route>
+
+      <Route exact path="/login">
+        <LoginPage />
       </Route>
 
      <Route exact path='/table'>

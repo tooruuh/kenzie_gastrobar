@@ -1,4 +1,6 @@
 import Header from "../../components/Header";
+import ModalTableOrder from "../../components/ModalTableOrder";
+import { useModal } from "../../Providers/modal";
 import { CardTable, Container, VitrineTable } from "./styles";
 
 const mesas = [
@@ -41,9 +43,26 @@ const mesas = [
     subtotal: 50,
     isActive: true,
   },
+  {
+    id: 5,
+    pedidos: [
+      { nome: "Bacon em Tiras", price: 35},
+      { nome: "Hamburguer X-Salada", price: 40 },
+      { nome: "Suco de Limao", price: 20 },
+    ],
+    subtotal: 50,
+    isActive: true,
+  },
 ];
 
 function TablePage() {
+
+  const { tableOrder, setTableOrder, setTableOrderId } = useModal()
+
+  function showModal (id) {
+    setTableOrderId(id)
+  }
+
   return (
     <>
       <Header></Header>
@@ -53,12 +72,17 @@ function TablePage() {
 
         <VitrineTable>
           {mesas.map((item) => {
-            return <CardTable key={item.id} id={item.id} onClick={(e)=>{console.log(e.target.id)}}>
+            return <CardTable key={item.id} id={item.id} onClick={(e)=>{
+              setTableOrder(true)
+              showModal(e.target.id)
+            }}>
                 Mesa {item.id}
             </CardTable>
           })}
         </VitrineTable>
       </Container>
+
+      {tableOrder && <ModalTableOrder />}
     </>
   );
 }
