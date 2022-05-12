@@ -115,21 +115,21 @@ function LoginPage() {
               />
             </>
           )}
+
           <Button
             type="submit"
             onClick={() => handleLoginEmployee(employeeId)}
-            className="btn-login"
-          >
+            className="btn-login">
             Entrar
           </Button>
         </form>
-
-        <Redirection>
-          <p>
-            Já não está cadastrado? <Link to="/register">Clique aqui</Link>
-          </p>
-        </Redirection>
+        
       </Container>
+      <Redirection>
+        <p>
+          Já não está cadastrado? <Link to="/register">Clique aqui</Link>
+        </p>
+      </Redirection>
     </>
   );
 }

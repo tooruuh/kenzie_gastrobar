@@ -14,8 +14,11 @@ export default createGlobalStyle`
         --orange-dark: #BC4124;
         --orange-light: #E7946D;
         --brown: #5B1206;
-        --white: #FFFFFF;
-        --black-opacity: #000000d6;
+        --brown-light: #F4EDE6;
+        --orange-darker: #AB2E1B;
+        --grey: #09101D;
+        --black: #000000;
+        --white: #ffffff;
     }
 
     button {

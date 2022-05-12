@@ -16,9 +16,7 @@ export const AdminProviders = ({children}) => {
     const id = localStorage.getItem('@id')
     const token = localStorage.getItem('@token')
 
-    const {setModalId} = useContext(ModalContext)
-
-    const {setEmployee} = useContext(ModalContext)
+    const {setModalId , setProduct, setEmployee} = useContext(ModalContext)
 
     const history = useHistory()
 
@@ -39,6 +37,7 @@ export const AdminProviders = ({children}) => {
         .then((response) => {
             toast.success('Produto adicionado')
             listProducts()
+            setProduct(false)
         })
         .catch((err) => {
             const res = err.response
