@@ -98,7 +98,6 @@ function LoginPage() {
           className="form-login-company"
           onSubmit={handleSubmit(onSubmitFunction)}
         >
-<<<<<<< HEAD
           {condition === false && (
             <>
               <input
@@ -116,24 +115,15 @@ function LoginPage() {
               />
             </>
           )}
+
           <Button
             type="submit"
             onClick={() => handleLoginEmployee(employeeId)}
-            className="btn-login"
-          >
+            className="btn-login">
             Entrar
           </Button>
         </form>
-
-        <Redirection>
-          <p>
-            Já não está cadastrado? <Link to="/register">Clique aqui</Link>
-          </p>
-        </Redirection>
-=======
-          Entrar
-        </Button>
->>>>>>> feature_login_user
+        
       </Container>
       <Redirection>
         <p>
