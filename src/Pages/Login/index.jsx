@@ -98,6 +98,7 @@ function LoginPage() {
           className="form-login-company"
           onSubmit={handleSubmit(onSubmitFunction)}
         >
+<<<<<<< HEAD
           {condition === false && (
             <>
               <input
@@ -129,7 +130,16 @@ function LoginPage() {
             Já não está cadastrado? <Link to="/register">Clique aqui</Link>
           </p>
         </Redirection>
+=======
+          Entrar
+        </Button>
+>>>>>>> feature_login_user
       </Container>
+      <Redirection>
+        <p>
+          Já não está cadastrado? <Link to="/register">Clique aqui</Link>
+        </p>
+      </Redirection>
     </>
   );
 }
