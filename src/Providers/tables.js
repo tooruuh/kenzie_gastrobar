@@ -5,7 +5,7 @@ export const TablesContext = createContext();
 
 export const TablesProvider = ({ children }) => {
   const [tables, setTables] = useState([]);
-  const userId = localStorage.getItem("@gastro/ID");
+  const userId = localStorage.getItem("@id");
 
   function addTable(table) {
     const tableExists = tables.find(
@@ -27,9 +27,11 @@ export const TablesProvider = ({ children }) => {
     syncTables();
   }
 
-  function syncTables() {
-    const updatedTables = api.get(`/tables?userId=${userId}`);
-    setTables(updatedTables);
+  async function syncTables() {
+    await api
+      .get(`/tables?userId=${userId}`)
+      .then((res) => setTables(res.data));
+    ;
   }
 
   function updateTable(numberTable, products) {
