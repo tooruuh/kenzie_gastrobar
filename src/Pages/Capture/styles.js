@@ -120,12 +120,17 @@ export const Description = styled.p`
     color: var(--brown);
     text-align: left;
     margin: 24px;
+    width: 272px;
 
     @media(min-width: 768px){
+        width: 320px;
         font-size: 27px;
         margin: 60px;
         margin-bottom: 0px;
+    }
 
+    @media (min-width: 1024px){
+        width: 421px;
     }
 
 `
