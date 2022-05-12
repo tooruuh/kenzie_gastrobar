@@ -23,11 +23,15 @@ export default function Routes() {
         <LoginPage />
       </Route>
 
-     <Route exact path='/table'>
+      <Route exact path='/register'>
+        <RegisterPage/>
+      </Route>
+
+      <Route exact path='/table'>
         <TablePage />
       </Route>
 
-     <Route exact path='/releases'>
+      <Route exact path='/releases'>
         <ReleasesPage />
       </Route>
 
