@@ -39,7 +39,7 @@ export const VitrineTable = styled.ul`
     flex-direction: row;
     list-style: none;
     align-content: flex-start;
-    justify-content: space-between;
+    justify-content: flex-start;
     max-width: 330px;
     height: 400px;
     margin: auto;
@@ -47,6 +47,11 @@ export const VitrineTable = styled.ul`
     border-radius: 8px;
     background-color: var(--orange-light);
 
+    @media(max-width: 360px){
+        max-width: 236px;
+        height: 530px;
+        justify-content: flex-start;
+    }
 
     @media(min-width: 800px){
         max-width: 600px;
