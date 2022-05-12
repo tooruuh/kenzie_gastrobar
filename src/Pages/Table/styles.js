@@ -1,34 +1,43 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    margin-top: 12%;
+    margin-top: 13px;
 
     h1 {
         text-align: center;
-        margin-bottom: 7%;
+        margin-bottom: 13px;
+        font-family: 'Arimo';
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 23px;
+    }
+
+    @media (min-width: 768px) {
+        h1 {
+            font-size: 24px;
+        }
     }
 
     @media(min-width: 900px){
-        margin-top: 6%;
-
+        margin-top: 20px;
+        
         h1 {
-            margin-bottom: 3%;
+            font-size: 28px;
+            margin-bottom: 20px;
         }
     }
 
     @media(min-width: 1500px){
-        margin-top: 5%;
 
         h1 {
-            margin-bottom: 3%;
+           
         }
     }
 
     @media(min-width: 1600px){
-        margin-top: 4%;
 
         h1 {
-            margin-bottom: 3%;
+
         }
     }
 `   
