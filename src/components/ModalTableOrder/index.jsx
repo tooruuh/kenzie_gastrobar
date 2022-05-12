@@ -41,19 +41,17 @@ export default function ModalTableOrder() {
     <ModalContainer>
       <ModalContent>
         <Headerr>
-          <h1>CONSUMO MESA {tableOrderId}</h1>
-          <span>
-            <strong onClick={() => setTableOrder(false)}>X</strong>
-          </span>
+          <h2>CONSUMO MESA {tableOrderId}</h2>
+          <button onClick={() => setTableOrder(false)}>X</button>
         </Headerr>
 
         <Vitrine>
           {tableRequest.products.map((item, index) => {
             return (
-              <li key={index}>
-                <h2>{item.name}</h2>
-                <h3>{item.price.toFixed(2)}</h3>
-              </li>
+              <ul key={index}>
+                <li>{item.name}</li>
+                <li>R$ {item.price.toFixed(2).replace('.',',')}</li>
+              </ul>
             );
           })}
         </Vitrine>

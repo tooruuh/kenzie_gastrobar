@@ -49,16 +49,17 @@ export const VitrineTable = styled.ul`
     list-style: none;
     align-content: flex-start;
     justify-content: flex-start;
-    max-width: 330px;
+    max-width: 283px;
     height: 400px;
+    overflow: auto;
     margin: auto;
     padding: 10px;
     border-radius: 8px;
     background-color: var(--orange-light);
 
     @media(max-width: 360px){
-        max-width: 236px;
-        height: 530px;
+        max-width: 283px;
+        height: 430px;
         justify-content: flex-start;
     }
 
@@ -67,23 +68,11 @@ export const VitrineTable = styled.ul`
         height: 550px;
         justify-content: flex-start;
     }
-    
-    @media(min-width: 1200px){
-        max-width: 830px;
-        height: 550px;
-        justify-content: flex-start; 
-    }
-
-    @media(min-width: 1600px){
-        max-width: 1000px;
-        height: 600px;
-        justify-content: flex-start;
-    }
 `
 
 export const CardTable = styled.li`
-    width: 60px;
-    height: 50px;
+    width: 75px;
+    height: 61px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -94,20 +83,15 @@ export const CardTable = styled.li`
     background-color: var(--orange-dark);
     cursor: pointer;
 
+    font-family: 'Arimo';
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+
+
     @media(min-width: 800px){
-        width: 130px;
-        height: 80px;
-        font-size: 1.5rem;  
-    }
-    
-    @media(min-width: 1200px){
-        width: 150px;
-        height: 80px;
-        font-size: 1.5rem;  
-    }
-    
-    @media(min-width: 1600px){
-        width: 150px;
+        width: 133px;
         height: 80px;
         font-size: 1.5rem;  
     }

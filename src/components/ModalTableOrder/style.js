@@ -20,82 +20,75 @@ export const ModalContent = styled.div`
     flex-direction: column;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 330px;
+    width: 280px;
     height: 530px;
-    padding: 16px;
+    padding-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 8px;
     background-color: var(--brown);
 
-    @media(max-width: 380px) {
-        width: 290px;
-    }
-
-    @media(min-width: 800px) {
-        width: 600px;
-    }
-
-    @media(min-width: 1200px) {
-        width: 850px;
-    }
-
-    @media(min-width: 1600px) {
-        width: 1060px;
-        height: 700px;
-    }
 `
 
 export const Headerr = styled.div`
     display: flex;
     align-items: center;
+    position: relative;
     justify-content: space-between;
 
-    h1 {
-        font-size: 1.4rem;
-
-        @media(min-width: 1600px) {
-            font-size: 3rem; 
-        }
+    h2 {
+        font-family: Source Sans Pro;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 28px;
+        letter-spacing: 0em;
+        text-align: center;
+        margin-left: 45px;
+        padding-top: 5px;
     }
 
-    span{
-        cursor: pointer;
-        @media(min-width: 1600px) {
-            font-size: 3rem; 
-            margin-right: 16px;
-        }
+    button{
+        position: absolute;
+        left: 240px;
+        top: 11px;
+        background-color: var(--brown);
+        color: #fff;
+        font-size: 18px;
+        border: none;
     }
 `
 
 export const Vitrine = styled.ul`
     list-style: none;
     height: 300px;
+    overflow: auto;
 
-    li {
-        display: flex;
-        justify-content: space-between;
+    ul {
+        margin-left: 7px;
         align-items: center;
         background-color: var(--orange-dark);
-        padding: 0px 16px;
-        margin: 5px;
+        height: 56px;
+        width: 266px;
+        border-radius: 10px;
+        margin-bottom: 5px;
+        margin-right: 10px;
         border-radius: 8px;
-        height: 30px;
 
-        h2 {
-            font-size: 1.5rem;
-            font-weight: 500;
+        li {
+            padding-top: 7px;
+            margin-left: 8px;
+            font-family: 'Arimo';
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 18px;
+            letter-spacing: 0em;
+            text-align: left;
+            width: 248px;
+            height: 25px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
         }
-
-        @media(min-width: 1600px) {
-            height: 60px;
-
-            h2, h3 {
-                font-size: 2.3rem;
-            }
-        }
-    }
-
-    @media(min-width: 1600px) {
-        height: 400px;
     }
 `
 
@@ -109,20 +102,11 @@ export const Footer = styled.div`
         padding: 0 20px;
 
         p {
-            width: 60px;
-            text-align: center;
-
-            @media(min-width: 900px){
-                font-size: 2rem;
-                width: 170px;
-                text-align: center;
-            }
-
-            @media(min-width: 1600px){
-                font-size: 3rem;
-                width: 260px;
-                text-align: center;
-            }
+            font-family: 'Inter';
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 17px;
+            letter-spacing: 0em;
         }
     }
 `
@@ -133,7 +117,7 @@ export const ResumTotal = styled.div`
 `
 
 export const BtBack = styled.button`
-    width: 262px;
+    width: 242px;
     height: 40px;
     border-radius: 8px;
     filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.25));
@@ -147,19 +131,7 @@ export const BtBack = styled.button`
     line-height: 26px;
     margin: 16px auto;
 
-    @media(min-width: 900px){
-        width: 532px;
-    }
 
-    @media(min-width: 1200px){
-        width: 780px;
-    }
-
-    @media(min-width: 1600px) {
-        height: 60px;
-        width: 985px;
-        font-size: 2rem;
-    }
 `
 
 export const BtFinish = styled.button`
@@ -175,20 +147,6 @@ export const BtFinish = styled.button`
     font-weight: 500;
     font-size: 18px;
     line-height: 26px;
-
-    @media(min-width: 900px){
-        width: 282px;
-    }
-
-    @media(min-width: 1200px){
-        width: 398px;
-    }
-
-    @media(min-width: 1600px) {
-        width: 510px;
-        height: 60px;
-        font-size: 2rem;
-    }
     
 `
 
