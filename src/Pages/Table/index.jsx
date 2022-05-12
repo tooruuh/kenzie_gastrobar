@@ -11,7 +11,6 @@ function TablePage() {
   useEffect(() => {
     syncTables();
   }, []);
-  console.log(tables);
 
   function showModal(id) {
     setTableOrderId(id);
