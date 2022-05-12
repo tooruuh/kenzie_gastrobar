@@ -72,6 +72,12 @@ export const Container = styled.div`
     height: 42px;
     width: 269px;
     background-color: #bc4124;
+
+    font-family: "Source Sans Pro";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
   }
 
   @media screen and (min-width: 768px) {
