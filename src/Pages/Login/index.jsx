@@ -123,13 +123,12 @@ function LoginPage() {
         >
           Entrar
         </Button>
-
-        <Redirection>
-          <p>
-            Já não está cadastrado? <Link to="/register">Clique aqui</Link>
-          </p>
-        </Redirection>
       </Container>
+      <Redirection>
+        <p>
+          Já não está cadastrado? <Link to="/register">Clique aqui</Link>
+        </p>
+      </Redirection>
     </>
   );
 }

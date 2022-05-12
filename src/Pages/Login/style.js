@@ -75,8 +75,8 @@ export const Container = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    height: 430px;
-    width: 585px;
+    height: 335px;
+    width: 393px;
 
     .input-login {
       width: 369px;
@@ -84,23 +84,34 @@ export const Container = styled.div`
     }
 
     .form-login-company {
-      margin-top: 80px;
+      margin-top: 70px;
     }
 
     .section-login-employee {
-      margin-top: 120px;
+      margin-top: 80px;
+    }
+
+    .btn-login {
+      margin-top: 30px;
+      width: 370px;
     }
   }
 
   @media screen and (min-width: 1240px) {
-    height: 410px;
-    width: 640px;
+    height: 375px;
+    width: 435px;
     .form-login-company {
-      margin-top: 100px;
+      margin-top: 65px;
     }
     .input-login {
       width: 369px;
       height: 48px;
+    }
+    .section-login-employee {
+      margin-top: 80px;
+    }
+    .btn-login {
+      margin-top: 60px;
     }
   }
 `;
@@ -142,10 +153,10 @@ export const ChangeForms = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    width: 540px;
+    width: 380px;
   }
 
   @media screen and (min-width: 1100px) {
-    width: 560px;
+    width: 420px;
   }
 `;
