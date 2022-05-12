@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
     margin-top: 13px;
+    text-align: center;
 
     h1 {
         text-align: center;
@@ -98,18 +99,21 @@ export const CardTable = styled.li`
 `
 
 export const Btn = styled.button`
-    width: 242px;
-    height: 40px;
-    border-radius: 8px;
-    filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.25));
-    color: var(--brown-light);
-    background: var(--orange-light);
+    height: 25px;
+    width: 136px;
+    border-radius: 5px;
     border: none;
-    font-family: 'Inika';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 22px;
-    line-height: 26px;
-    margin-left: 34.3%;
-    margin-top: 1%;
+    background-color: var(--orange-light);
+    color: #fff;
+    font-family: Arimo;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    @media (min-width: 768px) {
+        height: 33px;
+        width: 187px;
+        font-size: 16px;
+    }
 `

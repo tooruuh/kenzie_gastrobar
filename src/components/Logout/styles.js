@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
-export const ContainerLogout = styled.p`
+export const ContainerLogout = styled.button`
+  background-color: var(--orange-dark);
+  border: none;
+  position: absolute;
+  right: 0px;
+  top: 55px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   width: 30px;
   font-family: "Arimo";
   font-size: 12px;
@@ -13,4 +15,11 @@ export const ContainerLogout = styled.p`
   color: #ffffff;
   margin-right: 7px;
   cursor: pointer;
+  color: var(--orange-light);
+
+  @media (min-width: 768px) {
+    left: 20px;
+    font-size: 16px;
+    right: 0px;
+  }
 `;

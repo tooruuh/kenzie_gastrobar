@@ -22,7 +22,7 @@ export const ContentHeader = styled.header`
     position: absolute;
     left: 20px;
     font-size: 22px;
-    margin-top: 8px;
+    margin-top: 17px;
     display: inline-block;
   }
 
@@ -30,9 +30,9 @@ export const ContentHeader = styled.header`
     display: flex;
     .icon-user {
       position: relative;
-      font-size: 35px;
-      margin-top: 15px;
-      margin-left: 20px;
+      font-size: 45px;
+      margin-top: -10px;
+      margin-left: 5px;
       margin-right: 70px;
     }
     
