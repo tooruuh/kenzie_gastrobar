@@ -11,7 +11,6 @@ ReactDOM.render(
     <React.StrictMode>
       <Providers>
         <ToastContainer />
-          <ToastContainer />
           <App />
       </Providers>
     </React.StrictMode>
