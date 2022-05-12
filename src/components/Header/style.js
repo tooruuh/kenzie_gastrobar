@@ -35,6 +35,7 @@ export const ContentHeader = styled.header`
       margin-left: 20px;
       margin-right: 70px;
     }
+    
   }
 `;
 

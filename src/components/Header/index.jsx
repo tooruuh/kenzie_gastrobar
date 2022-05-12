@@ -11,11 +11,9 @@ function Header({ children, verify }) {
       <Title>Kenzie Gastrobar</Title>
       <AdminName>{name}</AdminName>
       <div className="user">
-        <FaUserAlt className="icon-user" />
+      <FaUserAlt className="icon-user" /> 
         {children}
-        {
-          verify !== 'login' && <Logout />
-        }
+      <Logout />
       </div>
     </ContentHeader>
   );
