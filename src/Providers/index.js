@@ -7,9 +7,11 @@ export function Providers({ children }) {
   return (
     <TablesProvider>
       <LoginProviders>
+       <ModalProviders>
         <AdminProviders>  
-          <ModalProviders>{children}</ModalProviders>
+            {children}
         </AdminProviders>
+       </ModalProviders>
       </LoginProviders>
     </TablesProvider>
   );

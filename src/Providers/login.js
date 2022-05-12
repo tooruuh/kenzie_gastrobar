@@ -12,6 +12,7 @@ export const LoginProviders = ({children}) => {
     function loginEmployee (id) {
         api.get(`employees?id=${id}`)
         .then((data) => {
+            localStorage.clear()
 
             const person = data.data[0]
 
@@ -33,6 +34,8 @@ export const LoginProviders = ({children}) => {
         console.log(data)
         api.post("/login", data)
         .then((response) => {
+            localStorage.clear()
+            
             const {user} = response.data
 
             const {accessToken} = response.data
