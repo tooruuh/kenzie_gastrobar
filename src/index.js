@@ -11,7 +11,7 @@ ReactDOM.render(
     <React.StrictMode>
       <Providers>
         <ToastContainer />
-          <App />
+        <App />
       </Providers>
     </React.StrictMode>
   </BrowserRouter>,

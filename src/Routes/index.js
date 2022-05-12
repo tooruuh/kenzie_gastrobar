@@ -27,16 +27,11 @@ export default function Routes() {
         <RegisterPage/>
       </Route>
 
-      <Route exact path='/table'>
+      <Route exact path='/TablePage'>
         <TablePage />
       </Route>
 
-      <Route exact path='/releases'>
-        <ReleasesPage />
-      </Route>
-
-      
-    </Switch>
+    </Switch >
   )
 }
 

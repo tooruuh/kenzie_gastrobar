@@ -97,3 +97,19 @@ export const CardTable = styled.li`
     }
 `
 
+export const Btn = styled.button`
+    width: 242px;
+    height: 40px;
+    border-radius: 8px;
+    filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.25));
+    color: var(--brown-light);
+    background: var(--orange-light);
+    border: none;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26px;
+    margin-left: 34.3%;
+    margin-top: 1%;
+`
