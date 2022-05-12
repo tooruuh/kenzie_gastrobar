@@ -3,7 +3,7 @@ import { ContentHeader, Title, AdminName } from "./style";
 import { FaUserAlt } from "react-icons/fa";
 import Logout from "../Logout";
 
-function Header({ children }) {
+function Header({ children, verify }) {
   const name = localStorage.getItem("@userName");
 
   return (
@@ -13,7 +13,9 @@ function Header({ children }) {
       <div className="user">
         <FaUserAlt className="icon-user" />
         {children}
-        <Logout />
+        {
+          verify !== 'login' && <Logout />
+        }
       </div>
     </ContentHeader>
   );

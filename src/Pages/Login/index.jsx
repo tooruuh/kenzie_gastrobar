@@ -43,7 +43,7 @@ function LoginPage() {
 
   return (
     <>
-      <Header />
+      <Header verify={'login'} />
       <ChangeForms>
         {condition === true ? (
           <>

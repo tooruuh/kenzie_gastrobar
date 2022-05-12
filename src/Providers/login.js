@@ -31,6 +31,7 @@ export const LoginProviders = ({children}) => {
     }
 
     function loginCompany (data) {
+        console.log(data)
         api.post("/login", data)
         .then((response) => {
             localStorage.clear()
