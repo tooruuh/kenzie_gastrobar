@@ -159,14 +159,12 @@ export const ChangeForms = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-<<<<<<< HEAD
     width: 540px;
     .change-user-login {
       font-size: 22px;
     }
-=======
+
     width: 380px;
->>>>>>> feature_login_user
   }
 
   @media screen and (min-width: 1100px) {
