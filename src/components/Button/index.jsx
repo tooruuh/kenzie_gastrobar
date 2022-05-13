@@ -1,11 +1,17 @@
-import { Container } from "./styles"
+import { Container } from "./styles";
 
-const Button = ({children, ...rest}) => (
+import { motion } from "framer-motion";
 
-    <Container {...rest}>
-        {children}
-    </Container>
+const Button = ({ children, onClick, className, ...rest }) => (
+  <motion.button
+    className={className}
+    whileHover={{ scale: 1.1 }}
+    whileTap={{ scale: 0.9 }}
+    onClick={onClick}
+    {...rest}
+  >
+    {children}
+  </motion.button>
+);
 
-)
-
-export default Button
+export default Button;

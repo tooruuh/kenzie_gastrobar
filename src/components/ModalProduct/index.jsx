@@ -1,4 +1,4 @@
-import {ContainerProduct, Modal, ButtonModal, ButtonRegister} from './style'
+import {ContainerProduct, Modal, ButtonModal} from './style'
 
 import { useContext } from 'react'
 import { ModalContext } from '../../Providers/modal'
@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { AdminContext } from '../../Providers/admin';
+import Button from '../Button'
 
 function ModalProduct () {
 
@@ -40,9 +41,10 @@ function ModalProduct () {
                         <option value='Sobremesas'>Sobremesas</option>
                     </select>
 
-                    <ButtonRegister
+                    <Button
+                    className={'btn-register'}
                     type='submit'
-                    >Cadastrar</ButtonRegister>
+                    >Cadastrar</Button>
                 </form>
             </Modal>
         </ContainerProduct>

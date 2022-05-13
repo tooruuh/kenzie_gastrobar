@@ -9,9 +9,10 @@ import {
   ImgContainer,
   Image,
 } from "./styles";
+
 import Button from "../../components/Button";
 import { useHistory } from "react-router";
-import waiter from "../../assets/waiter.svg";
+import waiter from "../../Assets/waiter.svg";
 
 function CapturePage() {
   const history = useHistory();
@@ -36,7 +37,10 @@ function CapturePage() {
               Quer esperimentar um pouquinho da nossa ferramenta ?
             </Description>
             <ButtonContainer>
-              <Button onClick={() => handleNavigation("/register")}>
+              <Button
+                className="btn-capture"
+                onClick={() => handleNavigation("/register")}
+              >
                 Experimente grátis
               </Button>
             </ButtonContainer>

@@ -5,6 +5,7 @@ import ModalTableOrder from "../../components/ModalTableOrder";
 import { useModal } from "../../Providers/modal";
 import { TablesContext } from "../../Providers/tables";
 import { Btn, CardTable, Container, VitrineTable } from "./styles";
+import Button from "../../components/Button";
 
 function TablePage() {
   const { tableOrder, setTableOrder, setTableOrderId } = useModal();
@@ -31,7 +32,8 @@ function TablePage() {
         <VitrineTable>
           {tables.map((item) => {
             return (
-              <CardTable
+              <Button
+                className='btn-card'
                 key={item.id}
                 id={item.id}
                 onClick={(e) => {
@@ -40,7 +42,7 @@ function TablePage() {
                 }}
               >
                 Mesa {item.numberTable}
-              </CardTable>
+              </Button>
             );
           })}
         </VitrineTable>

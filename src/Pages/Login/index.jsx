@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import { Redirection } from "../Register/styles";
 import { useContext } from "react";
 import { LoginContext } from "../../Providers/login";
+import HeaderLogin from "../../components/HeaderLogin";
 
 function LoginPage() {
   const { loginCompany, loginEmployee } = useContext(LoginContext);
@@ -43,7 +44,7 @@ function LoginPage() {
 
   return (
     <>
-      <Header />
+      <HeaderLogin />
       <ChangeForms>
         {condition === true ? (
           <>

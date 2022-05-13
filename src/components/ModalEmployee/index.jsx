@@ -1,8 +1,9 @@
-import {ContainerProduct, Modal, ButtonModal, ButtonRegister} from './style'
+import {ContainerProduct, Modal, ButtonModal } from './style'
 
 import { useContext, useState } from 'react'
 import { ModalContext } from '../../Providers/modal'
 import { AdminContext } from '../../Providers/admin'
+import Button from '../Button'
 
 function ModalEmployee () {
 
@@ -24,7 +25,7 @@ function ModalEmployee () {
                 <ButtonModal onClick={() => setEmployee(false)}>X</ButtonModal>
             </section>
             <input onChange={(event) => setName(event.target.value)} type="text" placeholder='Nome' />
-            <ButtonRegister onClick={() => handleName(name)}>Cadastrar</ButtonRegister>
+            <Button className='btn-register' onClick={() => handleName(name)}>Cadastrar</Button>
         </Modal>
     </ContainerProduct>
     )

@@ -77,6 +77,11 @@ export const Container = styled.div`
     font-weight: 600;
     font-size: 16px;
     line-height: 24px;
+    border: none;
+    border-radius: 6px;
+    :hover {
+      opacity: 0.6;
+    }
   }
 
   @media screen and (min-width: 768px) {

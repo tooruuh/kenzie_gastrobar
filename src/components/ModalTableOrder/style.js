@@ -95,6 +95,26 @@ export const Vitrine = styled.ul`
 export const Footer = styled.div`
     display: flex;
     flex-direction: column;
+    width: 280px;
+
+    .btn-back {
+        width: 242px;
+        height: 40px;
+        border-radius: 8px;
+        filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.25));
+        color: var(--brown-light);
+        background: var(--orange-light);
+        border: none;
+        font-family: 'Inika';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 26px;
+        margin: 16px auto;
+        :hover {
+            opacity: 0.6;
+        }
+    }
 
     div {
         display: flex;
@@ -114,38 +134,24 @@ export const Footer = styled.div`
 export const ResumTotal = styled.div`
     display: flex;
     align-items: center;
-`
 
-export const BtBack = styled.button`
-    width: 242px;
-    height: 40px;
-    border-radius: 8px;
-    filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.25));
-    color: var(--brown-light);
-    background: var(--orange-light);
-    border: none;
-    font-family: 'Source Sans Pro';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 26px;
-    margin: 16px auto;
-`
-
-export const BtFinish = styled.button`
-    width: 150px;
-    height: 40px;
-    border-radius: 8px;
-    filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.25));
-    color: var(--brown-light);
-    background: var(--orange-light);
-    border: none;
-    font-family: 'Source Sans Pro';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 26px;
-    
+    .btn-finish {
+        width: 150px;
+        height: 40px;
+        border-radius: 8px;
+        filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.25));
+        color: var(--brown-light);
+        background: var(--orange-light);
+        border: none;
+        font-family: 'Inika';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 26px;
+        :hover {
+            opacity: 0.6;
+        }
+    }
 `
 
 export const Hr = styled.hr`

@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
     margin-top: 13px;
+    text-align: center;
 
     h1 {
         text-align: center;
@@ -54,6 +55,37 @@ export const VitrineTable = styled.ul`
         height: 550px;
         justify-content: flex-start;
     }
+
+    .btn-card {
+        width: 75px;
+        height: 61px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        margin: 6px;
+        border-radius: 8px;
+        color: var(--white);
+        background-color: var(--orange-dark);
+        border: none;
+
+        font-family: 'Arimo';
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 17px;
+        letter-spacing: 0em;
+
+        :hover {
+            opacity: 0.6;
+        }
+
+
+        @media(min-width: 800px){
+            width: 133px;
+            height: 80px;
+            font-size: 1.5rem;  
+        }
+    }
 `
 
 export const CardTable = styled.li`
@@ -84,18 +116,22 @@ export const CardTable = styled.li`
 `
 
 export const Btn = styled.button`
-    width: 242px;
-    height: 40px;
-    border-radius: 8px;
-    filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.25));
-    color: var(--brown-light);
-    background: var(--orange-light);
+    height: 25px;
+    width: 136px;
+    border-radius: 5px;
     border: none;
-    font-family: 'Arimo';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 22px;
-    line-height: 26px;
-    margin-left: 34.3%;
-    margin-top: 1%;
+    background-color: var(--orange-light);
+    color: var(--white);
+    font-family: Arimo;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+    @media (min-width: 768px) {
+        height: 33px;
+        width: 187px;
+        font-size: 16px;
+    }
 `
