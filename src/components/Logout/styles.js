@@ -16,6 +16,10 @@ export const ContainerLogout = styled.button`
   margin-right: 7px;
   cursor: pointer;
   color: var(--orange-light);
+  :hover {
+    color: rgb(255,0,0);
+    transform: scale(1.1);
+  }
 
   @media (min-width: 768px) {
     left: 20px;
