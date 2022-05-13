@@ -11,7 +11,7 @@ export const Container = styled.div`
 
   .title-form-login {
     display: flex;
-    background-color: #bc4124;
+    background-color: var(--orange-dark);
     width: 100%;
     height: 44px;
     border-radius: 8px 8px 0px 0px;
@@ -22,9 +22,9 @@ export const Container = styled.div`
     font-weight: 400;
     font-size: 16px;
     line-height: 18px;
-
-    color: #ffffff;
+    color: var(--white);
   }
+
   .form-login-company {
     display: flex;
     align-items: center;
@@ -71,8 +71,7 @@ export const Container = styled.div`
     margin: 0 auto;
     height: 42px;
     width: 269px;
-    background-color: #bc4124;
-
+    background-color: var(--orange-dark);
     font-family: "Source Sans Pro";
     font-style: normal;
     font-weight: 600;
@@ -106,16 +105,20 @@ export const Container = styled.div`
   @media screen and (min-width: 1240px) {
     height: 375px;
     width: 435px;
+
     .form-login-company {
       margin-top: 65px;
     }
+
     .input-login {
       width: 369px;
       height: 48px;
     }
+
     .section-login-employee {
       margin-top: 80px;
     }
+
     .btn-login {
       margin-top: 60px;
     }
@@ -130,7 +133,6 @@ export const ChangeForms = styled.div`
   width: 260px;
   margin-top: 20px;
   margin-bottom: 5px;
-
   font-family: "Source Sans Pro";
   font-style: normal;
   font-weight: 600;
@@ -138,28 +140,29 @@ export const ChangeForms = styled.div`
   line-height: 20px;
 
   .change-user-login:hover {
-    color: #bc4124;
+    color: var(--orange-dark);
     cursor: pointer;
   }
 
   .employee-true {
-    color: #bc4124;
+    color: var(--orange-dark);
   }
 
   .company-false {
-    color: #000000;
+    color: var(--black);
   }
 
   .employee-false {
-    color: #000000;
+    color: var(--black);
   }
 
   .company-true {
-    color: #bc4124;
+    color: var(--orange-dark);
   }
 
   @media screen and (min-width: 768px) {
     width: 380px;
+    
     .change-user-login {
       font-size: 20px;
     }

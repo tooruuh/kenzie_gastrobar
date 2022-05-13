@@ -37,7 +37,7 @@ export const Headerr = styled.div`
     justify-content: space-between;
 
     h2 {
-        font-family: Source Sans Pro;
+        font-family: "Source Sans Pro";
         font-size: 22px;
         font-weight: 700;
         line-height: 28px;
@@ -52,7 +52,7 @@ export const Headerr = styled.div`
         left: 240px;
         top: 11px;
         background-color: var(--brown);
-        color: #fff;
+        color: var(--white);
         font-size: 18px;
         border: none;
     }
@@ -102,7 +102,7 @@ export const Footer = styled.div`
         padding: 0 20px;
 
         p {
-            font-family: 'Inter';
+            font-family: 'Arimo';
             font-size: 14px;
             font-weight: 400;
             line-height: 17px;
@@ -124,14 +124,12 @@ export const BtBack = styled.button`
     color: var(--brown-light);
     background: var(--orange-light);
     border: none;
-    font-family: 'Inika';
+    font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
     line-height: 26px;
     margin: 16px auto;
-
-
 `
 
 export const BtFinish = styled.button`
@@ -142,7 +140,7 @@ export const BtFinish = styled.button`
     color: var(--brown-light);
     background: var(--orange-light);
     border: none;
-    font-family: 'Inika';
+    font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 500;
     font-size: 18px;

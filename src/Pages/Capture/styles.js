@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Header = styled.header`
-
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -12,7 +11,7 @@ export const Header = styled.header`
     background: var(--orange-dark);
     color: var(--brown-light);
     height: 5rem;
-
+    font-family: 'Source Sans Pro';
 `
 
 export const Title = styled.h1`
@@ -22,7 +21,7 @@ export const Title = styled.h1`
     font-weight: 400;
     font-size: 32px;
     line-height: 37px;
-    color: #fff;
+    color: var(--white);
 
     @media(min-width: 425px){
         font-size: 40px
@@ -31,12 +30,9 @@ export const Title = styled.h1`
     @media(min-width: 768px){
         font-size: 50px
     }
-
-
 `
 
 export const Content = styled.div`
-
     display: flex;
     align-items: center;
     text-align: center;
@@ -46,36 +42,29 @@ export const Content = styled.div`
     align-content: space-between;
     flex-direction: row;
     justify-content: space-around;
+    font-family: 'Source Sans Pro';
 
     @media(min-width: 1024px){
-
         justify-content: center;
     }
 
     @media(min-width: 1440px){
-
         margin-top: 4px;
     }
 
     @media(min-width: 1600px){
-
         align-content: space-around;
         padding: 0px 70px 0px 70px;
         margin-top: 0px;
-
     }
-
-
 `
 
 export const Container = styled.div`
-
     background: var(--orange-dark);
     height: 100vh;
 `
 
 export const DescriptionContainer = styled.div`
-
     background: var(--orange-dark);
     display: flex;
     height: 30rem;
@@ -85,31 +74,24 @@ export const DescriptionContainer = styled.div`
     justify-content: space-around;
     align-content: center;
     margin-top: 10px;
+    font-family: 'Source Sans Pro';
 
     @media(min-width: 768px){
-        width: 50% ;
-
+        width: 50%;
     }
 
     @media(min-width: 1440px){
-
         width: 40%;
-
     }
 
 
     @media(min-width: 1600px){
-
         width: 34%;
-
     }
-    
-
 `
 
 export const Description = styled.p`
-    
-    font-family: 'Inika';
+    font-family: 'Arimo';
     font-style: normal;
     font-weight: 400;
     font-size: 23px;
@@ -129,7 +111,6 @@ export const Description = styled.p`
     @media (min-width: 1024px){
         width: 421px;
     }
-
 `
 
 export const ButtonContainer = styled.div`
@@ -141,7 +122,6 @@ export const ButtonContainer = styled.div`
 `
 
 export const ImgContainer = styled.div`
-
     display: none;
     width: 50%;
     height: 80%;
@@ -149,6 +129,7 @@ export const ImgContainer = styled.div`
     flex-wrap: wrap;
     align-items: flex-end;
     justify-content: center;
+    font-family: 'Source Sans Pro';
 
     @media(min-width: 768px){
         display: flex;
@@ -161,11 +142,9 @@ export const ImgContainer = styled.div`
     @media(min-width: 1600px){
         width: 23%;
     }
-
 `
 
 export const Image = styled.img`
-
     display: none;
     width: 100%;
     height: 100%;
@@ -178,5 +157,4 @@ export const Image = styled.img`
     @media(min-width: 1024px){
         width: 400px;
     }
-
 `

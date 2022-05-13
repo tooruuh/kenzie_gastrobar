@@ -8,7 +8,7 @@ export const Container = styled.div`
 
   .title-form-register {
     display: flex;
-    background-color: #bc4124;
+    background-color: var(--orange-black);
     width: 100%;
     height: 44px;
     border-radius: 8px 8px 0px 0px;
@@ -20,7 +20,7 @@ export const Container = styled.div`
     font-size: 16px;
     line-height: 18px;
 
-    color: #ffffff;
+    color: var(--white);
   }
   form {
     width: 100%;
@@ -70,13 +70,16 @@ export const Container = styled.div`
   }
   @media (min-width: 768px) {
     width: 433px;
+
     form {
       margin-top: 7px;
     }
+
     input {
       width: 357px;
       margin: 0px 0px 18px;
     }
+
     button,
     label {
       width: 357px;
@@ -115,6 +118,7 @@ export const Redirection = styled.div`
     line-height: 24px;
     color: var(--black);
   }
+  
   a {
     text-decoration: none;
     color: var(--orange-dark);

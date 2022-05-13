@@ -11,14 +11,14 @@ export default createGlobalStyle`
     }
 
     :root {
-        --orange-dark: #BC4124;
-        --orange-light: #E7946D;
-        --brown: #5B1206;
-        --brown-light: #F4EDE6;
+        --orange-dark:   #BC4124;
+        --orange-light:  #E7946D;
+        --brown:         #5B1206;
+        --brown-light:   #F4EDE6;
         --orange-darker: #AB2E1B;
-        --grey: #09101D;
-        --black: #000000;
-        --white: #ffffff;
+        --grey:          #09101D;
+        --black:         #000000;
+        --white:         #FFFFFF;
     }
 
     button {

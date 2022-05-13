@@ -10,12 +10,14 @@ export const Item = styled.article`
     padding-left: 25px;
     background-color: var(--orange-dark);
     border-radius: 10px;
+
     .icon-product {
-        color: #fff;
+        color: var(--white);
         margin-right: 20px;
         font-size: 20px;
         cursor: pointer;
     }
+
     @media (min-width: 768px) {
         margin-right: 5px;
         margin-left: 5px;
@@ -33,7 +35,8 @@ export const Name = styled.p`
     font-weight: 400;
     line-height: 18px;
     text-align: left;
-    color: #fff;
+    color: var(--white);
+
     @media (min-width: 768px) {
         width: 180px;
     }
@@ -46,7 +49,8 @@ export const Price = styled.p`
     line-height: 18px;
     letter-spacing: 0em;
     text-align: left;
-    color: #fff;
+    color: var(--white);
+    
     @media (min-width: 768px) {
         margin-top: 5px;
     }
@@ -54,6 +58,5 @@ export const Price = styled.p`
 
 export const Li = styled.li`
     list-style-type: none;
-
 `
 

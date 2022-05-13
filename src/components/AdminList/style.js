@@ -12,6 +12,7 @@ export const TitleList = styled.h2`
     display: inline-block;
     margin-right: 32px;
     font-weight: bold;
+
     @media (min-width: 768px) {
         font-size: 24px;
         font-weight: 700;
@@ -33,6 +34,7 @@ export const Showcase = styled.section`
     margin-right: auto;
     border-radius: 6px;
     background-color: var(--orange-light);
+
     @media (min-width: 768px) {
         width: 557px;
         height: 362px;
@@ -41,7 +43,7 @@ export const Showcase = styled.section`
 
 export const ButtonProduct = styled.button`
     background-color: var(--orange-light);
-    color: #fff;
+    color: var(--white);
     font-family: 'Source Sans Pro';
     font-size: 16px;
     font-weight: 600;
@@ -54,6 +56,7 @@ export const ButtonProduct = styled.button`
     margin-top: 12px;
     margin-bottom: 5px;
     border-radius: 5px;
+
     @media (min-width: 768px) {
         height: 40px;
         width: 243px;
@@ -63,7 +66,7 @@ export const ButtonProduct = styled.button`
 
 export const Button = styled.button`
     background-color: var(--orange-light);
-    color: #fff;
+    color: var(--white);
     font-family: 'Source Sans Pro';
     font-size: 16px;
     font-weight: 600;
@@ -75,6 +78,7 @@ export const Button = styled.button`
     width: 98px;
     margin-top: 16px;
     border-radius: 5px;
+
     @media (min-width: 768px) {
         height: 40px;
         width: 243px;
@@ -85,7 +89,7 @@ export const Button = styled.button`
 
 export const ButtonEmployee = styled.button`
     background-color: var(--orange-light);
-    color: #fff;
+    color: var(--white);
     font-family: 'Source Sans Pro';
     font-size: 16px;
     font-weight: 600;
@@ -96,6 +100,7 @@ export const ButtonEmployee = styled.button`
     width: 168px;
     margin-top: 16px;
     border-radius: 5px;
+
     @media (min-width: 768px) {
         height: 40px;
         width: 243px;

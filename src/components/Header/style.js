@@ -3,8 +3,9 @@ import styled from 'styled-components'
 export const ContentHeader = styled.header`
     background-color: var(--orange-dark);
     height: 78px;
+    
     .icon-user {
-        color: #fff;
+        color: var(--white);
         position: absolute;
         left: 20px;
         font-size: 22px;
@@ -14,6 +15,7 @@ export const ContentHeader = styled.header`
 
     @media (min-width: 768px) {
         display: flex;
+
         .icon-user {
             position: relative;
             font-size: 35px;
@@ -33,8 +35,9 @@ export const AdminName = styled.p`
     letter-spacing: 0em;
     text-align: left;
     margin-top: 15px;
-    color: #fff;
+    color: var(--white);
     margin-left: 52px;
+
     @media (min-width: 768px) {
         font-family: 'Source Sans Pro';
         font-size: 32px;
@@ -54,9 +57,10 @@ export const Title = styled.h1`
     font-size: 20px;
     font-weight: 400;
     line-height: 23px;
-    color: #fff;
+    color: var(--white);
     margin-left: 20px;
     padding-top: 16px;
+
     @media (min-width: 768px) {
         font-size: 32px;
         line-height: 37px;

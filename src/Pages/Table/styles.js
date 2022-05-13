@@ -26,20 +26,6 @@ export const Container = styled.div`
             margin-bottom: 20px;
         }
     }
-
-    @media(min-width: 1500px){
-
-        h1 {
-           
-        }
-    }
-
-    @media(min-width: 1600px){
-
-        h1 {
-
-        }
-    }
 `   
 
 export const VitrineTable = styled.ul`
@@ -105,7 +91,7 @@ export const Btn = styled.button`
     color: var(--brown-light);
     background: var(--orange-light);
     border: none;
-    font-family: 'Inika';
+    font-family: 'Arimo';
     font-style: normal;
     font-weight: 500;
     font-size: 22px;

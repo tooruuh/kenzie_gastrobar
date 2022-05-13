@@ -14,7 +14,7 @@ export const ContainerProduct = styled.section`
 export const Modal = styled.section`
   width: 300px;
   position: relative;
-  background-color: #5B1206;
+  background-color: var(--brown);
   border-radius: 8px;
   padding-bottom: 15px;
   
@@ -29,7 +29,7 @@ export const Modal = styled.section`
     line-height: 28px;
     letter-spacing: 0em;
     text-align: center;
-    color: #fff;
+    color: var(--white);
     margin-bottom: 10px;
     margin-top: 10px;
   }
@@ -78,7 +78,7 @@ export const ButtonModal = styled.button`
   top: 15px;
   left: 270px;
   background-color: var(--brown);
-  color: #fff;
+  color: var(--white);
   border: none;
   font-family: Inter;
   font-size: 17px;
@@ -98,7 +98,6 @@ export const ButtonRegister = styled.button`
   font-size: 16px;
   font-weight: 600;
   line-height: 24px;
-  color: #fff;
+  color: var(--white);
   border: none;
-
 `

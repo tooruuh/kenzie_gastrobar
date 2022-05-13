@@ -9,7 +9,7 @@ export const HeaderContainer = styled.header`
     justify-content: space-between;
 
     .icon-user {
-        color: #fff;
+        color: var(--white);
         margin-left: -95px;
         font-size: 22px;
         margin-top: 8px;
@@ -17,28 +17,24 @@ export const HeaderContainer = styled.header`
     }
 
     .icon-cart{
-        color: #fff;
+        color: var(--white);
         margin-right: 30px;
         font-size: 25px;
     }
     @media (min-width: 768px){
         .icon-cart{
             margin-right: 50px;
-
         }
     }
 
     @media (min-width: 1024px){
         .icon-cart{
-
             margin-right: 75px;
-
         }
     }
 
     @media (min-width: 1440px){
         .icon-cart{
-
             font-size: 35px;
         }
     }
@@ -53,7 +49,7 @@ export const AdminName = styled.p`
     line-height: 16px;
     letter-spacing: 0em;
     text-align: left;
-    color: #fff;
+    color: var(--white);
     margin-left: 52px;
 
     div {
@@ -67,10 +63,9 @@ export const Title = styled.h1`
     font-size: 20px;
     font-weight: 400;
     line-height: 23px;
-    color: #fff;
+    color: var(--white);
     margin-left: 20px;
     padding-top: 16px;
-
 `
 
 export const InfoContainer = styled.div`
@@ -94,22 +89,17 @@ export const InfoContainer = styled.div`
             margin: 0px;
             line-height: none;
             height: 10px;
-
         }
 
         .icon-user{
             font-size: 26px;
-
         }
-
     }
 
     @media (min-width: 1024px){
         .icon-user{
-
             margin-left: -165px;
         }
-
     }
 
     @media (min-width: 1440px){
@@ -121,7 +111,6 @@ export const InfoContainer = styled.div`
         p{
             margin-left: 435px;
         }
-
     }
 
     @media (min-width: 1600px){
@@ -130,26 +119,24 @@ export const InfoContainer = styled.div`
             margin-left: -190px;
         }
     }
-
-
-
 `
+
 export const Container = styled.div`
     background: var(--brown-light);
     height: 100vh;
 `
 
 export const Content = styled.div`
-        background-color: rgb(231, 148, 109, 0.6);
-        margin: 0 auto;
-        border-radius: 8px;
-        display: flex;
-        flex-direction: column;
-        padding: 11px 8px;
-        align-items: center;
-        width: 290px;
-        height: 383px;
-        margin-top: 10px;
+    background-color: rgb(231, 148, 109, 0.6);
+    margin: 0 auto;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 11px 8px;
+    align-items: center;
+    width: 290px;
+    height: 383px;
+    margin-top: 10px;
 
     @media (min-width: 768px) {
         width: 450px;
@@ -196,7 +183,6 @@ export const SectionContainer = styled.div`
 
 
     @media (min-width: 1440px){
-
         width: 640px;
 
         button{
@@ -204,8 +190,6 @@ export const SectionContainer = styled.div`
             font-size: 20px;
         }
     }
-
-
 `
 
 export const ButtonContainer = styled.div`
@@ -213,7 +197,6 @@ export const ButtonContainer = styled.div`
    width: 290px;
     
     button{
-  
         width: 125px;
         height: 35px;
         border-radius: 8px;
@@ -227,34 +210,25 @@ export const ButtonContainer = styled.div`
         font-size: 14px;
         line-height: 16px;
         color: var(--brown-light);
-
     }
 
     @media (min-width: 768px){
         width: 450px;
-
     }
 
     @media (min-width: 1440px){
-        
         width: 650px;
-
     }
-
-  
 `
 
 export const CardProduct = styled.div`
-
 `
 
 export const GeneralContainer = styled.div`
-
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     align-content: center;
-
 `

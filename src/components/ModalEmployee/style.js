@@ -1,20 +1,20 @@
 import styled from 'styled-components'
 
 export const ContainerProduct = styled.section`
-    background-color: rgb(0,0,0,0.50);
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    top: 0px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background-color: rgb(0,0,0,0.50);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 export const Modal = styled.section`
   width: 280px;
   position: relative;
-  background-color: #5B1206;
+  background-color: var(--brown);
   border-radius: 8px;
   padding-bottom: 15px;
 
@@ -25,7 +25,7 @@ export const Modal = styled.section`
     line-height: 28px;
     letter-spacing: 0em;
     text-align: center;
-    color: #fff;
+    color: var(--white);
     margin-bottom: 10px;
     margin-top: 10px;
   }
@@ -66,7 +66,6 @@ export const Modal = styled.section`
     line-height: 24px;
     opacity: 0.8;
   }
-
 `
 
 export const ButtonModal = styled.button`
@@ -74,7 +73,7 @@ export const ButtonModal = styled.button`
   top: 15px;
   left: 250px;
   background-color: var(--brown);
-  color: #fff;
+  color: var(--white);
   border: none;
   font-family: Inter;
   font-size: 17px;
@@ -94,7 +93,6 @@ export const ButtonRegister = styled.button`
   font-size: 16px;
   font-weight: 600;
   line-height: 24px;
-  color: #fff;
+  color: var(--white);
   border: none;
-
 `
