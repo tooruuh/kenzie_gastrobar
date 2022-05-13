@@ -69,6 +69,37 @@ export const VitrineTable = styled.ul`
         height: 550px;
         justify-content: flex-start;
     }
+
+    .btn-card {
+        width: 75px;
+        height: 61px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        margin: 6px;
+        border-radius: 8px;
+        color: var(--white);
+        background-color: var(--orange-dark);
+        border: none;
+
+        font-family: 'Arimo';
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 17px;
+        letter-spacing: 0em;
+
+        :hover {
+            opacity: 0.6;
+        }
+
+
+        @media(min-width: 800px){
+            width: 133px;
+            height: 80px;
+            font-size: 1.5rem;  
+        }
+    }
 `
 
 export const CardTable = styled.li`

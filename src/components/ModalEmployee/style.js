@@ -67,6 +67,23 @@ export const Modal = styled.section`
     opacity: 0.8;
   }
 
+  .btn-register {
+    height: 40px;
+    width: 269px;
+    margin-left: 5px;
+    border-radius: 8px;
+    background-color: var(--orange-darker);
+    font-family: Source Sans Pro;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #fff;
+    border: none;
+    :hover {
+      opacity: 0.8;
+    }
+  }
+
 `
 
 export const ButtonModal = styled.button`

@@ -6,6 +6,8 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRegister } from "../../Providers/register";
 
+import Button from "../../components/Button";
+
 function RegisterPage() {
 
   const {registerCompany} = useRegister()
@@ -94,7 +96,7 @@ function RegisterPage() {
             placeholder="Confirmar senha"
             {...register("confPassword")}
           />
-          <button type="submit">Cadastrar</button>
+          <Button type="submit">Cadastrar</Button>
         </form>
       </Container>
       <Redirection>

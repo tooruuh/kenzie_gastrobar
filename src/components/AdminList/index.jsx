@@ -1,7 +1,8 @@
-import {Button, ButtonProduct, ButtonEmployee, TitleList, Content, Showcase} from './style'
+import { TitleList, Content, Showcase} from './style'
 
 import { useContext, useEffect } from 'react'
 import { ModalContext } from '../../Providers/modal'
+import Button from "../Button";
 import Product from '../Product'
 import { AdminContext } from "../../Providers/admin"
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min'
@@ -25,7 +26,7 @@ function AdminList () {
         <>
         <Content>
             <TitleList>Lista de Produtos</TitleList>
-            <ButtonProduct onClick={() => setProduct(true)}>Adicionar Produto</ButtonProduct>
+            <Button className='btn-product' onClick={() => setProduct(true)}>Adicionar Produto</Button>
             <Showcase>
                 {
                     products.map((response, index) => {
@@ -33,8 +34,8 @@ function AdminList () {
                     })
                 }
             </Showcase>
-            <Button onClick={() => handleClick()}>Lançamento</Button>
-            <ButtonEmployee onClick={() => setEmployee(true)}>Adicionar Funcionario</ButtonEmployee>
+            <Button className='btn-redirect' onClick={() => handleClick()}>Lançamento</Button>
+            <Button className='btn-employee' onClick={() => setEmployee(true)}>Adicionar Funcionario</Button>
         </Content>
         </>
     )

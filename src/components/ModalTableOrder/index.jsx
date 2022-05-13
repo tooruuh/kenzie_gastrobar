@@ -4,7 +4,6 @@ import { useModal } from "../../Providers/modal";
 import { TablesContext } from "../../Providers/tables";
 import {
   BtBack,
-  BtFinish,
   Footer,
   Headerr,
   Hr,
@@ -13,6 +12,7 @@ import {
   ResumTotal,
   Vitrine,
 } from "./style";
+import Button from '../Button'
 
 export default function ModalTableOrder() {
   const { tableOrderId, setTableOrder } = useModal();
@@ -59,13 +59,13 @@ export default function ModalTableOrder() {
         <Footer>
           <Hr />
 
-          <BtBack onClick={() => setTableOrder(false)}>
+          <Button className='btn-back' onClick={() => setTableOrder(false)}>
             Voltar para lista de mesas
-          </BtBack>
+          </Button>
 
           <ResumTotal>
             <p>Total R$ {subtotal.toFixed(2)}</p>
-            <BtFinish onClick={onCheckout}>Finalizar mesa</BtFinish>
+            <Button className='btn-finish' onClick={onCheckout}>Finalizar mesa</Button>
           </ResumTotal>
         </Footer>
       </ModalContent>

@@ -64,6 +64,10 @@ export const Container = styled.div`
     border-radius: 8px;
     color: var(--brown-light);
 
+    :hover {
+      opacity: 0.6;
+    }
+
     /* filter: drop-shadow(0px 8px 10px rgba(50, 173, 198, 0.14))
       drop-shadow(0px 3px 14px rgba(50, 173, 198, 0.12))
       drop-shadow(0px 4px 5px rgba(50, 173, 198, 0.2)); */

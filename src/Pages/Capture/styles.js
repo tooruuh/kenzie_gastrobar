@@ -127,6 +127,9 @@ export const ButtonContainer = styled.div`
     font-weight: 400;
     font-size: 20px;
     line-height: 26px;
+    :hover {
+      opacity: 0.6;
+    }
   }
 
   @media (min-width: 1024px) {
