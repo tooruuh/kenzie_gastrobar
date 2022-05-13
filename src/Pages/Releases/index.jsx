@@ -3,7 +3,6 @@ import {
   HeaderContainer,
   Title,
   AdminName,
-  InfoContainer,
   SectionContainer,
   Content,
   Container,
