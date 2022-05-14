@@ -15,7 +15,7 @@ function ReleasesPage (){
 
     const {products} = useContext(AdminContext)
 
-    const { handleClick, currentSale } = useContext(ReleaseContext)
+    const { handleClick, filterProducts } = useContext(ReleaseContext)
 
     const history = useHistory()
 
@@ -56,7 +56,7 @@ function ReleasesPage (){
                 })
             
             ):(
-                currentSale.map((response, index) => {
+                filterProducts.map((response, index) => {
                     return <Product key={index} info={response}/>
                 })
             )

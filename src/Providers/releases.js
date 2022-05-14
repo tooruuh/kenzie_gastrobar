@@ -11,13 +11,13 @@ export const ReleaseProvider = ({children}) => {
         listProducts()
     },[])
 
-    const [currentSale, setCurrentSale] = useState([])
+    const [filterProducts, setfilterProducts] = useState([])
 
     function handleClick(section){
 
         const filter = products.filter((product) => product.section === section)
 
-        setCurrentSale(filter)
+        setfilterProducts(filter)
         
         console.log(filter)
           
@@ -26,7 +26,7 @@ export const ReleaseProvider = ({children}) => {
 return (
 
     <ReleaseContext.Provider
-    value={{ handleClick, currentSale }}>
+    value={{ handleClick, filterProducts }}>
      {children}
     </ReleaseContext.Provider>
 )
