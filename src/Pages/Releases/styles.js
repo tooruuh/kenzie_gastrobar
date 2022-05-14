@@ -12,7 +12,6 @@ export const HeaderContainer = styled.header`
         color: #fff;
         margin-left: -95px;
         font-size: 22px;
-        margin-top: 8px;
         display: inline-block;
     }
 
@@ -54,12 +53,17 @@ export const AdminName = styled.p`
     letter-spacing: 0em;
     text-align: left;
     color: #fff;
-    margin-left: 52px;
 
-    div {
-        display: flex;
-        align-items: center;
+    @media (min-width: 768px){
+        font-size: 23px;
     }
+    @media (min-width: 1440px){
+        font-size: 25px;
+        margin: 0px;
+        line-height: none;
+        height: 10px;
+    }
+
 `
 
 export const Title = styled.h1`
@@ -79,7 +83,7 @@ export const InfoContainer = styled.div`
         width: 90%;
         display: flex;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: space-around;
         flex-wrap: wrap;
         flex-direction: row;    
 
@@ -87,14 +91,6 @@ export const InfoContainer = styled.div`
             font-size: 30px;
             padding: 0px;
             margin: 0px;    
-        }
-
-        p{
-            font-size: 25px;
-            margin: 0px;
-            line-height: none;
-            height: 10px;
-
         }
 
         .icon-user{
@@ -113,13 +109,10 @@ export const InfoContainer = styled.div`
     }
 
     @media (min-width: 1440px){
+        
 
         .icon-user{
             margin-left: -150px;
-        }
-
-        p{
-            margin-left: 435px;
         }
 
     }
@@ -144,12 +137,17 @@ export const Content = styled.div`
         margin: 0 auto;
         border-radius: 8px;
         display: flex;
-        flex-direction: column;
         padding: 11px 8px;
-        align-items: center;
         width: 290px;
-        height: 383px;
+        height: 400px;
         margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        align-content: flex-start;
+        overflow-x: scroll;
 
     @media (min-width: 768px) {
         width: 450px;
@@ -157,6 +155,9 @@ export const Content = styled.div`
     }
 
     @media (min-width: 1440px) {
+        display: grid;
+        grid-template-columns: 125px 125px 125px 125px;
+        justify-items: center;
         width: 650px;
         height: 500px;
     }
@@ -183,6 +184,10 @@ export const SectionContainer = styled.div`
         background: transparent;
         height: 25px;
         font-size: 14px;
+    }
+
+    button:focus {
+        color: var(--orange-dark);
     }
 
     @media (min-width: 768px) {
@@ -257,4 +262,30 @@ export const GeneralContainer = styled.div`
     justify-content: center;
     align-content: center;
 
+
+    div::-webkit-scrollbar {
+        display: none;
+    }
+
+`
+
+export const UserContainer = styled.div`
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: center;
+    width: 145px;
+
+    @media (min-width: 768px){
+
+        flex-direction: row;
+        width: 225px;
+        justify-content: space-between;
+    }
+
+    @media (min-width: 1440px){
+
+        margin-left: 500px;
+    }
 `

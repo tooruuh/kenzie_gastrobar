@@ -1,5 +1,4 @@
 import {Button, ButtonProduct, ButtonEmployee, TitleList, Content, Showcase} from './style'
-
 import { useContext, useEffect } from 'react'
 import { ModalContext } from '../../Providers/modal'
 import Product from '../Product'
@@ -9,6 +8,7 @@ function AdminList () {
     const {setEmployee, setProduct} = useContext(ModalContext)
 
     const {listProducts, products} = useContext(AdminContext)
+
     useEffect(() => {
         listProducts()
     },[])

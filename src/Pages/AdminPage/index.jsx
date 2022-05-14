@@ -10,6 +10,7 @@ import ModalId from "../../components/ModalId"
 
 
 function AdminPage () {
+    
     const token = localStorage.getItem('@token')
 
     const {employee, product, modalId} = useContext(ModalContext)
@@ -20,7 +21,6 @@ function AdminPage () {
         history.push('/register')
     }
 
-
     return (
         <>
         <Header/>
@@ -29,7 +29,7 @@ function AdminPage () {
             {
                 product === false ? '' : <ModalProduct/>
             }
-                        {
+            {
                 employee === false ? '' : <ModalEmployee/>
             }
             {

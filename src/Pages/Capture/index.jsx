@@ -11,7 +11,7 @@ import {
 } from "./styles";
 import Button from "../../components/Button";
 import { useHistory } from "react-router";
-import waiter from "../../Assets/waiter.svg";
+import waiter from "../../assets/waiter.svg";
 
 function CapturePage() {
   const history = useHistory();
