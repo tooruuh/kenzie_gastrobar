@@ -158,6 +158,7 @@ export const Content = styled.div`
         display: grid;
         grid-template-columns: 125px 125px 125px 125px;
         justify-items: center;
+        justify-content: center;
         width: 650px;
         height: 500px;
     }
