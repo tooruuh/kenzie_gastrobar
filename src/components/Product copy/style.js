@@ -14,7 +14,7 @@ export const Item = styled.article`
 
     @media (min-width: 768px) {
         height: 90px;
-        width: 100px;
+        width: 115px;
     }
 `
 

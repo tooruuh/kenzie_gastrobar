@@ -41,7 +41,7 @@ function ReleasesPage (){
         <GeneralContainer>
 
             <SectionContainer>
-                <Button onClick={() => handleClick("Bebidas")}>Bebidas</Button>
+                <Button onClick={() => handleClick("Bedidas")}>Bebidas</Button>
                 <Button onClick={() => handleClick("Comidas")}>Comidas</Button>
                 <Button onClick={() => handleClick("Drinks")}>Drinks</Button>
                 <Button onClick={() => handleClick("Sobremesas")}>Sobremesas</Button>

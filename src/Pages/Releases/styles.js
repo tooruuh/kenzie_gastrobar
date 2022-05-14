@@ -144,10 +144,10 @@ export const Content = styled.div`
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: flex-start;
-        align-content: flex-start;
         overflow-x: scroll;
+        align-content: flex-start;
 
     @media (min-width: 768px) {
         width: 450px;
@@ -265,6 +265,7 @@ export const GeneralContainer = styled.div`
 
     div::-webkit-scrollbar {
         display: none;
+        
     }
 
 `
