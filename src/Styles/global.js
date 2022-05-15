@@ -19,6 +19,7 @@ export default createGlobalStyle`
         --grey:          #09101D;
         --black:         #000000;
         --white:         #FFFFFF;
+        --red:      rgb(255,0,0);
     }
 
     button {

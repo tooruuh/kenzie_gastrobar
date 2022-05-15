@@ -3,16 +3,17 @@ import Header from "../../components/Header"
 import AdminList from "../../components/AdminList"
 import ModalProduct from "../../components/ModalProduct"
 import ModalEmployee from "../../components/ModalEmployee"
+import ModalId from "../../components/ModalId"
+import ModalStatus from "../../components/ModalStatus"
 import { useContext} from "react"
 import { ModalContext} from "../../Providers/modal"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
-import ModalId from "../../components/ModalId"
 
 
 function AdminPage () {
     const token = localStorage.getItem('@token')
 
-    const {employee, product, modalId} = useContext(ModalContext)
+    const {employee, product, modalId, modalDelete} = useContext(ModalContext)
 
     const history = useHistory()
 
@@ -23,17 +24,20 @@ function AdminPage () {
 
     return (
         <>
-        <Header/>
+        <Header verify={'admin'}/>
         <main>
             <AdminList/>
             {
-                product === false ? '' : <ModalProduct/>
-            }
-                        {
-                employee === false ? '' : <ModalEmployee/>
+                !product ? '' : <ModalProduct/>
             }
             {
-                modalId === false ? '' : <ModalId/>
+                !employee ? '' : <ModalEmployee/>
+            }
+            {
+                !modalId ? '' : <ModalId/>
+            }
+            {
+                !modalDelete ? '' : <ModalStatus/>
             }
         </main>
         </>

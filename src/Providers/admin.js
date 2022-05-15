@@ -7,21 +7,23 @@ import { ModalContext } from "./modal";
 export const AdminContext = createContext([]);
 
 export const AdminProviders = ({ children }) => {
-  const [products, setProducts] = useState([]);
 
-  const [employeeId, setEmployeeId] = useState("");
+  const { setModalId, setProduct, setEmployee, setModalDelete } = useContext(ModalContext);
+  
+  const history = useHistory();
 
   const id = localStorage.getItem("@id");
   const token = localStorage.getItem("@token");
+
+  const [products, setProducts] = useState([]);
+  const [employeeId, setEmployeeId] = useState("");
+  const [listEmployee, setListEmployee] = useState([])
 
   function handleLogout() {
     localStorage.clear();
     return window.location.reload(history.push("/login"));
   }
 
-  const { setModalId, setProduct, setEmployee } = useContext(ModalContext);
-
-  const history = useHistory();
 
   function addProduct(data) {
     const product = {
@@ -97,15 +99,40 @@ export const AdminProviders = ({ children }) => {
     setModalId(true);
   }
 
+  function DeleteEmployee (idEmployee) {
+    api.delete(`/employees/${idEmployee}`)
+    .then((response) => {
+      toast.success('Funcionario Deletado')
+      setModalDelete(false)
+    })
+    .catch((err) => {
+      toast.error('Ocorreu um erro')
+    })
+  }
+
+  function getEmployee () {
+    api.get(`/employees?userId=${id}`)
+    .then((response) => {
+      setListEmployee(response.data)
+    })
+    .catch((err) => {
+      toast.error('Erro ao tentar se conectar com servidor')
+    })
+  }
+
   return (
     <AdminContext.Provider
       value={{
-        registerEmployee,
         employeeId,
+        registerEmployee,
+        listEmployee,
+        setListEmployee,
+        getEmployee,
+        DeleteEmployee,
+        products,
         addProduct,
         deleteProduct,
         listProducts,
-        products,
         handleLogout,
       }}
     >
