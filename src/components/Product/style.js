@@ -16,6 +16,9 @@ export const Item = styled.article`
         margin-right: 20px;
         font-size: 20px;
         cursor: pointer;
+        :hover {
+            color: var(--brown);
+        }
     }
 
     @media (min-width: 768px) {

@@ -3,6 +3,7 @@ import { useContext } from 'react'
 import { AdminContext } from '../../Providers/admin'
 import { ModalContext } from '../../Providers/modal'
 import {ContainerModal} from './style'
+import Button from '../Button'
 
 function ModalStatus () {
 
@@ -19,7 +20,7 @@ function ModalStatus () {
             <section className="modal">
                 <section className="header-modal">
                     <h3>Funcionarios Ativos</h3>
-                    <button onClick={() => setModalDelete(false) } className='button-exit'>X</button>
+                    <Button onClick={() => setModalDelete(false) } className='button-exit'>X</Button>
                 </section>
                 <section className="showcase">
 
@@ -28,7 +29,7 @@ function ModalStatus () {
                             return (
                                 <article key={index} className="employee">
                                     <p>{employee.name}</p>
-                                    <button onClick={() => DeleteEmployee(employee.id)} className='delete-employee'>Deletar</button>
+                                    <Button onClick={() => DeleteEmployee(employee.id)} className='delete-employee'>Deletar</Button>
                                 </article>
                             )
                         })
