@@ -62,7 +62,7 @@ export const Container = styled.div`
   height: 100vh;
 `;
 
-export const DescriptionContainer = styled.div`
+export const DescriptionContainer = styled.article`
   background: var(--orange-dark);
   display: flex;
   height: 30rem;
@@ -84,28 +84,28 @@ export const DescriptionContainer = styled.div`
   @media (min-width: 1600px) {
     width: 34%;
   }
-`;
 
-export const Description = styled.p`
-  font-family: "Inika";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 23px;
-  line-height: 26px;
-  color: var(--brown);
-  text-align: left;
-  margin: 24px;
-  width: 272px;
+  .description {
+    font-family: "Inika";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 26px;
+    color: var(--brown);
+    text-align: left;
+    margin: 24px;
+    width: 272px;
 
-  @media (min-width: 768px) {
-    width: 320px;
-    font-size: 27px;
-    margin: 60px;
-    margin-bottom: 0px;
-  }
+    @media (min-width: 768px) {
+      width: 320px;
+      font-size: 27px;
+      margin: 60px;
+      margin-bottom: 0px;
+    }
 
-  @media (min-width: 1024px) {
-    width: 421px;
+    @media (min-width: 1024px) {
+      width: 421px;
+    }
   }
 `;
 

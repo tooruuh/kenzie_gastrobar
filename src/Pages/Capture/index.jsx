@@ -4,7 +4,6 @@ import {
   Title,
   Content,
   DescriptionContainer,
-  Description,
   ButtonContainer,
   ImgContainer,
   Image,
@@ -13,6 +12,7 @@ import {
 import Button from "../../components/Button";
 import { useHistory } from "react-router";
 import waiter from "../../assets/waiter.svg";
+import { motion } from "framer-motion"
 
 function CapturePage() {
   const history = useHistory();
@@ -29,13 +29,23 @@ function CapturePage() {
         </Header>
         <Content>
           <DescriptionContainer>
-            <Description>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 2.5 }}
+              className="description">
               Olá, somos um grupo de desenvolvedores front-end que resolveu
               invovar na área de restaurante.
-            </Description>
-            <Description>
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 2.5 }}
+              className="description">
               Quer esperimentar um pouquinho da nossa ferramenta ?
-            </Description>
+            </motion.p>
             <ButtonContainer>
               <Button
                 className="btn-capture"
