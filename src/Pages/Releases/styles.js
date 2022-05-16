@@ -9,45 +9,44 @@ export const HeaderContainer = styled.header`
     justify-content: space-between;
 
     .icon-user {
-      color: #fff;
-      margin-left: 20px;
-      font-size: 26px;
-      display: inline-block;
+        color: #fff;
+        margin-left: 20px;
+        font-size: 22px;
+        display: inline-block;
     }
 
     .icon-cart{
-      color: #fff;
-      margin-right: 30px;
-      font-size: 25px;
+        color: #fff;
+        margin-right: 30px;
+        font-size: 25px;
     }
     @media (min-width: 768px){
-      .icon-cart{
-          margin-right: 50px;
 
-      }
+        align-items: flex-end;
+        align-content: center;
+
+        .icon-cart{
+            margin-right: 45px;
+
+        }
     }
 
     @media (min-width: 1024px){
-      .icon-cart{
-        margin-right: 75px;
-      }
-      .icon-user{
-        margin-left: -165px;
-      }
+        .icon-cart{
+
+            margin-right: 60px;
+            font-size: 30px;
+
+        }
     }
 
-    @media (min-width: 1440px){
-      .icon-cart{
-        font-size: 35px;
-      }
-      .icon-user{
-          margin-left: -150px;
-      }
-    }
-    @media (min-width: 1600px){
-      .icon-user{
-          margin-left: -190px;
-      }
+    @media (min-width: 1024px){
+        .icon-cart{
+
+            font-size: 30px;
+            margin-right: 75px;
+
+        }
     }
 
 `
@@ -91,17 +90,48 @@ export const InfoContainer = styled.div`
         width: 90%;
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
         flex-wrap: wrap;
         flex-direction: row;    
 
         h1{
             font-size: 30px;
             padding: 0px;
-            margin: 0px;    
+            margin: auto;   
+        }
+
+        .icon-user{
+            font-size: 26px;
+
         }
 
     }
+
+    @media (min-width: 1024px){
+        .icon-user{
+
+            margin-left: -165px;
+        }
+
+    }
+
+    @media (min-width: 1440px){
+        
+
+        .icon-user{
+            margin-left: -150px;
+        }
+
+    }
+
+    @media (min-width: 1600px){
+
+        .icon-user{
+            margin-left: -190px;
+        }
+    }
+
+
 
 `
 export const Container = styled.div`
@@ -155,6 +185,7 @@ export const SectionContainer = styled.div`
     width: 285px;
     margin-top: 15px;
 
+
     button{
         font-family: 'Archivo';
         font-style: normal;
@@ -196,7 +227,7 @@ export const ButtonContainer = styled.div`
    margin-top: 25px ;
    width: 290px;
     
-    .button{
+    button{
   
         width: 125px;
         height: 35px;
@@ -211,6 +242,7 @@ export const ButtonContainer = styled.div`
         font-size: 14px;
         line-height: 16px;
         color: var(--brown-light);
+
     }
 
     @media (min-width: 768px){
@@ -252,15 +284,26 @@ export const UserContainer = styled.div`
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-content: center;
     width: 145px;
+    margin-right: 15px;
+
+    p{
+        margin: auto;
+    }
 
     @media (min-width: 768px){
 
         flex-direction: row;
         width: 225px;
         justify-content: space-between;
+    }
+
+    @media (min-width: 1024px){
+        p{
+            margin-left: 60px;
+        }
     }
 
     @media (min-width: 1440px){
