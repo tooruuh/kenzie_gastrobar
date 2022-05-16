@@ -4,23 +4,22 @@ import Header from "../../components/Header";
 import ModalTableOrder from "../../components/ModalTableOrder";
 import { useModal } from "../../Providers/modal";
 import { TablesContext } from "../../Providers/tables";
-import { Btn, CardTable, Container, VitrineTable } from "./styles";
+import { Btn, Container, VitrineTable } from "./styles";
 import Button from "../../components/Button";
 
 function TablePage() {
   const { tableOrder, setTableOrder, setTableOrderId } = useModal();
   const { tables, syncTables } = useContext(TablesContext);
-  
-  const history = useHistory()
+
+  const history = useHistory();
 
   function showModal(id) {
     setTableOrderId(id);
   }
-  
+
   useEffect(() => {
     syncTables();
   }, []);
-
 
   return (
     <>
@@ -33,7 +32,7 @@ function TablePage() {
           {tables.map((item) => {
             return (
               <Button
-                className='btn-card'
+                className="btn-card"
                 key={item.id}
                 id={item.id}
                 onClick={(e) => {
@@ -47,7 +46,7 @@ function TablePage() {
           })}
         </VitrineTable>
 
-        <Btn onClick={() => history.push('/ReleasesPage')}>Lançamentos</Btn>
+        <Btn onClick={() => history.push("/releases")}>Lançamentos</Btn>
       </Container>
 
       {tableOrder && <ModalTableOrder />}

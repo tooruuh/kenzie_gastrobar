@@ -4,7 +4,6 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-import Header from "../../components/Header";
 import { useState } from "react";
 import Button from "../../components/Button";
 import { Link } from "react-router-dom";
@@ -110,7 +109,7 @@ function LoginPage() {
               <input
                 className="input-login"
                 name="password"
-                type='password'
+                type="password"
                 placeholder="Senha"
                 {...register("password")}
               />
@@ -120,11 +119,11 @@ function LoginPage() {
           <Button
             type="submit"
             onClick={() => handleLoginEmployee(employeeId)}
-            className="btn-login">
+            className="btn-login"
+          >
             Entrar
           </Button>
         </form>
-        
       </Container>
       <Redirection>
         <p>
