@@ -47,7 +47,7 @@ function TablePage() {
           })}
         </VitrineTable>
 
-        <Btn onClick={() => history.push('/ReleasesPage')}>Lançamentos</Btn>
+        <Btn onClick={() => history.push('/releases')}>Lançamentos</Btn>
       </Container>
 
       {tableOrder && <ModalTableOrder />}
