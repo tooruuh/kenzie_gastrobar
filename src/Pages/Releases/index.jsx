@@ -1,62 +1,71 @@
-import Button from "../../components/Button";
-import {
-  HeaderContainer,
-  Title,
-  AdminName,
-  SectionContainer,
-  Content,
-  Container,
-  ButtonContainer,
-  CardProduct,
-  GeneralContainer,
-} from "./styles";
+import Button from '../../components/Button';
+import {HeaderContainer, Title, AdminName, InfoContainer, SectionContainer, Content, Container, ButtonContainer, CardProduct, UserContainer, GeneralContainer} from './styles';
 import { FaUserAlt } from "react-icons/fa";
-import { BsCart4 } from "react-icons/bs";
-import { useHistory } from "react-router";
-import Logout from "../../components/Logout";
+import {BsCart4} from 'react-icons/bs'
+import { useHistory} from 'react-router'
+import { AdminContext } from "../../Providers/admin"
+import { useContext} from 'react'
+import Product from '../../components/Product copy'
+import {ReleaseContext} from "../../Providers/releases"
 
-function ReleasesPage() {
-  const history = useHistory();
+function ReleasesPage (){
+
+  const name = localStorage.getItem('@userName')
+
+  const {productsRealeases} = useContext(ReleaseContext)
+
+  const { handleClick, filterProducts } = useContext(ReleaseContext)
+
+  const history = useHistory()
 
   const handleNavigation = (path) => {
-    return history.push(path);
-  };
+      return history.push(path)
+  }
 
   return (
     <>
       <Container>
         <HeaderContainer>
-          <section className="section-title-releases">
-            <Title>Kenzie Gastrobar</Title>
 
-            <section>
-              <FaUserAlt className="icon-user" />
-              <AdminName>Wellington</AdminName>
-            </section>
-          </section>
-          <section className="logout-cart-releases">
-            <BsCart4 className="icon-cart" />
+            <InfoContainer>
+                <Title>Kenzie Gastrobar</Title>
+                <UserContainer>
+                    <AdminName>{name}</AdminName>
+                    <FaUserAlt className="icon-user"/>
+                </UserContainer>
+            </InfoContainer>
+            <BsCart4 className='icon-cart'/>
 
-            <Logout />
-          </section>
         </HeaderContainer>
         <GeneralContainer>
-          <SectionContainer>
-            <Button>Bebidas</Button>
-            <Button>Comidas</Button>
-            <Button>Drinks</Button>
-            <Button>Sobremesas</Button>
-          </SectionContainer>
+            <SectionContainer>
+                <Button onClick={() => handleClick("Bedidas")}>Bebidas</Button>
+                <Button onClick={() => handleClick("Comidas")}>Comidas</Button>
+                <Button onClick={() => handleClick("Drinks")}>Drinks</Button>
+                <Button onClick={() => handleClick("Sobremesas")}>Sobremesas</Button>
+            </SectionContainer>
 
-          <Content>
-            <CardProduct></CardProduct>
-          </Content>
+            <Content>
 
-          <ButtonContainer>
-            <Button onClick={() => handleNavigation("/table")}>
-              Lista de mesas
-            </Button>
-          </ButtonContainer>
+            { productsRealeases.length === 0 ? (
+                
+                productsRealeases.map((response, index) => {
+                    return <Product key={index} info={response}/>
+                })
+            
+            ):(
+                filterProducts.map((response, index) => {
+                    return <Product key={index} info={response}/>
+                })
+            )
+
+            }
+            </Content>
+
+            <ButtonContainer>
+                <Button className='button' onClick={() => handleNavigation('/table')}>Lista de mesas</Button>
+            </ButtonContainer>
+
         </GeneralContainer>
       </Container>
     </>

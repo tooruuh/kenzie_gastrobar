@@ -5,7 +5,7 @@ import LoginPage from "../Pages/Login";
 import CapturePage from "../Pages/Capture"
 import AdminPage from "../Pages/AdminPage";
 import TablePage from "../Pages/Table";
-import ReleasesPage from "../Pages/Releases"
+import ReleasesPage from "../Pages/Releases";
 
 export default function Routes() {
   return (
@@ -31,7 +31,7 @@ export default function Routes() {
         <TablePage />
       </Route>
 
-      <Route exact path='releases'>
+      <Route exact path='/releases'>
         <ReleasesPage/>
       </Route>
 

@@ -22,7 +22,7 @@ export const LoginProviders = ({children}) => {
 
             toast.success('Sucesso !')
 
-            history.push('/table')
+            history.push('/releases')
         })
         .catch((err) => {
             console.log('erro:' + err)

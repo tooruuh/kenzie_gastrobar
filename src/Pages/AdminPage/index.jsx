@@ -11,6 +11,7 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
 
 
 function AdminPage () {
+    
     const token = localStorage.getItem('@token')
 
     const {employee, product, modalId, modalDelete} = useContext(ModalContext)
@@ -20,7 +21,6 @@ function AdminPage () {
     if (!token) {
         history.push('/register')
     }
-
 
     return (
         <>
