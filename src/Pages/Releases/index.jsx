@@ -1,26 +1,30 @@
 import Button from '../../components/Button';
-import {HeaderContainer, Title, AdminName, InfoContainer, SectionContainer, Content, Container, ButtonContainer, CardProduct, UserContainer, GeneralContainer} from './styles';
+import {HeaderContainer, Title, AdminName, InfoContainer, SectionContainer, Content, Container, ButtonContainer, UserContainer, GeneralContainer} from './styles';
 import { FaUserAlt } from "react-icons/fa";
 import {BsCart4} from 'react-icons/bs'
 import { useHistory} from 'react-router'
-import { AdminContext } from "../../Providers/admin"
 import { useContext} from 'react'
-import Product from '../../components/Product copy'
-import {ReleaseContext} from "../../Providers/releases"
+import Product from '../../components/ProductReleases'
+import { ReleaseContext } from "../../Providers/releases"
+import { useEffect } from 'react';
 
 function ReleasesPage (){
 
+  const token = localStorage.getItem('@token')
+
   const name = localStorage.getItem('@userName')
 
-  const {productsRealeases} = useContext(ReleaseContext)
-
-  const { handleClick, filterProducts } = useContext(ReleaseContext)
+  const { handleClick, filterProducts, listProducts, productsRealeases  } = useContext(ReleaseContext)
 
   const history = useHistory()
 
   const handleNavigation = (path) => {
       return history.push(path)
   }
+
+  useEffect(() => {
+    listProducts()
+  },[])
 
   return (
     <>
@@ -63,7 +67,11 @@ function ReleasesPage (){
             </Content>
 
             <ButtonContainer>
-                <Button className='button' onClick={() => handleNavigation('/table')}>Lista de mesas</Button>
+                <Button className='button-table' onClick={() => handleNavigation('/table')}>Lista de mesas</Button>
+                {
+                  token && <Button className='button-home' onClick={() => handleNavigation('/admin')}>Home</Button>
+                }
+
             </ButtonContainer>
 
         </GeneralContainer>

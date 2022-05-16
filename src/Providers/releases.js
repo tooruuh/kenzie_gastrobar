@@ -12,15 +12,13 @@ export const ReleaseProvider = ({children}) => {
 
     const id = localStorage.getItem('@id')
 
-    const { products} = useContext(AdminContext)
-
     const [productsRealeases, setProductsRealeases] = useState([])
 
     const [filterProducts, setfilterProducts] = useState([])
 
     function handleClick(section){
 
-        const filter = products.filter((product) => product.section === section)
+        const filter = productsRealeases.filter((product) => product.section === section)
 
         setfilterProducts(filter)
         

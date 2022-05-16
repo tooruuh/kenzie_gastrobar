@@ -8,25 +8,34 @@ export const Item = styled.article`
     align-items: center;
     background-color: var(--orange-dark);
     border-radius: 10px;
-    margin: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
     flex-direction: column;
     justify-content: center;
 
     @media (min-width: 768px) {
         height: 90px;
-        width: 115px;
+        width: 132px;
+    }
+
+    @media (min-width: 1024px) {
+        margin-left: 10px;
+    }
+
+    @media (min-width: 1440px) {
+        margin-left: 21px;
     }
 `
 
 export const Name = styled.p`
+    text-align: center;
     font-family: 'Arimo';
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 18px;
+    height: 35px;
     font-size: 16px;
     font-weight: 400;
     line-height: 18px;
-    text-align: left;
     color: #fff;
     
 

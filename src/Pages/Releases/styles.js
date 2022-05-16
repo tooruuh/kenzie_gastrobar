@@ -34,17 +34,8 @@ export const HeaderContainer = styled.header`
     @media (min-width: 1024px){
         .icon-cart{
 
-            margin-right: 60px;
+            margin-right: 70px;
             font-size: 30px;
-
-        }
-    }
-
-    @media (min-width: 1024px){
-        .icon-cart{
-
-            font-size: 30px;
-            margin-right: 75px;
 
         }
     }
@@ -136,7 +127,6 @@ export const InfoContainer = styled.div`
 `
 export const Container = styled.div`
     background: var(--brown-light);
-    height: 100vh;
 `
 
 export const Content = styled.div`
@@ -162,10 +152,8 @@ export const Content = styled.div`
     }
 
     @media (min-width: 1440px) {
-        display: grid;
+        display: flex;
         grid-template-columns: 125px 125px 125px 125px;
-        justify-items: center;
-        justify-content: center;
         width: 650px;
         height: 500px;
     }
@@ -227,22 +215,37 @@ export const ButtonContainer = styled.div`
    margin-top: 25px ;
    width: 290px;
     
-    button{
-  
-        width: 125px;
-        height: 35px;
-        border-radius: 8px;
-        filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.25));
-        color: var(--brown-light);
-        background: var(--orange-light);
-        border: none;
-        font-family: 'Arimo';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 16px;
-        color: var(--brown-light);
+    .button-table{
+      width: 125px;
+      height: 35px;
+      border-radius: 8px;
+      filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.25));
+      color: var(--brown-light);
+      background: var(--orange-light);
+      border: none;
+      font-family: 'Arimo';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+      color: var(--brown-light);
+    }
 
+    .button-home {
+      width: 125px;
+      height: 35px;
+      border-radius: 8px;
+      filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.25));
+      color: var(--brown-light);
+      background: var(--orange-light);
+      border: none;
+      font-family: 'Arimo';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+      color: var(--brown-light);
+      margin-left: 40px;
     }
 
     @media (min-width: 768px){
