@@ -12,6 +12,7 @@ function TablePage() {
   const { tableOrder, setTableOrder, setTableOrderId } = useModal();
   const { tables, syncTables } = useContext(TablesContext);
   
+  
   const history = useHistory()
 
   function showModal(id) {

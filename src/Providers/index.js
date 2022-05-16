@@ -1,24 +1,22 @@
 import { ModalProviders } from "./modal";
 import { TablesProvider } from "./tables";
-import { LoginProviders} from './login'
+import { LoginProviders } from "./login";
 import { AdminProviders } from "./admin";
 import { RegisterProviders } from "./register";
 import { ReleaseProvider } from "./releases";
 
 export function Providers({ children }) {
   return (
-    <TablesProvider>
+    <ModalProviders>
       <RegisterProviders>
         <LoginProviders>
-          <ModalProviders>
-            <AdminProviders>
-              <ReleaseProvider>  
-                {children}
-              </ReleaseProvider>
-            </AdminProviders>
-          </ModalProviders>
+          <AdminProviders>
+            <TablesProvider>
+              <ReleaseProvider>{children}</ReleaseProvider>
+            </TablesProvider>
+          </AdminProviders>
         </LoginProviders>
       </RegisterProviders>
-    </TablesProvider>
+    </ModalProviders>
   );
 }

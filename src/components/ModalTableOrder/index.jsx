@@ -1,5 +1,4 @@
 import { useContext, useEffect } from "react";
-import { toast } from "react-toastify";
 import { useModal } from "../../Providers/modal";
 import { TablesContext } from "../../Providers/tables";
 import {
@@ -16,6 +15,8 @@ import Button from '../Button'
 export default function ModalTableOrder() {
   const { tableOrderId, setTableOrder } = useModal();
   const { tables, syncTables, removeTable } = useContext(TablesContext);
+  const userId = localStorage.getItem("@userId");
+  const id = localStorage.getItem("@id");
 
   useEffect(() => {
     syncTables();
@@ -31,7 +32,7 @@ export default function ModalTableOrder() {
 
   function onCheckout() {
     removeTable(tableOrderId);
-    toast.success("Mesa finalizada.");
+    
     setTableOrder(false);
     syncTables();
   }
