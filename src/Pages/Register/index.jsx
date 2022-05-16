@@ -76,7 +76,7 @@ function RegisterPage() {
           />
           <label>
             {!!errors.password?.message && (
-              <span> {errors.confPassword.message}</span>
+              <span> {errors.password.message}</span>
             )}
           </label>
           <input

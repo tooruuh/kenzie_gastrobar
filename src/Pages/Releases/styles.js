@@ -5,45 +5,47 @@ export const HeaderContainer = styled.header`
   height: 78px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
 
   .icon-user {
-    color: var(--white);
-    margin-left: -50px;
-    margin-top: 8px;
-    margin-right: 10px;
+    color: #fff;
+    margin-left: 20px;
+    font-size: 26px;
+    display: inline-block;
   }
 
   .icon-cart {
-    color: var(--white);
+    color: #fff;
     margin-right: 30px;
-    font-size: 35px;
+    font-size: 25px;
   }
-
-  .section-title-releases {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-left: 20px;
-  }
-
-  .logout-cart-releases {
-    display: flex;
+  @media (min-width: 768px) {
+    .icon-cart {
+      margin-right: 50px;
+    }
   }
 
   @media (min-width: 1024px) {
-    .section-title-releases {
-      flex-direction: row;
-      justify-content: space-between;
-      width: 400px;
-      padding-left: 40px;
+    .icon-cart {
+      margin-right: 75px;
     }
+    .icon-user {
+      margin-left: -165px;
+    }
+  }
 
-    .logout-cart-releases {
-      width: 300px;
-      justify-content: space-between;
-      padding-right: 40px;
+  @media (min-width: 1440px) {
+    .icon-cart {
+      font-size: 35px;
+    }
+    .icon-user {
+      margin-left: -150px;
+    }
+  }
+  @media (min-width: 1600px) {
+    .icon-user {
+      margin-left: -190px;
     }
   }
 `;
@@ -51,22 +53,50 @@ export const HeaderContainer = styled.header`
 export const AdminName = styled.p`
   display: inline-block;
   font-family: "Arimo";
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
-  line-height: 22px;
+  line-height: 16px;
+  letter-spacing: 0em;
   text-align: left;
-  color: var(--white);
+  color: #fff;
+
+  @media (min-width: 768px) {
+    font-size: 23px;
+  }
+  @media (min-width: 1440px) {
+    font-size: 25px;
+    margin: 0px;
+    line-height: none;
+    height: 10px;
+  }
 `;
 
 export const Title = styled.h1`
-  display: flex;
   font-family: "Arimo";
   font-size: 20px;
   font-weight: 400;
   line-height: 23px;
-  color: var(--white);
+  color: #fff;
+  margin-left: 20px;
+  padding-top: 16px;
 `;
 
+export const InfoContainer = styled.div`
+  @media (min-width: 768px) {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    h1 {
+      font-size: 30px;
+      padding: 0px;
+      margin: 0px;
+    }
+  }
+`;
 export const Container = styled.div`
   background: var(--brown-light);
   height: 100vh;
@@ -77,12 +107,17 @@ export const Content = styled.div`
   margin: 0 auto;
   border-radius: 8px;
   display: flex;
-  flex-direction: column;
   padding: 11px 8px;
-  align-items: center;
   width: 290px;
-  height: 383px;
+  height: 400px;
   margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow-x: scroll;
+  align-content: flex-start;
 
   @media (min-width: 768px) {
     width: 450px;
@@ -90,6 +125,10 @@ export const Content = styled.div`
   }
 
   @media (min-width: 1440px) {
+    display: grid;
+    grid-template-columns: 125px 125px 125px 125px;
+    justify-items: center;
+    justify-content: center;
     width: 650px;
     height: 500px;
   }
@@ -115,6 +154,11 @@ export const SectionContainer = styled.div`
     background: transparent;
     height: 25px;
     font-size: 14px;
+    border: none;
+  }
+
+  button:focus {
+    color: var(--orange-dark);
   }
 
   @media (min-width: 768px) {
@@ -139,7 +183,7 @@ export const ButtonContainer = styled.div`
   margin-top: 25px;
   width: 290px;
 
-  button {
+  .button {
     width: 125px;
     height: 35px;
     border-radius: 8px;
@@ -173,4 +217,27 @@ export const GeneralContainer = styled.div`
   align-items: center;
   justify-content: center;
   align-content: center;
+
+  div::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+export const UserContainer = styled.div`
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-end;
+  align-content: center;
+  width: 145px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    width: 225px;
+    justify-content: space-between;
+  }
+
+  @media (min-width: 1440px) {
+    margin-left: 500px;
+  }
 `;

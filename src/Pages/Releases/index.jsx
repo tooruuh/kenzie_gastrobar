@@ -3,19 +3,34 @@ import {
   HeaderContainer,
   Title,
   AdminName,
+  InfoContainer,
   SectionContainer,
   Content,
   Container,
   ButtonContainer,
   CardProduct,
+  UserContainer,
   GeneralContainer,
 } from "./styles";
 import { FaUserAlt } from "react-icons/fa";
 import { BsCart4 } from "react-icons/bs";
 import { useHistory } from "react-router";
-import Logout from "../../components/Logout";
+import { AdminContext } from "../../Providers/admin";
+import { useContext } from "react";
+import Product from "../../components/Product copy";
+import { ReleaseContext } from "../../Providers/releases";
+import { useModal } from "../../Providers/modal";
+import ModalReleases from "../../components/ModalReleases";
 
 function ReleasesPage() {
+  const name = localStorage.getItem("@userName");
+
+  const { modalReleases, setModalReleases } = useModal();
+
+  const { productsRealeases } = useContext(ReleaseContext);
+
+  const { handleClick, filterProducts } = useContext(ReleaseContext);
+
   const history = useHistory();
 
   const handleNavigation = (path) => {
@@ -26,37 +41,51 @@ function ReleasesPage() {
     <>
       <Container>
         <HeaderContainer>
-          <section className="section-title-releases">
+          <InfoContainer>
             <Title>Kenzie Gastrobar</Title>
-
-            <section>
+            <UserContainer>
+              <AdminName>{name}</AdminName>
               <FaUserAlt className="icon-user" />
-              <AdminName>Wellington</AdminName>
-            </section>
-          </section>
-          <section className="logout-cart-releases">
-            <BsCart4 className="icon-cart" />
-
-            <Logout />
-          </section>
+            </UserContainer>
+          </InfoContainer>
+          <BsCart4
+            cursor="pointer"
+            onClick={() => setModalReleases(true)}
+            className="icon-cart"
+          />
         </HeaderContainer>
         <GeneralContainer>
           <SectionContainer>
-            <Button>Bebidas</Button>
-            <Button>Comidas</Button>
-            <Button>Drinks</Button>
-            <Button>Sobremesas</Button>
+            <Button onClick={() => handleClick("Bedidas")}>Bebidas</Button>
+            <Button onClick={() => handleClick("Comidas")}>Comidas</Button>
+            <Button onClick={() => handleClick("Drinks")}>Drinks</Button>
+            <Button onClick={() => handleClick("Sobremesas")}>
+              Sobremesas
+            </Button>
           </SectionContainer>
 
           <Content>
-            <CardProduct></CardProduct>
+            {productsRealeases.length === 0
+              ? productsRealeases.map((response, index) => {
+                  return <Product key={index} info={response} />;
+                })
+              : filterProducts.map((response, index) => {
+                  return <Product key={index} info={response} />;
+                })}
           </Content>
 
-          <ButtonContainer>
-            <Button onClick={() => handleNavigation("/table")}>
-              Lista de mesas
-            </Button>
-          </ButtonContainer>
+          {modalReleases ? (
+            <ModalReleases />
+          ) : (
+            <ButtonContainer>
+              <Button
+                className="button"
+                onClick={() => handleNavigation("/table")}
+              >
+                Lista de mesas
+              </Button>
+            </ButtonContainer>
+          )}
         </GeneralContainer>
       </Container>
     </>

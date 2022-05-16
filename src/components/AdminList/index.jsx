@@ -1,5 +1,4 @@
 import { TitleList, Content, Showcase} from './style'
-
 import { useContext, useEffect } from 'react'
 import { ModalContext } from '../../Providers/modal'
 import Button from "../Button";
