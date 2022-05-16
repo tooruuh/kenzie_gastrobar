@@ -1,4 +1,4 @@
-import {Item, Name, Price, Li, Ul} from './style'
+import {Item, Name, Price, Li, Ul} from './styles'
 
 function Product ({info}) {
     return (
