@@ -10,6 +10,10 @@ export default createGlobalStyle`
         box-sizing:border-box;
     }
 
+    body{
+        background: var(--brown-light);
+    }
+
     :root {
         --orange-dark:              #BC4124;
         --orange-light:             #E7946D;
