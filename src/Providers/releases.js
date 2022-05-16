@@ -36,7 +36,7 @@ export const ReleaseProvider = ({children}) => {
     }
 
     async function listProducts (id, userId) {
-        if (!token) {
+        if (token) {
             const data = await api.get(`/products?userId=${id}`);
             setProductsRender(data.data);
             setProductsRealeases(data.data);

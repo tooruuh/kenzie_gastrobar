@@ -10,10 +10,11 @@ export const ModalProviders = ({children}) => {
     const [tableOrderId, setTableOrderId] = useState('')
     const [modalId, setModalId] = useState(false)
     const [modalDelete, setModalDelete] = useState(false)
+    const [modalExit, setModalExit] = useState(false)
 
     return (
         <ModalContext.Provider
-        value={{employee, product, tableOrder, tableOrderId, modalId, modalDelete, setModalDelete, setEmployee, setProduct, setTableOrder, setTableOrderId, setModalId}}>
+        value={{employee, product, tableOrder, modalExit, setModalExit, tableOrderId, modalId, modalDelete, setModalDelete, setEmployee, setProduct, setTableOrder, setTableOrderId, setModalId}}>
          {children}
         </ModalContext.Provider>
     )

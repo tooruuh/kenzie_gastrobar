@@ -25,6 +25,7 @@ export const ContentHeader = styled.header`
     font-size: 22px;
     margin-top: 17px;
     display: inline-block;
+    cursor: pointer;
   }
 
   @media (min-width: 768px) {
@@ -32,10 +33,10 @@ export const ContentHeader = styled.header`
 
     .icon-user {
       position: relative;
-      font-size: 45px;
-      margin-top: -10px;
+      font-size: 35px;
+      margin-top: -8px;
       margin-left: 5px;
-      margin-right: 70px;
+      margin-right: 20px;
     }
   }
 `;
