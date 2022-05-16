@@ -9,15 +9,12 @@ import Header from '../../components/Header';
 import {GrCart} from 'react-icons/gr'
 import ContainerProducts from '../../components/ContaineProducts';
 
+
 function ReleasesPage (){
 
   const token = localStorage.getItem('@token')
 
-  const id = localStorage.getItem('@id')
-
-  const userId = localStorage.getItem("@userId")
-
-  const { handleClick, filterProducts, listProducts, productsRealeases, handleTotalProducts  } = useContext(ReleaseContext)
+  const { handleClick, filterProducts, listProducts, productsRealeases, handleTotalProducts, productsRender  } = useContext(ReleaseContext)
 
   const history = useHistory()
 
@@ -26,6 +23,8 @@ function ReleasesPage (){
   }
 
   useEffect(() => {
+    const id = localStorage.getItem('@id')
+    const userId = localStorage.getItem("@userId")
     listProducts(id, userId)
   },[])
 
@@ -43,17 +42,25 @@ function ReleasesPage (){
             </SectionContainer>
 
             <ContainerProducts>
-            { productsRealeases.length === 0 ? (
+              
+            { filterProducts.length === 0 ? (
                 
-                productsRealeases.map((response, index) => {
-                    return <Product key={index} info={response}/>
-                })
-            
-            ):(
-                filterProducts.map((response, index) => {
-                    return <Product key={index} info={response}/>
-                })
-            )
+                productsRender.length > 0 ? (     
+
+                  productsRealeases.map((response, index) => {
+                  return <Product key={index} info={response}/> })
+
+                ):(
+
+                  null
+
+                )
+
+              ):(
+                  filterProducts.map((response, index) => {
+                      return <Product key={index} info={response}/>
+                  })
+              )
 
             }
             </ContainerProducts>

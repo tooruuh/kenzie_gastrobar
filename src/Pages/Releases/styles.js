@@ -134,13 +134,19 @@ export const CartContainer = styled.div`
     @media (min-width: 768px){
         
         border:none;
+        background: var(--orange-60);
+        border: none;
+        position: absolute;
+        bottom: 0px;
+        width: 45px;
+        height: 45px;
+        border-radius: 60%;
+        right: 0px;
 
         .Icon-Cart{
 
-
-            margin-top: 0px;
-            margin-right: 20px;
-            font-size: 30px;
+            margin: auto;
+            font-size: 25px;
 
         }
 
