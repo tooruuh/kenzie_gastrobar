@@ -11,15 +11,16 @@ export default createGlobalStyle`
     }
 
     :root {
-        --orange-dark:   #BC4124;
-        --orange-light:  #E7946D;
-        --brown:         #5B1206;
-        --brown-light:   #F4EDE6;
-        --orange-darker: #AB2E1B;
-        --grey:          #09101D;
-        --black:         #000000;
-        --white:         #FFFFFF;
-        --red:      rgb(255,0,0);
+        --orange-dark:              #BC4124;
+        --orange-light:             #E7946D;
+        --orange-60:   rgb(231,148,109,0.6);
+        --brown:                    #5B1206;
+        --brown-light:              #F4EDE6;
+        --orange-darker:            #AB2E1B;
+        --grey:                     #09101D;
+        --black:                    #000000;
+        --white:                    #FFFFFF;
+        --red:                 rgb(255,0,0);
     }
 
     button {
