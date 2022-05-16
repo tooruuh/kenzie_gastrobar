@@ -75,7 +75,7 @@ export const ContainerModal = styled.div`
         border-radius: 8px;
     }
 
-    p {
+    .name {
         margin-left: 10px;
         width: 150px;
         height: 18px;
@@ -90,6 +90,10 @@ export const ContainerModal = styled.div`
         text-align: left;
 
         color: #fff;
+    }
+
+    .id {
+        
     }
 
     .delete-employee {

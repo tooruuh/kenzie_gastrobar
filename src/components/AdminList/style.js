@@ -108,7 +108,7 @@ export const Showcase = styled.section`
     margin-left: auto;
     margin-right: auto;
     border-radius: 6px;
-    background-color: var(--orange-light);
+    background-color: var(--orange-60);
 
     @media (min-width: 768px) {
         width: 557px;
