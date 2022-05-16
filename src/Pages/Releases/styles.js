@@ -1,6 +1,22 @@
 import styled from 'styled-components'
 
 
+export const InfoContainer = styled.div`
+  @media (min-width: 768px) {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    h1 {
+      font-size: 30px;
+      padding: 0px;
+      margin: 0px;
+    }
+  }
+`;
 export const Container = styled.div`
     background: var(--brown-light);
     height: 100vh;

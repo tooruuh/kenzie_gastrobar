@@ -18,11 +18,10 @@ function TablePage() {
   function showModal(id) {
     setTableOrderId(id);
   }
-  
+
   useEffect(() => {
     syncTables();
   }, []);
-
 
   return (
     <>
@@ -35,7 +34,7 @@ function TablePage() {
           {tables.map((item) => {
             return (
               <Button
-                className='btn-card'
+                className="btn-card"
                 key={item.id}
                 id={item.id}
                 onClick={(e) => {

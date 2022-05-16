@@ -4,61 +4,61 @@ import { toast } from "react-toastify";
 import { api } from "../Services/api";
 import { AdminContext } from "./admin";
 
-export const LoginContext = createContext([])
+export const LoginContext = createContext([]);
 
-export const LoginProviders = ({children}) => {
+export const LoginProviders = ({ children }) => {
+  const history = useHistory();
 
-    const history = useHistory()
-    
-    function loginEmployee (id) {
-        api.get(`employees?id=${id}`)
-        .then((data) => {
-            localStorage.clear()
+  function loginEmployee(id) {
+    api
+      .get(`employees?id=${id}`)
+      .then((data) => {
+        localStorage.clear();
 
-            const person = data.data[0]
+        const person = data.data[0];
 
-            localStorage.setItem('@userId', person.userId)
-            localStorage.setItem('@userName', person.name)
-            localStorage.setItem('@id', person.id)
+        localStorage.setItem("@userId", person.userId);
+        localStorage.setItem("@userName", person.name);
+        localStorage.setItem("@id", person.id);
 
-            toast.success('Sucesso !')
+        toast.success("Sucesso !");
 
-            history.push('/releases')
-        })
-        .catch((err) => {
-            console.log('erro:' + err)
-            toast.error('Usuario não encontrado')
-        })
-    }
+        history.push("/releases");
+      })
+      .catch((err) => {
+        console.log("erro:" + err);
+        toast.error("Usuario não encontrado");
+      });
+  }
 
-    function loginCompany (data) {
-        console.log(data)
-        api.post("/login", data)
-        .then((response) => {
-            localStorage.clear()
-            
-            const {user} = response.data
+  function loginCompany(data) {
+    console.log(data);
+    api
+      .post("/login", data)
+      .then((response) => {
+        localStorage.clear();
 
-            const {accessToken} = response.data
+        const { user } = response.data;
 
-            localStorage.setItem('@token',accessToken)
-            localStorage.setItem('@userName', user.name)
-            localStorage.setItem('@id', user.id)
+        const { accessToken } = response.data;
 
-            toast.success('Sucesso !')
-            
-            history.push('/admin')
-        })
-        .catch((err) => {
-            console.log(err);
-            toast.error('Empresa não encontrado')
-        });
-    }
- 
-    return (
-        <LoginContext.Provider
-        value={{ loginCompany, loginEmployee }}>
-         {children}
-        </LoginContext.Provider>
-    )
-}
+        localStorage.setItem("@token", accessToken);
+        localStorage.setItem("@userName", user.name);
+        localStorage.setItem("@id", user.id);
+
+        toast.success("Sucesso !");
+
+        history.push("/admin");
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error("Empresa não encontrado");
+      });
+  }
+
+  return (
+    <LoginContext.Provider value={{ loginCompany, loginEmployee }}>
+      {children}
+    </LoginContext.Provider>
+  );
+};
