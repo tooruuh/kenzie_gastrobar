@@ -37,7 +37,6 @@ function ModalProduct () {
                     <select {...register("section")}>
                         <option value='Bedidas'>Bedidas</option>
                         <option value='Comidas'>Comidas</option>
-                        <option value='Drinks'>Drinks</option>
                         <option value='Sobremesas'>Sobremesas</option>
                     </select>
 

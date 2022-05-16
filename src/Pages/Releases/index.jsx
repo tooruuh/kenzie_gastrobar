@@ -7,12 +7,17 @@ import { useContext} from 'react'
 import Product from '../../components/ProductReleases'
 import { ReleaseContext } from "../../Providers/releases"
 import { useEffect } from 'react';
+import Header from '../../components/Header';
 
 function ReleasesPage (){
 
   const token = localStorage.getItem('@token')
 
   const name = localStorage.getItem('@userName')
+
+  const id = localStorage.getItem('@id')
+
+  const userId = localStorage.getItem("@userId")
 
   const { handleClick, filterProducts, listProducts, productsRealeases  } = useContext(ReleaseContext)
 
@@ -23,29 +28,18 @@ function ReleasesPage (){
   }
 
   useEffect(() => {
-    listProducts()
+    listProducts(id, userId)
   },[])
 
   return (
     <>
       <Container>
-        <HeaderContainer>
-
-            <InfoContainer>
-                <Title>Kenzie Gastrobar</Title>
-                <UserContainer>
-                    <AdminName>{name}</AdminName>
-                    <FaUserAlt className="icon-user"/>
-                </UserContainer>
-            </InfoContainer>
-            <BsCart4 className='icon-cart'/>
-
-        </HeaderContainer>
+        <Header/>
         <GeneralContainer>
             <SectionContainer>
-                <Button onClick={() => handleClick("Bedidas")}>Bebidas</Button>
+                <Button onClick={() => handleClick("Todos")}>Todos</Button>
                 <Button onClick={() => handleClick("Comidas")}>Comidas</Button>
-                <Button onClick={() => handleClick("Drinks")}>Drinks</Button>
+                <Button onClick={() => handleClick("Bedidas")}>Bebidas</Button>
                 <Button onClick={() => handleClick("Sobremesas")}>Sobremesas</Button>
             </SectionContainer>
 

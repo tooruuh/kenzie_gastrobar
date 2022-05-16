@@ -13,6 +13,7 @@ export const AdminProviders = ({ children }) => {
   const history = useHistory();
 
   const id = localStorage.getItem("@id");
+
   const token = localStorage.getItem("@token");
 
   const [products, setProducts] = useState([]);
@@ -41,7 +42,7 @@ export const AdminProviders = ({ children }) => {
       })
       .then((response) => {
         toast.success("Produto adicionado");
-        listProducts();
+        listProducts(id);
         setProduct(false);
       })
       .catch((err) => {
@@ -55,21 +56,27 @@ export const AdminProviders = ({ children }) => {
       });
   }
 
-  async function listProducts() {
-    const data = await api.get(`/products?userId=${id}`);
-    setProducts(data.data);
+  async function listProducts(id) {
+    api.get(`/products?userId=${id}`)
+    .then((response) => {
+      console.log(response)
+      setProducts(response.data);
+    })
+    .catch((err) => {
+
+    })
   }
 
-  function deleteProduct(id) {
+  function deleteProduct(idProduct) {
     api
-      .delete(`https://kenzie-gastrobar.herokuapp.com/products/${id}`, {
+      .delete(`https://kenzie-gastrobar.herokuapp.com/products/${idProduct}`, {
         headers: {
           authorization: `Bearer ${token}`,
         },
       })
       .then((response) => {
         toast.info("Produto deletado");
-        listProducts();
+        listProducts(id);
       });
   }
 

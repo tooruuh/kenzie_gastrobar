@@ -1,7 +1,8 @@
-import { createContext, useState } from "react";
+import { createContext, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import { api } from "../Services/api";
+import { AdminContext } from "./admin";
 
 export const LoginContext = createContext([])
 
@@ -45,7 +46,7 @@ export const LoginProviders = ({children}) => {
             localStorage.setItem('@id', user.id)
 
             toast.success('Sucesso !')
-
+            
             history.push('/admin')
         })
         .catch((err) => {

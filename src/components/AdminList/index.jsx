@@ -13,8 +13,10 @@ function AdminList () {
 
     const history = useHistory()
 
+    const id = localStorage.getItem('@id')
+
     useEffect(() => {
-        listProducts()
+        listProducts(id)
     },[])
 
     function handleClick () {

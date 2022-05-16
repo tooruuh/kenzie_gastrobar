@@ -4,7 +4,28 @@ export const Container = styled.div`
     margin-top: 13px;
     text-align: center;
 
-    h1 {
+    .btn {
+        height: 25px;
+        width: 136px;
+        border-radius: 5px;
+        border: none;
+        background-color: var(--orange-light);
+        color: var(--white);
+        font-family: Arimo;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        
+        @media (min-width: 768px) {
+            height: 33px;
+            width: 187px;
+            font-size: 16px;
+        }
+    }
+
+    .h1-table {
         text-align: center;
         margin-bottom: 13px;
         font-family: 'Arimo';
@@ -112,26 +133,5 @@ export const CardTable = styled.li`
         width: 133px;
         height: 80px;
         font-size: 1.5rem;  
-    }
-`
-
-export const Btn = styled.button`
-    height: 25px;
-    width: 136px;
-    border-radius: 5px;
-    border: none;
-    background-color: var(--orange-light);
-    color: var(--white);
-    font-family: Arimo;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 16px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    
-    @media (min-width: 768px) {
-        height: 33px;
-        width: 187px;
-        font-size: 16px;
     }
 `

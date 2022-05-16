@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 import ModalTableOrder from "../../components/ModalTableOrder";
 import { useModal } from "../../Providers/modal";
 import { TablesContext } from "../../Providers/tables";
-import { Btn, CardTable, Container, VitrineTable } from "./styles";
+import { Container, VitrineTable } from "./styles";
 import Button from "../../components/Button";
 
 function TablePage() {
@@ -27,7 +27,7 @@ function TablePage() {
       <Header></Header>
 
       <Container>
-        <h1>Lista de mesas</h1>
+        <h1 className="h1-table">Lista de mesas</h1>
 
         <VitrineTable>
           {tables.map((item) => {
@@ -47,7 +47,7 @@ function TablePage() {
           })}
         </VitrineTable>
 
-        <Btn onClick={() => history.push('/releases')}>Lançamentos</Btn>
+        <Button className='btn' onClick={() => history.push('/releases')}>Lançamentos</Button>
       </Container>
 
       {tableOrder && <ModalTableOrder />}

@@ -127,6 +127,7 @@ export const InfoContainer = styled.div`
 `
 export const Container = styled.div`
     background: var(--brown-light);
+    height: 100vh;
 `
 
 export const Content = styled.div`

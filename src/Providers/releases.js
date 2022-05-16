@@ -6,11 +6,7 @@ export const ReleaseContext = createContext([])
 
 export const ReleaseProvider = ({children}) => {
 
-    const userId = localStorage.getItem('@userId')
-
     const token = localStorage.getItem('@token')
-
-    const id = localStorage.getItem('@id')
 
     const [productsRealeases, setProductsRealeases] = useState([])
 
@@ -26,7 +22,7 @@ export const ReleaseProvider = ({children}) => {
           
     }
 
-    async function listProducts () {
+    async function listProducts (id, userId) {
         if (token) {
             const data = await api.get(`/products?userId=${id}`);
             setProductsRealeases(data.data);
