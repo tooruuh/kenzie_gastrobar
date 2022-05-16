@@ -7,33 +7,7 @@ export const Container = styled.div`
 `
 
 export const Content = styled.div`
-        background-color: rgb(231, 148, 109, 0.6);
-        margin: 0 auto;
-        border-radius: 8px;
-        display: flex;
-        padding: 11px 8px;
-        width: 290px;
-        height: 400px;
-        margin-top: 10px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        align-items: flex-start;
-        overflow-x: scroll;
-        align-content: flex-start;
 
-    @media (min-width: 768px) {
-        width: 450px;
-        height: 415px;
-    }
-
-    @media (min-width: 1440px) {
-        display: flex;
-        grid-template-columns: 125px 125px 125px 125px;
-        width: 650px;
-        height: 500px;
-    }
 `
 
 export const SectionContainer = styled.div`
@@ -89,8 +63,8 @@ export const SectionContainer = styled.div`
 `
 
 export const ButtonContainer = styled.div`
-   margin-top: 25px ;
-   width: 290px;
+    margin-top: 15px;
+    width: 290px;
     
     .button-table{
       width: 125px;
@@ -143,19 +117,67 @@ export const CardProduct = styled.div`
 
 `
 
+export const CartContainer = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    border-top: 1px solid var(--orange-60);
+
+    .Icon-Cart{
+        margin: auto;
+        margin-top: 7px;
+        margin-bottom: 5px;
+        font-size: 20px;
+    }
+
+    @media (min-width: 768px){
+        
+        border:none;
+
+        .Icon-Cart{
+
+
+            margin-top: 0px;
+            margin-right: 20px;
+            font-size: 30px;
+
+        }
+
+    }
+
+`
+
 export const GeneralContainer = styled.div`
 
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     align-content: center;
+    height: 87vh;
 
 
     div::-webkit-scrollbar {
         display: none;
         
     }
+
+    @media (min-width: 768px){
+        
+        height: auto;
+
+    }
+
+    @media (min-width: 1440px){
+        
+        height: 88vh;
+
+    }
+
+
+
+
 
 `

@@ -32,7 +32,6 @@ export const Name = styled.p`
     font-family: 'Arimo';
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 35px;
     font-size: 16px;
     font-weight: 400;
     line-height: 18px;
@@ -62,6 +61,8 @@ export const Price = styled.span`
 export const Li = styled.li`
     list-style-type: none;
     margin: 3px;
+    display: flex;
+    align-items: center;
 
 `
 export const Ul = styled.ul`
