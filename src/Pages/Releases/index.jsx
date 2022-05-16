@@ -1,11 +1,13 @@
 import Button from '../../components/Button';
-import {SectionContainer, Content, Container, ButtonContainer, GeneralContainer} from './styles';
+import {SectionContainer, Content, Container, ButtonContainer, GeneralContainer, CartContainer} from './styles';
 import { useHistory} from 'react-router'
 import { useContext} from 'react'
 import Product from '../../components/ProductReleases'
 import { ReleaseContext } from "../../Providers/releases"
 import { useEffect } from 'react';
 import Header from '../../components/Header';
+import {GrCart} from 'react-icons/gr'
+import ContainerProducts from '../../components/ContaineProducts';
 
 function ReleasesPage (){
 
@@ -15,7 +17,7 @@ function ReleasesPage (){
 
   const userId = localStorage.getItem("@userId")
 
-  const { handleClick, filterProducts, listProducts, productsRealeases  } = useContext(ReleaseContext)
+  const { handleClick, filterProducts, listProducts, productsRealeases, handleTotalProducts  } = useContext(ReleaseContext)
 
   const history = useHistory()
 
@@ -32,15 +34,15 @@ function ReleasesPage (){
       <Container>
         <Header/>
         <GeneralContainer>
+          <Content>
             <SectionContainer>
-                <Button onClick={() => handleClick("Todos")}>Todos</Button>
+                <Button onClick={() => handleTotalProducts()}>Todos</Button>
                 <Button onClick={() => handleClick("Comidas")}>Comidas</Button>
                 <Button onClick={() => handleClick("Bedidas")}>Bebidas</Button>
                 <Button onClick={() => handleClick("Sobremesas")}>Sobremesas</Button>
             </SectionContainer>
 
-            <Content>
-
+            <ContainerProducts>
             { productsRealeases.length === 0 ? (
                 
                 productsRealeases.map((response, index) => {
@@ -54,7 +56,7 @@ function ReleasesPage (){
             )
 
             }
-            </Content>
+            </ContainerProducts>
 
             <ButtonContainer>
                 <Button className='button-table' onClick={() => handleNavigation('/table')}>Lista de mesas</Button>
@@ -63,7 +65,10 @@ function ReleasesPage (){
                 }
 
             </ButtonContainer>
-
+          </Content>
+          <CartContainer>
+            <GrCart className='Icon-Cart'/>
+          </CartContainer>
         </GeneralContainer>
       </Container>
     </>

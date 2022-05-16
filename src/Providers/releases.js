@@ -1,5 +1,4 @@
-import { createContext, useContext, useState, useEffect } from "react";
-import { AdminContext } from "../Providers/admin"
+import { createContext, useState, } from "react";
 import { api } from "../Services/api";
 
 export const ReleaseContext = createContext([])
@@ -22,6 +21,16 @@ export const ReleaseProvider = ({children}) => {
           
     }
 
+    function handleTotalProducts(){
+
+        const filter = productsRealeases.filter((product) => product)
+
+        setfilterProducts(filter)
+        
+        console.log(filter)
+          
+    }
+
     async function listProducts (id, userId) {
         if (token) {
             const data = await api.get(`/products?userId=${id}`);
@@ -35,7 +44,7 @@ export const ReleaseProvider = ({children}) => {
 return (
 
     <ReleaseContext.Provider
-    value={{ handleClick, filterProducts, listProducts, productsRealeases }}>
+    value={{ handleClick, filterProducts, listProducts, productsRealeases, handleTotalProducts }}>
      {children}
     </ReleaseContext.Provider>
 )

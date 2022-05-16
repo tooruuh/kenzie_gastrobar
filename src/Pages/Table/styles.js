@@ -4,6 +4,11 @@ export const Container = styled.div`
     margin-top: 13px;
     text-align: center;
 
+    div::-webkit-scrollbar {
+        display: none;
+        
+    }
+
     .btn {
         height: 25px;
         width: 136px;
