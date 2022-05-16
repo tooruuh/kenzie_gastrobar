@@ -18,14 +18,21 @@ export const ModalContainer = styled.div`
   width: 280px;
   height: 520px;
   border-radius: 8px;
-  cursor: default;
+
+  @media (min-width: 768px) {
+    width: 380px;
+  }
+
+  @media (min-width: 1100px) {
+    width: 480px;
+  }
 
   .exit {
     display: flex;
     position: absolute;
     cursor: pointer;
     color: var(--white);
-    left: 250px;
+    left: 90%;
     top: 15px;
   }
 
@@ -33,7 +40,7 @@ export const ModalContainer = styled.div`
     display: flex;
     position: absolute;
 
-    left: 43px;
+    left: 18%;
     top: 10px;
     color: var(--white);
     width: 195px;
@@ -53,7 +60,7 @@ export const ModalContainer = styled.div`
     justify-content: center;
     margin: 0 auto;
     left: 5px;
-    width: 270px;
+    width: 96%;
     height: 300px;
     top: 80px;
     border-bottom: 1px solid white;
