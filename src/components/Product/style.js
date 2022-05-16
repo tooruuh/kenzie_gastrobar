@@ -2,11 +2,11 @@ import styled from 'styled-components'
 
 export const Item = styled.article`
     height: 56px;
-    width: 260px;
+    width: 268px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 15px;
+    margin-top: 10px;
     padding-left: 25px;
     background-color: var(--orange-dark);
     border-radius: 10px;

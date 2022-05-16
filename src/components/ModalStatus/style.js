@@ -14,7 +14,7 @@ export const ContainerModal = styled.div`
     .modal {
         background-color: var(--brown);
         width: 280px;
-        height: 260px;
+        height: 300px;
         border-radius: 6px;
         position: fixed;
         padding-bottom: 15px;
@@ -60,12 +60,17 @@ export const ContainerModal = styled.div`
         flex-wrap: wrap;
         justify-content: center;
         overflow: auto;
-        height: 200px;
+        height: 240px;
+    }
+
+    .showcase::-webkit-scrollbar {
+        display: none;
     }
 
     .employee {
+        position: relative;
         width: 270px;
-        height: 40px;
+        height: 100px;
         align-items: center;
         display: flex;
         margin-top: 10px;
@@ -73,6 +78,10 @@ export const ContainerModal = styled.div`
         justify-content: space-between;
 
         border-radius: 8px;
+    }
+
+    li {
+        margin-top: 10px;
     }
 
     .name {
@@ -93,10 +102,42 @@ export const ContainerModal = styled.div`
     }
 
     .id {
-        
+        margin-left: 10px;
+        width: 150px;
+        height: 18px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        font-family: Arimo;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: left;
+
+        color: #fff;
+    }
+
+    .total-sales {
+        margin-left: 10px;
+        width: 150px;
+        height: 18px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        font-family: Arimo;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0em;
+        text-align: left;
+
+        color: #fff;
     }
 
     .delete-employee {
+        position: absolute;
+        left: 135px;
         margin-right: 10px;
         background-color: var(--orange-dark);
 
@@ -134,9 +175,13 @@ export const ContainerModal = styled.div`
 
         .employee {
             height: 100px;
-            width: 200px;
+            width: 210px;
             flex-wrap: wrap;
             margin-left: 10px;
+        }
+
+        .ul-employee {
+            margin-bottom: 10px;
         }
 
         .delete-employee {

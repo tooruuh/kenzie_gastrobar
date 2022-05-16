@@ -113,6 +113,7 @@ export const Showcase = styled.section`
     @media (min-width: 768px) {
         width: 557px;
         height: 362px;
+        justify-content: start;
     }
 `
 

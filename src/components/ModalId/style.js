@@ -4,7 +4,7 @@ export const ContainerProduct = styled.section`
     background-color: rgb(0,0,0,0.50);
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     top: 0px;
     display: flex;
     align-items: center;
@@ -13,7 +13,7 @@ export const ContainerProduct = styled.section`
 
 export const Modal = styled.section`
   width: 300px;
-  position: relative;
+  position: fixed;
   background-color: var(--brown);
   border-radius: 8px;
   padding-bottom: 15px;
