@@ -3,7 +3,6 @@ import {HeaderContainer, Title, AdminName, InfoContainer, SectionContainer, Cont
 import { FaUserAlt } from "react-icons/fa";
 import {BsCart4} from 'react-icons/bs'
 import { useHistory} from 'react-router'
-import { AdminContext } from "../../Providers/admin"
 import { useContext} from 'react'
 import Product from '../../components/Product copy'
 import {ReleaseContext} from "../../Providers/releases"

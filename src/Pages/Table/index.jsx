@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 import ModalTableOrder from "../../components/ModalTableOrder";
 import { useModal } from "../../Providers/modal";
 import { TablesContext } from "../../Providers/tables";
-import { Btn, CardTable, Container, VitrineTable } from "./styles";
+import { Btn, Container, VitrineTable } from "./styles";
 import Button from "../../components/Button";
 
 function TablePage() {
@@ -12,6 +12,10 @@ function TablePage() {
   const { tables, syncTables } = useContext(TablesContext);
   
   const history = useHistory()
+
+  const handleNavigation = (path) => {
+      return history.push(path)
+  }
 
   function showModal(id) {
     setTableOrderId(id);
@@ -47,7 +51,7 @@ function TablePage() {
           })}
         </VitrineTable>
 
-        <Btn onClick={() => history.push('/ReleasesPage')}>Lançamentos</Btn>
+        <Btn onClick={() => handleNavigation('/releases')} >Lançamentos </Btn>
       </Container>
 
       {tableOrder && <ModalTableOrder />}

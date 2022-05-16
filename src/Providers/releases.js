@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, } from "react";
 import { AdminContext } from "../Providers/admin"
 import { api } from "../Services/api";
 
