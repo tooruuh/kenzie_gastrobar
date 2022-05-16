@@ -3,14 +3,13 @@ import { toast } from "react-toastify";
 import { useModal } from "../../Providers/modal";
 import { TablesContext } from "../../Providers/tables";
 import {
-  BtBack,
   Footer,
   Headerr,
   Hr,
   ModalContainer,
   ModalContent,
   ResumTotal,
-  Vitrine,
+  Showcase,
 } from "./style";
 import Button from '../Button'
 
@@ -45,7 +44,7 @@ export default function ModalTableOrder() {
           <button onClick={() => setTableOrder(false)}>X</button>
         </Headerr>
 
-        <Vitrine>
+        <Showcase>
           {tableRequest.products.map((item, index) => {
             return (
               <ul key={index}>
@@ -54,7 +53,7 @@ export default function ModalTableOrder() {
               </ul>
             );
           })}
-        </Vitrine>
+        </Showcase>
 
         <Footer>
           <Hr />

@@ -58,10 +58,14 @@ export const Headerr = styled.div`
     }
 `
 
-export const Vitrine = styled.ul`
+export const Showcase = styled.ul`
     list-style: none;
     height: 300px;
     overflow: auto;
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
 
     ul {
         margin-left: 7px;
