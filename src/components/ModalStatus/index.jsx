@@ -28,7 +28,8 @@ function ModalStatus () {
                         listEmployee.map((employee,index) => {
                             return (
                                 <article key={index} className="employee">
-                                    <p>{employee.name}</p>
+                                    <ul><p className='name'>{employee.name}</p></ul>
+                                    <ul><p className='id'>{employee.id}</p></ul>
                                     <Button onClick={() => DeleteEmployee(employee.id)} className='delete-employee'>Deletar</Button>
                                 </article>
                             )

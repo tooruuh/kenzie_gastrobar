@@ -1,3 +1,4 @@
+import { Main } from "./style"
 
 import Header from "../../components/Header"
 import AdminList from "../../components/AdminList"
@@ -26,7 +27,7 @@ function AdminPage () {
     return (
         <>
         <Header verify={'admin'}/>
-        <main>
+        <Main>
             <AdminList/>
             {
                 !product ? '' : <ModalProduct/>
@@ -40,7 +41,7 @@ function AdminPage () {
             {
                 !modalDelete ? '' : <ModalStatus/>
             }
-        </main>
+        </Main>
         </>
     )
 }
