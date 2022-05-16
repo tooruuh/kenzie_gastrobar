@@ -1,7 +1,5 @@
 import Button from '../../components/Button';
-import {HeaderContainer, Title, AdminName, InfoContainer, SectionContainer, Content, Container, ButtonContainer, UserContainer, GeneralContainer} from './styles';
-import { FaUserAlt } from "react-icons/fa";
-import {BsCart4} from 'react-icons/bs'
+import {SectionContainer, Content, Container, ButtonContainer, GeneralContainer} from './styles';
 import { useHistory} from 'react-router'
 import { useContext} from 'react'
 import Product from '../../components/ProductReleases'
@@ -12,8 +10,6 @@ import Header from '../../components/Header';
 function ReleasesPage (){
 
   const token = localStorage.getItem('@token')
-
-  const name = localStorage.getItem('@userName')
 
   const id = localStorage.getItem('@id')
 

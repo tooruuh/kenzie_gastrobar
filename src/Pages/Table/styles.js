@@ -35,19 +35,61 @@ export const Container = styled.div`
     }
 
     @media (min-width: 768px) {
-        h1 {
+        .h1-table {
             font-size: 24px;
         }
     }
 
-    @media(min-width: 900px){
+    @media(min-width: 1024px){
         margin-top: 20px;
         
-        h1 {
-            font-size: 28px;
+        .h1-table {
+            font-size: 30px;
             margin-bottom: 20px;
         }
     }
+
+    .showcase{
+
+    .btn-card {
+        width: 79px;
+        height: 61px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        margin: 6px;
+        border-radius: 8px;
+        color: var(--white);
+        background-color: var(--orange-dark);
+        border: none;
+
+        font-family: 'Arimo';
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 17px;
+        letter-spacing: 0em;
+
+        :hover {
+            opacity: 0.6;
+        }
+
+
+        @media(min-width: 768px){
+            width: 132px;
+            height: 80px;
+            font-size: 1.5rem;  
+        }
+
+
+
+        @media(min-width: 1440px){
+            width: 146px;
+            height: 85px;
+        }
+        }
+    }
+    
 `   
 
 export const VitrineTable = styled.ul`
