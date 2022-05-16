@@ -137,7 +137,7 @@ export const ContainerModal = styled.div`
 
     .delete-employee {
         position: absolute;
-        left: 135px;
+        left: 205px;
         margin-right: 10px;
         background-color: var(--orange-dark);
 
@@ -185,7 +185,8 @@ export const ContainerModal = styled.div`
         }
 
         .delete-employee {
-            margin-left: 10px;
+            top: 35px;
+            left: 145px;
         }
     }
 
