@@ -10,17 +10,18 @@ import {
   ResumTotal,
   Showcase,
 } from "./style";
-import Button from '../Button'
+import Button from "../Button";
+import { array } from "yup";
 
 export default function ModalTableOrder() {
-
-  const [newArray, setNewArray] = useState([])
+  const [newArray, setNewArray] = useState([]);
 
   const { tableOrderId, setTableOrder } = useModal();
   const { tables, syncTables, removeTable } = useContext(TablesContext);
 
   useEffect(() => {
     syncTables();
+    filterProducts();
   }, []);
 
   const tableRequest = tables.find((item) => {
@@ -33,16 +34,29 @@ export default function ModalTableOrder() {
 
   function onCheckout() {
     removeTable(tableOrderId);
-    
+
     setTableOrder(false);
     syncTables();
   }
 
-  function filterProducts () {
-    setNewArray([])
-    tableRequest.products.forEach((product) => {
-      
-    })
+  function filterProducts() {
+    const quantityAdd = tableRequest.products.filter(
+      (product, index, array) => {
+        const quantity = array.filter(
+          (element) => element.name === product.name
+        ).length;
+        if (array.indexOf(product) === index) {
+          product.quantity = quantity;
+          return product;
+        }
+      }
+    );
+
+    const filteredArray = quantityAdd.filter(
+      (ele, ind, array) =>
+        ind === array.findIndex((elem) => elem.name === ele.name)
+    );
+    setNewArray(filteredArray);
   }
 
   return (
@@ -54,11 +68,12 @@ export default function ModalTableOrder() {
         </Headerr>
 
         <Showcase>
-          {tableRequest.products.map((item, index) => {
+          {newArray.map((item, index) => {
             return (
-              <ul key={index}>
+              <ul key={index} onClick={() => filterProducts()}>
                 <li>{item.name}</li>
-                <li>R$ {Number(item.price).toFixed(2).replace('.',',')}</li>
+                <li>R$ {Number(item.price).toFixed(2).replace(".", ",")}</li>
+                <li>Quantidade: {item.quantity}</li>
               </ul>
             );
           })}
@@ -67,13 +82,15 @@ export default function ModalTableOrder() {
         <Footer>
           <Hr />
 
-          <Button className='btn-back' onClick={() => setTableOrder(false)}>
+          <Button className="btn-back" onClick={() => setTableOrder(false)}>
             Voltar para lista de mesas
           </Button>
 
           <ResumTotal>
             <p>Total R$ {subtotal.toFixed(2)}</p>
-            <Button className='btn-finish' onClick={onCheckout}>Finalizar mesa</Button>
+            <Button className="btn-finish" onClick={onCheckout}>
+              Finalizar mesa
+            </Button>
           </ResumTotal>
         </Footer>
       </ModalContent>
