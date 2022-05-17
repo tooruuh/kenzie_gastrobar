@@ -1,14 +1,18 @@
-import {Item, Name, Price, Li, Ul} from './styles'
+import { Item, Name, Price, Li, Ul } from "./styles";
 
-function Product ({info}) {
-    return (
-        <Item>
-            <Ul>
-                <Li><Name>{info.name}</Name></Li>
-                <Li><Price>R$ {info.price}</Price></Li>
-            </Ul>
-        </Item>
-    )
+function Product({ info, onClick }) {
+  return (
+    <Item onClick={onClick}>
+      <Ul>
+        <Li>
+          <Name>{info.name}</Name>
+        </Li>
+        <Li>
+          <Price>R$ {info.price}</Price>
+        </Li>
+      </Ul>
+    </Item>
+  );
 }
 
-export default Product
+export default Product;
