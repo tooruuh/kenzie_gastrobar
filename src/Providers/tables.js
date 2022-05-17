@@ -3,48 +3,49 @@ import { api } from "../Services/api";
 import { AdminContext } from "./admin";
 import { toast } from "react-toastify";
 
+
 export const TablesContext = createContext();
 
 export const TablesProvider = ({ children }) => {
   const [tables, setTables] = useState([]);
-  
+
   const userId = localStorage.getItem("@userId");
   const id = localStorage.getItem("@id");
   const { updateEmployee } = useContext(AdminContext);
   const token = localStorage.getItem("@token");
 
-  function createTable (products, numberTable) {
+  function createTable(products, numberTable) {
     if (!numberTable) {
-      return toast.error('Adicione uma mesa')
+      return toast.error("Adicione uma mesa");
     }
 
     const table = {
       userId: token ? id : userId,
       numberTable: numberTable,
-      products: products
-    }
-    addTable(table)
-
+      products: products,
+    };
+    addTable(table);
   }
 
   async function addTable(table) {
-    const tablesApi = await api.get(`/tables?userId=${token ? id : userId}`)
-    .then((response) => {
-      return response.data
-    })
-    .catch((err) => {
-      
-    })
+    const tablesApi = await api
+      .get(`/tables?userId=${token ? id : userId}`)
+      .then((response) => {
+        return response.data;
+      })
+      .catch((err) => {});
 
-    const tableExists = tablesApi.find((localTable) => Number(table.numberTable) === Number(localTable.numberTable));
+    const tableExists = tablesApi.find(
+      (localTable) =>
+        Number(table.numberTable) === Number(localTable.numberTable)
+    );
 
     if (tableExists) {
       updateTable(table);
     } else {
-      api.post(`/tables`,table)
-      .then((response) => {
-        console.log(response)
-      })
+      api.post(`/tables`, table).then((response) => {
+        console.log(response);
+      });
       syncTables();
     }
   }
@@ -75,24 +76,45 @@ export const TablesProvider = ({ children }) => {
     const tableApi = await api.get(
       `/tables?numberTable=${table.numberTable}&userId=${token ? id : userId}`
     );
-    const productsApi = await tableApi.data[0].products
-    table.products = [...table.products, ...productsApi];
-    const idApi = tableApi.data[0].id
-    console.log(idApi)
+    const productsApi = await tableApi.data[0].products;
+    // ----------------------
+
+    const arrey = table.products.map((element) => {
+      const index = productsApi.findIndex((prod) => {
+       
+        return element.name === prod.name
+      })
+      console.log(index)
+      if(index > -1){
+        element.quantity = element.quantity + productsApi[index].quantity
+      }else{
+        return 
+      }
+      return element;
+    })
+
+    
+    
+
+    table.products = arrey
+    
+    // -----------------------
+    const idApi = tableApi.data[0].id;
+   
     api.put(`/tables/${idApi}`, table);
     syncTables();
   }
 
   return (
     <TablesContext.Provider
-      value={{ 
+      value={{
         tables,
         addTable,
-        removeTable, 
-        syncTables, 
+        removeTable,
+        syncTables,
         updateTable,
-        createTable
-        }}
+        createTable,
+      }}
     >
       {children}
     </TablesContext.Provider>

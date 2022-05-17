@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { useModal } from "../../Providers/modal";
 import { TablesContext } from "../../Providers/tables";
 import {
@@ -11,17 +11,17 @@ import {
   Showcase,
 } from "./style";
 import Button from "../Button";
-import { array } from "yup";
+
 
 export default function ModalTableOrder() {
-  const [newArray, setNewArray] = useState([]);
+  
 
   const { tableOrderId, setTableOrder } = useModal();
   const { tables, syncTables, removeTable } = useContext(TablesContext);
 
   useEffect(() => {
     syncTables();
-    filterProducts();
+    
   }, []);
 
   const tableRequest = tables.find((item) => {
@@ -29,7 +29,7 @@ export default function ModalTableOrder() {
   });
 
   const subtotal = tableRequest.products.reduce((acc, currentValue) => {
-    return Number(acc) + Number(currentValue.price);
+    return Number(acc) + Number(currentValue.price) * Number(currentValue.quantity);
   }, 0);
 
   function onCheckout() {
@@ -39,38 +39,19 @@ export default function ModalTableOrder() {
     syncTables();
   }
 
-  function filterProducts() {
-    const quantityAdd = tableRequest.products.filter(
-      (product, index, array) => {
-        const quantity = array.filter(
-          (element) => element.name === product.name
-        ).length;
-        if (array.indexOf(product) === index) {
-          product.quantity = quantity;
-          return product;
-        }
-      }
-    );
-
-    const filteredArray = quantityAdd.filter(
-      (ele, ind, array) =>
-        ind === array.findIndex((elem) => elem.name === ele.name)
-    );
-    setNewArray(filteredArray);
-  }
 
   return (
     <ModalContainer>
       <ModalContent>
         <Headerr>
-          <h2>CONSUMO MESA {tableOrderId}</h2>
+          <h2>CONSUMO MESA {tableRequest.numberTable}</h2>
           <button onClick={() => setTableOrder(false)}>X</button>
         </Headerr>
 
         <Showcase>
-          {newArray.map((item, index) => {
+          {tableRequest.products.map((item, index) => {
             return (
-              <ul key={index} onClick={() => filterProducts()}>
+              <ul key={index}>
                 <li>{item.name}</li>
                 <li>R$ {Number(item.price).toFixed(2).replace(".", ",")}</li>
                 <li>Quantidade: {item.quantity}</li>
