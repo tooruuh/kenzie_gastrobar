@@ -134,13 +134,24 @@ export const ButtonContainer = styled.div`
 
     @media (min-width: 768px){
         width: 450px;
+        .button-table {
+            width: 160px;
+            font-size: 16px;
+        }
 
+        .button-home {
+            width: 140px;
+            font-size: 16px;
+            margin-left: 150px;
+        }
     }
 
     @media (min-width: 1440px){
         
         width: 650px;
-
+        .button-home {
+            margin-left: 350px;
+        }
     }
 
   

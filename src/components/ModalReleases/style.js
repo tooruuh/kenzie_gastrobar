@@ -1,5 +1,10 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 
+
+export const animation = keyframes`
+  from{top: -1000px}
+  to{top: 150px}
+`
 export const Container = styled.div`
   background-color: rgb(0, 0, 0, 0.5);
   width: 100vw;
@@ -19,6 +24,8 @@ export const ModalContainer = styled.div`
   width: 280px;
   height: 520px;
   border-radius: 8px;
+  animation: ${animation} 1.5s;
+  animation-fill-mode: forwards;
 
   @media (min-width: 768px) {
     width: 380px;
@@ -52,8 +59,10 @@ export const ModalContainer = styled.div`
     height: 300px;
     top: 80px;
     border-bottom: 1px solid white;
-
     color: white;
+    ::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   .prod-list {
@@ -92,6 +101,17 @@ export const ModalContainer = styled.div`
     color: var(--white);
     left: 90%;
     top: 15px;
+    border: none;
+
+    font-family: "Arimo";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    background-color: var(--brown);
+    :hover {
+      color: var(--red);
+    }
   }
 
   .h1-title-cart {

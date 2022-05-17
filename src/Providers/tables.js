@@ -13,17 +13,38 @@ export const TablesProvider = ({ children }) => {
   const { updateEmployee } = useContext(AdminContext);
   const token = localStorage.getItem("@token");
 
-  function addTable(table) {
-    const tableExists = tables.find(
-      (localTable) => table.numberTable === localTable.numberTable
-    );
+  function createTable (products, numberTable) {
+    if (!numberTable) {
+      return toast.error('Adicione uma mesa')
+    }
+
+    const table = {
+      userId: token ? id : userId,
+      numberTable: numberTable,
+      products: products
+    }
+    addTable(table)
+
+  }
+
+  async function addTable(table) {
+    const tablesApi = await api.get(`/tables?userId=${token ? id : userId}`)
+    .then((response) => {
+      return response.data
+    })
+    .catch((err) => {
+      
+    })
+
+    const tableExists = tablesApi.find((localTable) => Number(table.numberTable) === Number(localTable.numberTable));
+
     if (tableExists) {
-      updateTable(table.numberTable, table.products);
+      updateTable(table);
     } else {
-      api.post(`/tables`, {
-        userId: userId,
-        table,
-      });
+      api.post(`/tables`,table)
+      .then((response) => {
+        console.log(response)
+      })
       syncTables();
     }
   }
@@ -50,19 +71,28 @@ export const TablesProvider = ({ children }) => {
       });
   }
 
-  function updateTable(numberTable, products) {
-    const table = api.get(
-      `/tables?numberTable=${numberTable}&userId=${userId}`
+  async function updateTable(table) {
+    const tableApi = await api.get(
+      `/tables?numberTable=${table.numberTable}&userId=${token ? id : userId}`
     );
-    table.products = [...table.products, products];
-
-    api.put(`/tables/${table.id}`, table);
+    const productsApi = await tableApi.data[0].products
+    table.products = [...table.products, ...productsApi];
+    const idApi = tableApi.data[0].id
+    console.log(idApi)
+    api.put(`/tables/${idApi}`, table);
     syncTables();
   }
 
   return (
     <TablesContext.Provider
-      value={{ tables, addTable, removeTable, syncTables, updateTable }}
+      value={{ 
+        tables,
+        addTable,
+        removeTable, 
+        syncTables, 
+        updateTable,
+        createTable
+        }}
     >
       {children}
     </TablesContext.Provider>

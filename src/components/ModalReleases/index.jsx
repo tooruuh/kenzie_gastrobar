@@ -4,16 +4,17 @@ import { ReleaseContext } from "../../Providers/releases";
 import Button from "../Button";
 import { Container, ModalContainer } from "./style";
 import { BiTrash } from "react-icons/bi";
+import { TablesContext } from "../../Providers/tables";
 
 function ModalReleases() {
   const { setModalReleases } = useModal();
-  const { mesa, setMesa } = useState("");
+  const [ mesa, setMesa ] = useState("");
+
+  const {createTable} = useContext(TablesContext)
 
   const { sendProducts, setSendProducts } = useContext(ReleaseContext);
 
-  function handleChange(event) {
-    return setMesa(event.target.value);
-  }
+  const totalValue = sendProducts.reduce((a,b) => a + Number(b.price),0)
 
   //verificar function delete product do modal cart product
   function handleDeleteProd() {
@@ -30,17 +31,17 @@ function ModalReleases() {
       <Container>
         <ModalContainer>
           <h3 className="h1-title-cart">CARRINHO DE PRODUTOS</h3>
-          <span className="exit" onClick={() => setModalReleases(false)}>
+          <Button className="exit" onClick={() => setModalReleases(false)}>
             X
-          </span>
+          </Button>
 
           <ul className="list-cart-products">
             {sendProducts.map((products, index) => (
-              <div className="prod-list">
-                <li> {products.name}</li>
-                <li> R${products.price}</li>
+              <li key={index} className="prod-list">
+                <p> {products.name}</p>
+                <p> R${products.price}</p>
                 <BiTrash cursor="pointer" onClick={() => handleDeleteProd} />
-              </div>
+              </li>
             ))}
           </ul>
           <Button
@@ -53,13 +54,13 @@ function ModalReleases() {
             className="input-number-table"
             type="text"
             placeholder="N° da mesa"
-            onChange={() => handleChange}
+            onChange={(event) => setMesa(event.target.value)}
           />
           <section className="sub-total-price">
             <span className="sub-total">SUB-TOTAL</span>
-            <span className="price">R$95,50</span>
+            <span className="price">R$ {totalValue}</span>
           </section>
-          <Button className="send-release">ENVIAR PEDIDO</Button>
+          <Button onClick={() => createTable(sendProducts, mesa)} className="send-release">ENVIAR PEDIDO</Button>
         </ModalContainer>
       </Container>
     </>

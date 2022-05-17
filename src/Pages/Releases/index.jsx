@@ -25,8 +25,13 @@ function ReleasesPage() {
   const { sendProducts, setSendProducts } = useContext(ReleaseContext);
 
   function addSendProducts(prod) {
-    setSendProducts([...sendProducts, prod]);
-    console.log("sendProducts ", sendProducts);
+    const product = {
+      name: prod.name,
+      price: prod.price
+    }
+
+    setSendProducts([...sendProducts, product]);
+
   }
 
   const token = localStorage.getItem("@token");

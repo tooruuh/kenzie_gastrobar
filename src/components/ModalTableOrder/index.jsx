@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useModal } from "../../Providers/modal";
 import { TablesContext } from "../../Providers/tables";
 import {
@@ -13,10 +13,11 @@ import {
 import Button from '../Button'
 
 export default function ModalTableOrder() {
+
+  const [newArray, setNewArray] = useState([])
+
   const { tableOrderId, setTableOrder } = useModal();
   const { tables, syncTables, removeTable } = useContext(TablesContext);
-  const userId = localStorage.getItem("@userId");
-  const id = localStorage.getItem("@id");
 
   useEffect(() => {
     syncTables();
@@ -27,7 +28,7 @@ export default function ModalTableOrder() {
   });
 
   const subtotal = tableRequest.products.reduce((acc, currentValue) => {
-    return acc + currentValue.price;
+    return Number(acc) + Number(currentValue.price);
   }, 0);
 
   function onCheckout() {
@@ -35,6 +36,13 @@ export default function ModalTableOrder() {
     
     setTableOrder(false);
     syncTables();
+  }
+
+  function filterProducts () {
+    setNewArray([])
+    tableRequest.products.forEach((product) => {
+      
+    })
   }
 
   return (
@@ -50,7 +58,7 @@ export default function ModalTableOrder() {
             return (
               <ul key={index}>
                 <li>{item.name}</li>
-                <li>R$ {item.price.toFixed(2).replace('.',',')}</li>
+                <li>R$ {Number(item.price).toFixed(2).replace('.',',')}</li>
               </ul>
             );
           })}
