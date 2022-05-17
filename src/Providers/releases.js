@@ -12,8 +12,6 @@ export const ReleaseProvider = ({ children }) => {
 
   const [productsRender, setProductsRender] = useState([]);
 
-  const [sendProducts, setSendProducts] = useState([]);
-
   function handleClick(section) {
     const filter = productsRealeases.filter(
       (product) => product.section === section
@@ -54,8 +52,6 @@ export const ReleaseProvider = ({ children }) => {
         productsRealeases,
         handleTotalProducts,
         productsRender,
-        sendProducts,
-        setSendProducts,
       }}
     >
       {children}

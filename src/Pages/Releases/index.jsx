@@ -22,15 +22,15 @@ import ModalReleases from "../../components/ModalReleases";
 function ReleasesPage() {
   const { modalReleases, setModalReleases } = useModal();
 
-  const { sendProducts, setSendProducts } = useContext(ReleaseContext);
+  function addProductCart(prod) {
+    const cart = JSON.parse(localStorage.getItem('@cart')) || []
 
-  function addSendProducts(prod) {
     const product = {
       name: prod.name,
-      price: prod.price
+      price: prod.price,
     }
 
-    setSendProducts([...sendProducts, product]);
+    localStorage.setItem('@cart',JSON.stringify([...cart, product]))
 
   }
 
@@ -79,7 +79,7 @@ function ReleasesPage() {
                   ? productsRealeases.map((response, index) => {
                       return (
                         <Product
-                          onClick={() => addSendProducts(response)}
+                          onClick={() => addProductCart(response)}
                           key={index}
                           info={response}
                         />

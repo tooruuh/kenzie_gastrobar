@@ -1,4 +1,10 @@
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
+
+export const animation = keyframes`
+    from{top: -500px;}
+    to{top: 0px;}
+
+`
 
 export const ModalContainer = styled.div`
     display: flex;
@@ -9,6 +15,8 @@ export const ModalContainer = styled.div`
     position: absolute;
     top: 0;
     left: 0;
+    animation: ${animation} 1.5s;
+    animation-fill-mode: backwards;
     z-index: 1000;
     background: var(--black-opacity);
     color: var(--white); 
@@ -71,7 +79,7 @@ export const Showcase = styled.ul`
         margin-left: 7px;
         align-items: center;
         background-color: var(--orange-dark);
-        height: 56px;
+        height: 80px;
         width: 266px;
         border-radius: 10px;
         margin-bottom: 5px;

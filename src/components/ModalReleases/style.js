@@ -71,6 +71,7 @@ export const ModalContainer = styled.div`
     align-items: center;
     min-height: 50px;
     width: 92%;
+    height: 70px;
 
     background-color: #bc4124;
 
@@ -85,6 +86,9 @@ export const ModalContainer = styled.div`
     margin-bottom: 10px;
 
     border-radius: 8px;
+    li {
+      margin-top: 5px;
+    }
   }
 
   .btn-delete-prod-cart {
@@ -92,6 +96,9 @@ export const ModalContainer = styled.div`
     border: none;
     outline: none;
     color: #ffffff;
+    :hover {
+      color: var(--orange-darker);
+    }
   }
 
   .exit {
