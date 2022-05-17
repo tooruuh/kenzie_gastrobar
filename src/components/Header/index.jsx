@@ -19,7 +19,7 @@ function Header({ children, verify }) {
         verify === 'admin' ? <FaUserAlt onClick={() => setModalDelete(true)} className="icon-user" /> : <FaUserAlt className="icon-user" />
       } 
         {children}
-      <Logout />
+        
       </div>
     </ContentHeader>
   );
