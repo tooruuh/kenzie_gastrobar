@@ -139,6 +139,7 @@ export const CartContainer = styled.div`
     justify-content: flex-end;
     align-items: center;
     border-top: 1px solid var(--orange-60);
+    cursor: pointer;
 
     .Icon-Cart{
         margin: auto;
@@ -153,11 +154,11 @@ export const CartContainer = styled.div`
         background: var(--orange-60);
         border: none;
         position: absolute;
-        bottom: 0px;
+        bottom: 10px;
         width: 45px;
         height: 45px;
         border-radius: 60%;
-        right: 0px;
+        right: 10px;
 
         .Icon-Cart{
 

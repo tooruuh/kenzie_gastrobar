@@ -12,8 +12,10 @@ export function Providers({ children }) {
         <LoginProviders>
           <ModalProviders>
             <AdminProviders>
-              <ReleaseProvider>  
+              <ReleaseProvider>
+                <TablesProvider>
                 {children}
+                </TablesProvider>  
               </ReleaseProvider>
             </AdminProviders>
           </ModalProviders>

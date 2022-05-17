@@ -10,6 +10,7 @@ export const ModalProviders = ({ children }) => {
   const [modalId, setModalId] = useState(false);
   const [modalDelete, setModalDelete] = useState(false);
   const [modalReleases, setModalReleases] = useState(false);
+  const [modalExit, setModalExit] = useState(false)
 
   return (
     <ModalContext.Provider
@@ -21,6 +22,8 @@ export const ModalProviders = ({ children }) => {
         modalId,
         modalDelete,
         modalReleases,
+        modalExit,
+        setModalExit,
         setModalReleases,
         setModalDelete,
         setEmployee,

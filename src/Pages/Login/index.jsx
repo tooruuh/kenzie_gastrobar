@@ -3,7 +3,6 @@ import { Container, ChangeForms } from "./style";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-
 import { useState } from "react";
 import Button from "../../components/Button";
 import { Link } from "react-router-dom";

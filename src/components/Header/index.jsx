@@ -1,26 +1,31 @@
 import { ContentHeader, Title, AdminName } from "./style";
 
-import { FaUserAlt } from "react-icons/fa";
-import Logout from "../Logout";
+import { AiOutlineMenu } from "react-icons/ai";
 import { useContext } from "react";
 import { ModalContext } from "../../Providers/modal";
+import ModalHeader from "../ModalHeader";
+import ModalStatus from "../ModalStatus";
 
-function Header({ children, verify }) {
+function Header({ children }) {
+  
   const name = localStorage.getItem("@userName");
 
-  const {setModalDelete} = useContext(ModalContext)
+  const { setModalExit, modalExit, modalDelete, setModalDelete } = useContext(ModalContext);
 
   return (
     <ContentHeader>
       <Title>Kenzie Gastrobar</Title>
       <AdminName>{name}</AdminName>
       <div className="user">
-      {
-        verify === 'admin' ? <FaUserAlt onClick={() => setModalDelete(true)} className="icon-user" /> : <FaUserAlt className="icon-user" />
-      } 
+        <AiOutlineMenu
+          onClick={() => setModalExit(!modalExit)}
+          className="icon-user"
+        />
+        {}
         {children}
-        
       </div>
+      {modalExit && <ModalHeader />}
+      {modalDelete && <ModalStatus/>}
     </ContentHeader>
   );
 }

@@ -16,7 +16,7 @@ function AdminPage () {
     
     const token = localStorage.getItem('@token')
 
-    const {employee, product, modalId, modalDelete} = useContext(ModalContext)
+    const { employee, product, modalId } = useContext(ModalContext)
 
     const history = useHistory()
 
@@ -30,19 +30,16 @@ function AdminPage () {
         <Main>
             <AdminList/>
             {
-                !product ? '' : <ModalProduct/>
+                product && <ModalProduct/>
             }
             {
-                !employee ? '' : <ModalEmployee/>
+                employee && <ModalEmployee/>
             }
             {
-                !modalId ? '' : <ModalId/>
-            }
-            {
-                !modalDelete ? '' : <ModalStatus/>
+                modalId && <ModalId/>
             }
         </Main>
-        </>
+        </>// vendas
     )
 }
 
