@@ -5,7 +5,7 @@ import AdminList from "../../components/AdminList"
 import ModalProduct from "../../components/ModalProduct"
 import ModalEmployee from "../../components/ModalEmployee"
 import ModalId from "../../components/ModalId"
-import ModalStatus from "../../components/ModalStatus"
+import waiter from '../../assets/waiter-light.svg'
 import { useContext} from "react"
 import { ModalContext} from "../../Providers/modal"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
@@ -28,6 +28,7 @@ function AdminPage () {
         <>
         <Header verify={'admin'}/>
         <Main>
+            <img className="image" src={waiter} alt="logotipo gastrobar"/>
             <AdminList/>
             {
                 product && <ModalProduct/>

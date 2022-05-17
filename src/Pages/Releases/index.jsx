@@ -6,6 +6,7 @@ import Product from '../../components/ProductReleases'
 import { ReleaseContext } from "../../Providers/releases"
 import { useEffect } from 'react';
 import Header from '../../components/Header';
+import waiter from '../../assets/waiter-light.svg'
 import {GrCart} from 'react-icons/gr'
 import ContainerProducts from '../../components/ContaineProducts';
 
@@ -72,11 +73,12 @@ function ReleasesPage (){
                 }
 
             </ButtonContainer>
+            <img className='image' src={waiter} alt="logotipo Kenzie Gastrobar" />
           </Content>
+        </GeneralContainer>
           <CartContainer>
             <GrCart className='Icon-Cart'/>
           </CartContainer>
-        </GeneralContainer>
       </Container>
     </>
   );

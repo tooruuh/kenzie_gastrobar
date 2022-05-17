@@ -1,4 +1,9 @@
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
+
+export const animation = keyframes`
+  from{top: -100px}
+  to{top: 250px}
+`
 
 export const ContainerModal = styled.div`
     z-index: 1;
@@ -16,7 +21,9 @@ export const ContainerModal = styled.div`
         width: 280px;
         height: 300px;
         border-radius: 6px;
-        position: fixed;
+        position: absolute;
+        animation: ${animation} 1.5px;
+        animation-fill-mode: forwards;
         padding-bottom: 15px;
     }
 
@@ -156,6 +163,9 @@ export const ContainerModal = styled.div`
     @media (min-width: 768px) {
         .modal {
             width: 450px;
+            position: absolute;
+            animation: ${animation} 1.5px;
+            animation-fill-mode: forwards;
         }
 
         .header-modal {

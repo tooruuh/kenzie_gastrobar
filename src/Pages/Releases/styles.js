@@ -23,7 +23,18 @@ export const Container = styled.div`
 `
 
 export const Content = styled.div`
-
+    .image {
+        display: none;
+    }
+    @media (min-width: 1024px) {
+        .image {
+            top: 150px;
+            height: 450px;
+            display: block;
+            position: absolute;
+            left: 0px;
+        }
+    }
 `
 
 export const SectionContainer = styled.div`
@@ -138,6 +149,8 @@ export const CartContainer = styled.div`
     width: 100%;
     justify-content: flex-end;
     align-items: center;
+    position: fixed;
+    bottom: 0px;
     border-top: 1px solid var(--orange-60);
     cursor: pointer;
 

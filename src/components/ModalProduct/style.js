@@ -1,4 +1,9 @@
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
+
+export const animation = keyframes`
+  from{top: -100px}
+  to{top: 150px}
+`
 
 export const ContainerProduct = styled.section`
   background-color: rgb(0,0,0,0.50);
@@ -17,6 +22,8 @@ export const Modal = styled.section`
   background-color: var(--brown);
   border-radius: 8px;
   padding-bottom: 15px;
+  animation: ${animation} 1.5s;
+  animation-fill-mode: forwards;
 
   h3 {
     font-family: "Source Sans Pro";

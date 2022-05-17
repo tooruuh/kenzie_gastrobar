@@ -56,7 +56,7 @@ function CapturePage() {
             </ButtonContainer>
           </DescriptionContainer>
           <ImgContainer>
-            <Image src={waiter} alt="adicionar item" />
+            <Image src={waiter} alt="logotipo Kenzie Gastrobar" />
           </ImgContainer>
         </Content>
       </Container>

@@ -9,6 +9,16 @@ export const Container = styled.div`
         
     }
 
+    .image {
+        display: none;
+        @media (min-width: 1024px) {
+            display: block;
+            position: absolute;
+            top: 150px;
+            height: 450px;
+        }
+    }
+
     .btn {
         height: 25px;
         width: 136px;

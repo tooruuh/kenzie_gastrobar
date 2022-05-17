@@ -4,7 +4,8 @@ import Header from "../../components/Header";
 import ModalTableOrder from "../../components/ModalTableOrder";
 import { useModal } from "../../Providers/modal";
 import { TablesContext } from "../../Providers/tables";
-import { Container, VitrineTable } from "./styles";
+import { Container } from "./styles";
+import waiter from '../../assets/waiter-light.svg'
 import Button from "../../components/Button";
 import ContainerProducts from "../../components/ContaineProducts";
 
@@ -28,6 +29,7 @@ function TablePage() {
       <Header></Header>
 
       <Container>
+        <img className="image" src={waiter} alt="logotipo Kenzie Gastrobar" />
         <h1 className="h1-table">Lista de mesas</h1>
 
         <ContainerProducts className='showcase'>
