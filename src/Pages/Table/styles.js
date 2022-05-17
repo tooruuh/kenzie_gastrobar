@@ -32,6 +32,9 @@ export const Container = styled.div`
         line-height: 16px;
         margin-top: 10px;
         margin-bottom: 10px;
+        :hover {
+            opacity: 60%;
+        }
         
         @media (min-width: 768px) {
             height: 33px;

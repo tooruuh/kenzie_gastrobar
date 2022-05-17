@@ -107,6 +107,9 @@ export const ButtonContainer = styled.div`
       font-size: 14px;
       line-height: 16px;
       color: var(--brown-light);
+      :hover {
+          opacity: 60%;
+      }
     }
 
     .button-home {
@@ -124,6 +127,9 @@ export const ButtonContainer = styled.div`
       line-height: 16px;
       color: var(--brown-light);
       margin-left: 40px;
+      :hover {
+          opacity: 60%;
+      }
     }
 
     @media (min-width: 768px){
