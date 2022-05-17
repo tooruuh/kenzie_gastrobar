@@ -1,57 +1,64 @@
-import { createContext, useState, } from "react";
+import { createContext, useState } from "react";
 import { api } from "../Services/api";
 
-export const ReleaseContext = createContext([])
+export const ReleaseContext = createContext([]);
 
-export const ReleaseProvider = ({children}) => {
+export const ReleaseProvider = ({ children }) => {
+  const token = localStorage.getItem("@token");
 
-    const token = localStorage.getItem('@token')
-    
+  const [productsRealeases, setProductsRealeases] = useState([]);
 
-    const [productsRealeases, setProductsRealeases] = useState([])
+  const [filterProducts, setfilterProducts] = useState([]);
 
-    const [filterProducts, setfilterProducts] = useState([])
+  const [productsRender, setProductsRender] = useState([]);
 
-    const [productsRender, setProductsRender] = useState([])
+  const [sendProducts, setSendProducts] = useState([]);
 
-    function handleClick(section){
+  function handleClick(section) {
+    const filter = productsRealeases.filter(
+      (product) => product.section === section
+    );
 
-        const filter = productsRealeases.filter((product) => product.section === section)
-        
-        if(filter.length === 0){
-        setfilterProducts([])
-        setProductsRender([])
-        }else{
-        setfilterProducts(filter)
-        }
-          
+    if (filter.length === 0) {
+      setfilterProducts([]);
+      setProductsRender([]);
+    } else {
+      setfilterProducts(filter);
     }
+  }
 
-    function handleTotalProducts(){
+  function handleTotalProducts() {
+    const filter = productsRealeases.filter((product) => product);
 
-        const filter = productsRealeases.filter((product) => product)
+    setfilterProducts(filter);
+  }
 
-        setfilterProducts(filter)
-          
+  async function listProducts(id, userId) {
+    if (token) {
+      const data = await api.get(`/products?userId=${id}`);
+      setProductsRender(data.data);
+      setProductsRealeases(data.data);
+    } else {
+      const data = await api.get(`/products?userId=${userId}`);
+      setProductsRender(data.data);
+      setProductsRealeases(data.data);
     }
+  }
 
-    async function listProducts (id, userId) {
-        if (token) {
-            const data = await api.get(`/products?userId=${id}`);
-            setProductsRender(data.data);
-            setProductsRealeases(data.data);
-        } else {
-            const data = await api.get(`/products?userId=${userId}`);
-            setProductsRender(data.data);
-            setProductsRealeases(data.data);
-        }
-    }
-
-return (
-
+  return (
     <ReleaseContext.Provider
-    value={{ handleClick, filterProducts, listProducts, productsRealeases, handleTotalProducts, productsRender }}>
-     {children}
+      value={{
+        handleClick,
+        filterProducts,
+        listProducts,
+        productsRealeases,
+        handleTotalProducts,
+        productsRender,
+        sendProducts,
+        setSendProducts,
+      }}
+    >
+      {children}
     </ReleaseContext.Provider>
-)
-}
+  );
+};

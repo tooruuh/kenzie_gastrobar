@@ -8,7 +8,7 @@ import {
   CartContainer,
 } from "./styles";
 import { useHistory } from "react-router";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Product from "../../components/ProductReleases";
 import { ReleaseContext } from "../../Providers/releases";
 import { useEffect } from "react";
@@ -20,6 +20,13 @@ import ModalReleases from "../../components/ModalReleases";
 
 function ReleasesPage() {
   const { modalReleases, setModalReleases } = useModal();
+
+  const { sendProducts, setSendProducts } = useContext(ReleaseContext);
+
+  function addSendProducts(prod) {
+    setSendProducts([...sendProducts, prod]);
+    console.log("sendProducts ", sendProducts);
+  }
 
   const token = localStorage.getItem("@token");
 
@@ -34,9 +41,9 @@ function ReleasesPage() {
 
   const history = useHistory();
 
-  const handleNavigation = (path) => {
+  function handleNavigation(path) {
     return history.push(path);
-  };
+  }
 
   useEffect(() => {
     const id = localStorage.getItem("@id");
@@ -64,7 +71,13 @@ function ReleasesPage() {
               {filterProducts.length === 0
                 ? productsRender.length > 0
                   ? productsRealeases.map((response, index) => {
-                      return <Product key={index} info={response} />;
+                      return (
+                        <Product
+                          onClick={() => addSendProducts(response)}
+                          key={index}
+                          info={response}
+                        />
+                      );
                     })
                   : null
                 : filterProducts.map((response, index) => {
@@ -73,14 +86,12 @@ function ReleasesPage() {
             </ContainerProducts>
 
             <ButtonContainer>
-              {!modalReleases ? (
-                <Button
-                  className="button-table"
-                  onClick={() => handleNavigation("/table")}
-                >
-                  Lista de mesas
-                </Button>
-              ) : null}
+              <Button
+                className="button-table"
+                onClick={() => handleNavigation("/table")}
+              >
+                Lista de mesas
+              </Button>
 
               {token && (
                 <Button

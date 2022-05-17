@@ -9,6 +9,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 `;
 
 export const ModalContainer = styled.div`
@@ -21,10 +22,67 @@ export const ModalContainer = styled.div`
 
   @media (min-width: 768px) {
     width: 380px;
+
+    .prod-list {
+      width: 85% !important;
+    }
+
+    .h1-title-cart {
+      width: 300px !important;
+    }
   }
 
   @media (min-width: 1100px) {
     width: 480px;
+
+    .prod-list {
+      width: 80% !important;
+    }
+  }
+
+  .list-cart-products {
+    display: flex;
+    flex-direction: column;
+    overflow-x: scroll;
+    position: absolute;
+    align-items: center;
+    margin: 0 auto;
+    left: 5px;
+    width: 96%;
+    height: 300px;
+    top: 80px;
+    border-bottom: 1px solid white;
+
+    color: white;
+  }
+
+  .prod-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50px;
+    width: 92%;
+
+    background-color: #bc4124;
+
+    font-family: "Arimo";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+
+    border-radius: 8px;
+  }
+
+  .btn-delete-prod-cart {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
   }
 
   .exit {
@@ -51,19 +109,6 @@ export const ModalContainer = styled.div`
     font-size: 22px;
     line-height: 28px;
     text-align: center;
-  }
-
-  .list-cart-products {
-    display: flex;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    left: 5px;
-    width: 96%;
-    height: 300px;
-    top: 80px;
-    border-bottom: 1px solid white;
   }
 
   .back-add-to-cart {

@@ -1,19 +1,29 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useModal } from "../../Providers/modal";
+import { ReleaseContext } from "../../Providers/releases";
 import Button from "../Button";
 import { Container, ModalContainer } from "./style";
+import { BiTrash } from "react-icons/bi";
 
 function ModalReleases() {
   const { setModalReleases } = useModal();
   const { mesa, setMesa } = useState("");
 
+  const { sendProducts, setSendProducts } = useContext(ReleaseContext);
+
   function handleChange(event) {
     return setMesa(event.target.value);
   }
 
-  // function handleSend() {
-  //   console.log(mesa);
-  // }
+  //verificar function delete product do modal cart product
+  function handleDeleteProd() {
+    const deleteProd = sendProducts.filter((item) => item.id !== item);
+    setSendProducts(deleteProd);
+  }
+
+  //listar valor sub-total conforme lista atualizada
+
+  //enviar pedido criando uma table
 
   return (
     <>
@@ -25,7 +35,13 @@ function ModalReleases() {
           </span>
 
           <ul className="list-cart-products">
-            {/* aqui vem array de produtos selecionados*/}
+            {sendProducts.map((products, index) => (
+              <div className="prod-list">
+                <li> {products.name}</li>
+                <li> R${products.price}</li>
+                <BiTrash cursor="pointer" onClick={() => handleDeleteProd} />
+              </div>
+            ))}
           </ul>
           <Button
             className="back-add-to-cart"
