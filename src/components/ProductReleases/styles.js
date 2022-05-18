@@ -42,6 +42,7 @@ export const Name = styled.p`
   font-weight: 400;
   line-height: 18px;
   color: #fff;
+  margin-left: 8px;
 `;
 
 export const Price = styled.span`
@@ -50,7 +51,7 @@ export const Price = styled.span`
   font-weight: 400;
   line-height: 18px;
   letter-spacing: 0em;
-  text-align: center;
+  text-align: left;
   color: #fff;
   white-space: nowrap;
   width: 90px;
