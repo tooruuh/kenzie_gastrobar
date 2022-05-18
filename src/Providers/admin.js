@@ -41,7 +41,9 @@ export const AdminProviders = ({ children }) => {
         },
       })
       .then((response) => {
-        toast.success("Produto adicionado");
+        toast.success("Produto adicionado",{
+          autoClose: 1000
+        });
         listProducts(id);
         setProduct(false);
       })
@@ -49,7 +51,9 @@ export const AdminProviders = ({ children }) => {
         const res = err.response;
         if (res.data === "jwt expired") {
           localStorage.clear();
-          toast.error("token espirado faça login novamente");
+          toast.error("token espirado faça login novamente",{
+            autoClose: 1000
+          });
           history.push("/login");
         }
       });

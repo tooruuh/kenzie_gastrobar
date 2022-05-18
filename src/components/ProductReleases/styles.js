@@ -50,7 +50,7 @@ export const Price = styled.span`
   font-weight: 400;
   line-height: 18px;
   letter-spacing: 0em;
-  text-align: left;
+  text-align: center;
   color: #fff;
   white-space: nowrap;
   width: 90px;
