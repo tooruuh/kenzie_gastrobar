@@ -3,7 +3,6 @@ import { api } from "../Services/api";
 import { AdminContext } from "./admin";
 import { toast } from "react-toastify";
 
-
 export const TablesContext = createContext();
 
 export const TablesProvider = ({ children }) => {
@@ -45,7 +44,7 @@ export const TablesProvider = ({ children }) => {
       updateTable(table);
     } else {
       api.post(`/tables`, table).then((response) => {
-        console.log(response);
+
       });
       syncTables();
     }
@@ -78,44 +77,34 @@ export const TablesProvider = ({ children }) => {
       `/tables?numberTable=${table.numberTable}&userId=${token ? id : userId}`
     );
     const productsApi = await tableApi.data[0].products;
-    // ----------------------
 
-    const arrey = table.products.map((element , ind, array) => {
+    const newProducts = table.products.map((element) => {
       const index = productsApi.findIndex((prod) => {
-        return element.name === prod.name
-      })
-
-      if(index > -1){
-        element.quantity = element.quantity + productsApi[index].quantity
+        return element.name === prod.name;
+      });
+      
+      if (index > -1) {
+        element.quantity = element.quantity + productsApi[index].quantity;
       }
       
       return element;
-    })
+    });
 
+    const oldProducts = productsApi.filter((element) => {
+      const index = table.products.findIndex(
+        (prod) => element.name === prod.name
+      );
+      if (index < 0) {
+        return true;
+      } else {
+        return false;
+      }
+    });
 
-    const final = arrey.map((element, ind, array) => {
-      const arrayOld = productsApi.filter((productOld) => productOld.name !== element.name)
-      console.log()
+    table.products = [...newProducts, ...oldProducts];
 
-      console.log(productsApi)
-
-      setProductsOld(arrayOld)
-      return element
-    })
-    
-    const ola = [...final, ...productOld]
-
-    console.log(ola)
-
-    table.products = arrey
-    // [...array novo, produto antigo]
-
-    productsApi.filter((productOld) => {
-
-    })
-    // -----------------------
     const idApi = tableApi.data[0].id;
-   
+
     api.put(`/tables/${idApi}`, table);
     syncTables();
   }
