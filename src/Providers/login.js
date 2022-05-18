@@ -1,8 +1,7 @@
-import { createContext, useContext } from "react";
+import { createContext } from "react";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import { api } from "../Services/api";
-import { AdminContext } from "./admin";
 
 export const LoginContext = createContext([]);
 
@@ -10,6 +9,9 @@ export const LoginProviders = ({ children }) => {
   const history = useHistory();
 
   function loginEmployee(id) {
+
+    const loading = toast.loading("Carregando...")
+
     api
       .get(`employees?id=${id}`)
       .then((data) => {
@@ -21,20 +23,20 @@ export const LoginProviders = ({ children }) => {
         localStorage.setItem("@userName", person.name);
         localStorage.setItem("@id", person.id);
 
-        toast.success("Sucesso !");
+        toast.update(loading, {render: "Sucesso !", autoClose: 1000, type: "success", isLoading: false});
 
         history.push("/releases");
       })
       .catch((err) => {
         console.log("erro:" + err);
-        toast.error("Usuario não encontrado");
+        toast.update(loading, {render: "Usuario não encontrado", autoClose: 1000 , type: "error", isLoading: false });
       });
   }
 
-  function loginCompany(data) {
+  async function loginCompany(data) {
     console.log(data);
-    api
-      .post("/login", data)
+    const loading = toast.loading("Carregando...")
+    await api.post("/login", data)
       .then((response) => {
         localStorage.clear();
 
@@ -46,14 +48,18 @@ export const LoginProviders = ({ children }) => {
         localStorage.setItem("@userName", user.name);
         localStorage.setItem("@id", user.id);
 
-        toast.success("Sucesso !");
-
+        toast.update(loading, {render: "Sucesso !", autoClose: 1000, type: "success", isLoading: false});
+        
         history.push("/admin");
       })
       .catch((err) => {
         console.log(err);
-        toast.error("Empresa não encontrado");
+
+        toast.update(loading, {render: "Conta não encontrada", autoClose: 1000 , type: "error", isLoading: false });
       });
+      
+     
+    
   }
 
   return (

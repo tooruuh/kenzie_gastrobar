@@ -102,7 +102,7 @@ export const AdminProviders = ({ children }) => {
 
   async function updateEmployee(id, tableId) {
     if (token) {
-      toast.error("Você não pode finalizar a mesa sendo um administrador.");
+      api.delete(``)
       return false;
     } else {
       const employee = await api

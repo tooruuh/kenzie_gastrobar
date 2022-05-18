@@ -23,8 +23,9 @@ export const Item = styled.article`
 
     @media (min-width: 768px) {
         margin-right: 5px;
-        margin-left: 5px;
+        margin-left: 10px;
         height: 90px;
+        width: 306px;
     }
 `
 

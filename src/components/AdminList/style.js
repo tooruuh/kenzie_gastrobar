@@ -24,7 +24,7 @@ export const Content = styled.section`
         @media (min-width: 768px) {
             height: 40px;
             width: 243px;
-            margin-right: 61px;
+            margin-right: 165px;
             margin-top: 30px;
         }
     }
@@ -52,6 +52,7 @@ export const Content = styled.section`
             height: 40px;
             width: 243px;
             vertical-align: bottom;
+            margin-bottom: 10px;
         }
     }
 
@@ -93,7 +94,7 @@ export const TitleList = styled.h2`
         font-weight: 700;
         line-height: 28px;
         margin-bottom: 10px;
-        margin-right: 127px;
+        margin-right: 218px;
     }
 `
 
@@ -109,9 +110,12 @@ export const Showcase = styled.section`
     margin-right: auto;
     border-radius: 6px;
     background-color: var(--orange-60);
+    ::-webkit-scrollbar {
+        display: none;
+    }
 
     @media (min-width: 768px) {
-        width: 557px;
+        width: 650px;
         height: 362px;
         justify-content: start;
     }

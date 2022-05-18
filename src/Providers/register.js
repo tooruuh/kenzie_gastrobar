@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import { api } from "../Services/api";
@@ -10,30 +10,19 @@ export const RegisterProviders = ({children}) => {
     const history = useHistory()
 
     function registerCompany (data) {
+      const loading = toast.loading("Carregando...")
+
         api.post("/register", data)
         .then((response) => {
-          toast.success('Conta criada com sucesso! ', {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            });
+
+          toast.update(loading, {render: "Conta registrada !", autoClose: 1000, type: "success", isLoading: false});
+
           history.push("/login")
         })
         .catch((err) => {
           console.log(err)
-          toast.error('Ocorreu um erro no registro!', {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          })
+
+          toast.update(loading, {render: "Ocorreu um erro ao registrar", autoClose: 1000 , type: "error", isLoading: false });
         })
     }
 

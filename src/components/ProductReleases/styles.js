@@ -1,4 +1,9 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
+
+export const animation = keyframes`
+    from{transform: scale(1.0);}
+    to{transform: scale(1.2);}
+`
 
 export const Item = styled.article`
   height: 56px;
@@ -13,6 +18,10 @@ export const Item = styled.article`
   flex-direction: column;
   justify-content: center;
   cursor: pointer;
+  :hover {
+    animation: ${animation} 1.5s;
+    animation-fill-mode: forwards;
+  }
 
   @media (min-width: 768px) {
     height: 90px;
