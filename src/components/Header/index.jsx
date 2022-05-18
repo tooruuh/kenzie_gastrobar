@@ -10,7 +10,7 @@ function Header({ children }) {
   
   const name = localStorage.getItem("@userName");
 
-  const { setModalExit, modalExit, modalDelete, setModalDelete } = useContext(ModalContext);
+  const { setModalExit, modalExit, modalDelete } = useContext(ModalContext);
 
   return (
     <ContentHeader>

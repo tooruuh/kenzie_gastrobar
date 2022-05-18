@@ -13,25 +13,26 @@ import Product from "../../components/ProductReleases";
 import { ReleaseContext } from "../../Providers/releases";
 import { useEffect } from "react";
 import Header from "../../components/Header";
-import waiter from '../../assets/waiter-light.svg'
+import waiter from "../../assets/waiter-light.svg";
 import { GrCart } from "react-icons/gr";
 import ContainerProducts from "../../components/ContaineProducts";
 import { useModal } from "../../Providers/modal";
 import ModalReleases from "../../components/ModalReleases";
+import { toast } from "react-toastify";
 
 function ReleasesPage() {
   const { modalReleases, setModalReleases } = useModal();
 
   function addProductCart(prod) {
-    const cart = JSON.parse(localStorage.getItem('@cart')) || []
+    const cart = JSON.parse(localStorage.getItem("@cart")) || [];
 
     const product = {
       name: prod.name,
       price: prod.price,
-    }
+    };
 
-    localStorage.setItem('@cart',JSON.stringify([...cart, product]))
-
+    localStorage.setItem("@cart", JSON.stringify([...cart, product]));
+    toast.success(`${prod.name} adicionado 👍`, { autoClose: 500 });
   }
 
   const token = localStorage.getItem("@token");
@@ -108,12 +109,16 @@ function ReleasesPage() {
                 </Button>
               )}
             </ButtonContainer>
-            <img className='image' src={waiter} alt="logotipo Kenzie Gastrobar" />
+            <img
+              className="image"
+              src={waiter}
+              alt="logotipo Kenzie Gastrobar"
+            />
           </Content>
         </GeneralContainer>
-          <CartContainer onClick={() => setModalReleases(true)}>
-            <GrCart className="Icon-Cart" />
-          </CartContainer>
+        <CartContainer onClick={() => setModalReleases(true)}>
+          <GrCart className="Icon-Cart" />
+        </CartContainer>
       </Container>
     </>
   );

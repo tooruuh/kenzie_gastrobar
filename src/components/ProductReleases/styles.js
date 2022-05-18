@@ -35,13 +35,13 @@ export const Name = styled.p`
   font-family: "Arimo";
   overflow: hidden;
   text-overflow: ellipsis;
+  width: 100px;
+  white-space: nowrap;
+  text-align: left;
   font-size: 16px;
   font-weight: 400;
   line-height: 18px;
   color: #fff;
-
-  @media (min-width: 768px) {
-  }
 `;
 
 export const Price = styled.span`
@@ -54,7 +54,7 @@ export const Price = styled.span`
   color: #fff;
   white-space: nowrap;
   width: 90px;
-  overflow: hidden; 
+  overflow: hidden;
   text-overflow: ellipsis;
 
   @media (min-width: 768px) {
