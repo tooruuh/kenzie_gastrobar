@@ -20,26 +20,7 @@ export const ModalContainer = styled.div`
   height: 520px;
   border-radius: 8px;
   
-  @media (min-width: 768px) {
-    width: 380px;
-
-    .prod-list {
-      width: 85% !important;
-    }
-
-    .h1-title-cart {
-      width: 300px !important;
-    }
-  }
-
-  @media (min-width: 1100px) {
-    width: 480px;
-
-    .prod-list {
-      width: 80% !important;
-    }
-  }
-
+  
   .list-cart-products {
     display: flex;
     flex-direction: column;
@@ -56,13 +37,15 @@ export const ModalContainer = styled.div`
     ::-webkit-scrollbar {
       display: none;
     }
+    
+
   }
 
   .prod-list {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 50px;
+    min-height: 60px;
     width: 92%;
     height: 70px;
 
@@ -211,4 +194,35 @@ export const ModalContainer = styled.div`
     outline: none;
     border-radius: 8px;
   }
+
+  @media (min-width: 768px) {
+      width: 380px;
+  
+      .prod-list {
+        width: 85% !important;
+        height: 80px;
+      }
+  
+      .h1-title-cart {
+        width: 300px !important;
+        left: 48px;
+      }
+    }
+  
+    @media (min-width: 1100px) {
+      width: 480px;
+  
+      .prod-list {
+        width: 80% !important;
+      }
+  
+      .list-cart-products {
+        width: 100%;
+        left: 0px;
+      }
+
+      .exit {
+        left: 87%;
+      }
+    }
 `;
