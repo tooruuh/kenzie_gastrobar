@@ -101,7 +101,7 @@ function ModalReleases() {
           </Button>
           <input
             className="input-number-table"
-            type="text"
+            type="number"
             placeholder="N° da mesa"
             onChange={(event) => setMesa(event.target.value)}
           />

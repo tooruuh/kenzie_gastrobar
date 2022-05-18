@@ -102,7 +102,7 @@ export const AdminProviders = ({ children }) => {
 
   async function updateEmployee(id, tableId) {
     if (token) {
-      api.delete(``)
+      api.delete(`/tables/${tableId}`)
       return false;
     } else {
       const employee = await api

@@ -1,10 +1,5 @@
-import styled, {keyframes} from "styled-components";
+import styled from "styled-components";
 
-
-export const animation = keyframes`
-  from{top: -1000px}
-  to{top: 150px}
-`
 export const Container = styled.div`
   background-color: rgb(0, 0, 0, 0.5);
   width: 100vw;
@@ -24,9 +19,7 @@ export const ModalContainer = styled.div`
   width: 280px;
   height: 520px;
   border-radius: 8px;
-  animation: ${animation} 1.5s;
-  animation-fill-mode: forwards;
-
+  
   @media (min-width: 768px) {
     width: 380px;
 
