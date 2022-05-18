@@ -112,11 +112,12 @@ export const AdminProviders = ({ children }) => {
         .then((res) => res.data[0]);
 
       const oldTotal = employee.totalSales;
-
+      console.log(oldTotal)
       const products = await api
-        .get(`/tables/${tableId}`)
-        .then((res) => res.data.products);
-      const total = products.reduce((a, b) => a + b.price, 0);
+      .get(`/tables/${tableId}`)
+      .then((res) => res.data.products);
+      const total = products.reduce((a, b) => a + b.price * b.quantity , 0);
+      console.log(Number(total))
       api.put(`/employees/${id}`, {
         totalSales: Number(oldTotal) + Number(total),
         userId: userId,

@@ -115,7 +115,7 @@ function ModalReleases() {
             className="input-number-table"
             type="text"
             placeholder="N° da mesa"
-            maxlength='2'
+            maxLength='2'
             onChange={(event) => setMesa(event.target.value)}
           />
           <section className="sub-total-price">
