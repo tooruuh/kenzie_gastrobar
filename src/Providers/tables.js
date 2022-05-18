@@ -8,6 +8,7 @@ export const TablesContext = createContext();
 
 export const TablesProvider = ({ children }) => {
   const [tables, setTables] = useState([]);
+  const [productOld, setProductsOld] = useState('')
 
   const userId = localStorage.getItem("@userId");
   const id = localStorage.getItem("@id");
@@ -79,25 +80,39 @@ export const TablesProvider = ({ children }) => {
     const productsApi = await tableApi.data[0].products;
     // ----------------------
 
-    const arrey = table.products.map((element) => {
+    const arrey = table.products.map((element , ind, array) => {
       const index = productsApi.findIndex((prod) => {
-       
         return element.name === prod.name
       })
-      console.log(index)
+
       if(index > -1){
         element.quantity = element.quantity + productsApi[index].quantity
-      }else{
-        return 
       }
+      
       return element;
     })
 
+
+    const final = arrey.map((element, ind, array) => {
+      const arrayOld = productsApi.filter((productOld) => productOld.name !== element.name)
+      console.log()
+
+      console.log(productsApi)
+
+      setProductsOld(arrayOld)
+      return element
+    })
     
-    
+    const ola = [...final, ...productOld]
+
+    console.log(ola)
 
     table.products = arrey
-    
+    // [...array novo, produto antigo]
+
+    productsApi.filter((productOld) => {
+
+    })
     // -----------------------
     const idApi = tableApi.data[0].id;
    
