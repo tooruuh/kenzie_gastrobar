@@ -47,7 +47,7 @@ export const ModalContainer = styled.div`
     align-items: center;
     min-height: 60px;
     width: 92%;
-    height: 70px;
+    height: 80px;
 
     background-color: #bc4124;
 
@@ -193,6 +193,13 @@ export const ModalContainer = styled.div`
     border: none;
     outline: none;
     border-radius: 8px;
+  }
+
+  .price-product {
+    white-space: nowrap;
+    width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   @media (min-width: 768px) {

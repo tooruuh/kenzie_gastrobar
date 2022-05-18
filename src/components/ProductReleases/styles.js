@@ -52,6 +52,10 @@ export const Price = styled.span`
   letter-spacing: 0em;
   text-align: left;
   color: #fff;
+  white-space: nowrap;
+  width: 90px;
+  overflow: hidden; 
+  text-overflow: ellipsis;
 
   @media (min-width: 768px) {
     margin-top: 5px;

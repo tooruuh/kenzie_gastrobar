@@ -91,7 +91,7 @@ function ModalReleases() {
                     <p>{products.name}</p>
                   </li>
                   <li>
-                    <p>R$ {products.price}</p>
+                    <p className="price-product">R$ {products.price}</p>
                   </li>
                   <li>
                     <p>Quantidade: {products.quantity}</p>
