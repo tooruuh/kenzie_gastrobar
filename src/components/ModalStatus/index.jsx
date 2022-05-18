@@ -31,7 +31,7 @@ function ModalStatus () {
                                     <ul className='ul-employee'>
                                         <li><p className='name'>{employee.name}</p></li>
                                         <li><p className='id'>id: {employee.id}</p></li>
-                                        <li><p className='total-sales'>Vendas: R$ {employee.totalSales}</p></li>
+                                        <li><p className='total-sales'>Vendas: R$ {Number(employee.totalSales)}</p></li>
                                     </ul>
                                     <Button onClick={() => DeleteEmployee(employee.id)} className='delete-employee'>Deletar</Button>
                                 </article>

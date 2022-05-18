@@ -47,7 +47,6 @@ export const AdminProviders = ({ children }) => {
       })
       .catch((err) => {
         const res = err.response;
-        console.log(res.data);
         if (res.data === "jwt expired") {
           localStorage.clear();
           toast.error("token espirado faça login novamente");
@@ -60,7 +59,6 @@ export const AdminProviders = ({ children }) => {
     api
       .get(`/products?userId=${id}`)
       .then((response) => {
-        console.log(response);
         setProducts(response.data);
       })
       .catch((err) => {});
@@ -116,7 +114,7 @@ export const AdminProviders = ({ children }) => {
         .then((res) => res.data.products);
       const total = products.reduce((a, b) => a + b.price, 0);
       api.put(`/employees/${id}`, {
-        totalSales: oldTotal + total,
+        totalSales: Number(oldTotal) + Number(total),
         userId: userId,
         name: employee.name,
         id: employee.id,

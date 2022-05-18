@@ -34,7 +34,6 @@ export const LoginProviders = ({ children }) => {
   }
 
   async function loginCompany(data) {
-    console.log(data);
     const loading = toast.loading("Carregando...")
     await api.post("/login", data)
       .then((response) => {
