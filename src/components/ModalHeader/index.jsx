@@ -11,6 +11,7 @@ function ModalHeader () {
     const history = useHistory()
 
     const handleNavigation = (path) => {
+        localStorage.clear()
         return history.push(path)
     }
 

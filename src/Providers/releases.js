@@ -32,15 +32,11 @@ export const ReleaseProvider = ({ children }) => {
   }
 
   async function listProducts(id, userId) {
-    if (token) {
-      const data = await api.get(`/products?userId=${id}`);
-      setProductsRender(data.data);
-      setProductsRealeases(data.data);
-    } else {
-      const data = await api.get(`/products?userId=${userId}`);
-      setProductsRender(data.data);
-      setProductsRealeases(data.data);
-    }
+    const token = localStorage.getItem('@token')
+    const data = await api.get(`/products?userId=${token ? id : userId}`);
+    setProductsRender(data.data);
+    setProductsRealeases(data.data);
+
   }
 
   return (
