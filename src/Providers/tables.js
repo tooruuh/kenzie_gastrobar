@@ -3,7 +3,6 @@ import { api } from "../Services/api";
 import { AdminContext } from "./admin";
 import { toast } from "react-toastify";
 
-
 export const TablesContext = createContext();
 
 export const TablesProvider = ({ children }) => {
@@ -77,30 +76,33 @@ export const TablesProvider = ({ children }) => {
       `/tables?numberTable=${table.numberTable}&userId=${token ? id : userId}`
     );
     const productsApi = await tableApi.data[0].products;
-    // ----------------------
 
-    const arrey = table.products.map((element) => {
+    const newProducts = table.products.map((element) => {
       const index = productsApi.findIndex((prod) => {
-       
-        return element.name === prod.name
-      })
-      console.log(index)
-      if(index > -1){
-        element.quantity = element.quantity + productsApi[index].quantity
-      }else{
-        return 
+        return element.name === prod.name;
+      });
+      console.log(index);
+      if (index > -1) {
+        element.quantity = element.quantity + productsApi[index].quantity;
       }
       return element;
-    })
+    });
 
-    
-    
+    const oldProducts = productsApi.filter((element) => {
+      const index = table.products.findIndex(
+        (prod) => element.name === prod.name
+      );
+      if (index < 0) {
+        return true;
+      } else {
+        return false;
+      }
+    });
 
-    table.products = arrey
-    
-    // -----------------------
+    table.products = [...newProducts, ...oldProducts];
+
     const idApi = tableApi.data[0].id;
-   
+
     api.put(`/tables/${idApi}`, table);
     syncTables();
   }
