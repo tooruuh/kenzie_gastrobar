@@ -8,7 +8,7 @@ import {
   CartContainer,
 } from "./styles";
 import { useHistory } from "react-router";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import Product from "../../components/ProductReleases";
 import { ReleaseContext } from "../../Providers/releases";
 import { useEffect } from "react";

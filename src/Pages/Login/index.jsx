@@ -126,7 +126,7 @@ function LoginPage() {
       </Container>
       <Redirection>
         <p>
-          Já não está cadastrado? <Link to="/register">Clique aqui</Link>
+          Ainda nao se cadastrou? <Link to="/register">Clique aqui</Link>
         </p>
       </Redirection>
     </>

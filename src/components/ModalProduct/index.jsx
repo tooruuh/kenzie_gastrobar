@@ -40,7 +40,7 @@ function ModalProduct () {
                     <label>
                         {!!errors.name?.message && <p> {errors.name.message}</p>}
                     </label>
-                    <input {...register("price")} type="number" placeholder='Preço'/>
+                    <input pattern="[0-9]+([,\.][0-9]+)?" min="0" step="any" name="null" {...register("price")} type="number" placeholder='Preço'/>
                     <label>
                         {!!errors.price?.message && <p> {errors.price.message}</p>}
                     </label>
