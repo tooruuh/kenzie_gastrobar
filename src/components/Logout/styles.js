@@ -17,7 +17,7 @@ export const ContainerLogout = styled.button`
   cursor: pointer;
   color: var(--orange-light);
   :hover {
-    color: rgb(255,0,0);
+    color: var(--red);
     transform: scale(1.1);
   }
 
