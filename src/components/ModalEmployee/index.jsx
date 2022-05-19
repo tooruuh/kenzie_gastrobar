@@ -1,37 +1,49 @@
-import {ContainerProduct, Modal, ButtonModal } from './style'
+import { ContainerProduct, Modal, ButtonModal } from "./style";
 
-import { useContext, useState } from 'react'
-import { ModalContext } from '../../Providers/modal'
-import { AdminContext } from '../../Providers/admin'
-import Button from '../Button'
+import { useContext, useState } from "react";
+import { ModalContext } from "../../Providers/modal";
+import { AdminContext } from "../../Providers/admin";
+import Button from "../Button";
+import { toast } from "react-toastify";
 
-function ModalEmployee () {
+function ModalEmployee() {
+  const [name, setName] = useState("");
 
-    const [name, setName] = useState('')
-    
-    const {setEmployee} = useContext(ModalContext)
+  const { setEmployee } = useContext(ModalContext);
 
-    const {registerEmployee} = useContext(AdminContext)
+  const { registerEmployee } = useContext(AdminContext);
 
-    function handleName (name) {
-        registerEmployee(name)
+  function handleName(name) {
+    if (name.length <= 2) {
+      toast.error("Adicione um nome com mais de 2 letras");
+    } else {
+      registerEmployee(name);
     }
+  }
 
-    return (
-        <ContainerProduct>
-        <Modal>
-            <section>
-                <h3>ADICIONAR NOVO FUNCIONÁRIO</h3>
-                <ButtonModal onClick={() => setEmployee(false)}>X</ButtonModal>
-            </section>
-            <input onChange={(event) => setName(event.target.value)} type="text" placeholder='Nome' />
-            <Button className='btn-register' onClick={() => handleName(name)}>Cadastrar</Button>
-        </Modal>
+  return (
+    <ContainerProduct>
+      <Modal>
+        <section>
+          <h3>ADICIONAR NOVO FUNCIONÁRIO</h3>
+          <ButtonModal onClick={() => setEmployee(false)}>X</ButtonModal>
+        </section>
+        <input
+          onChange={(event) => setName(event.target.value)}
+          type="text"
+          min="2"
+          placeholder="Nome"
+        />
+        <Button className="btn-register" onClick={() => handleName(name)}>
+          Cadastrar
+        </Button>
+      </Modal>
     </ContainerProduct>
-    )
+  );
 }
 
-export default ModalEmployee
+export default ModalEmployee;
+
 // [[Prototype]]: Promise
 // [[PromiseState]]: "fulfilled"
 // [[PromiseResult]]: Object
