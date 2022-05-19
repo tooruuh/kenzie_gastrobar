@@ -91,7 +91,7 @@ function ModalReleases() {
                     <p>{products.name}</p>
                   </li>
                   <li>
-                    <span className="price-product">R$ {products.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>
+                    <span className="price-product">{Number(products.price).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</span>
                   </li>
                   <li>
                     <p>Quantidade: {products.quantity}</p>
@@ -120,7 +120,7 @@ function ModalReleases() {
           />
           <section className="sub-total-price">
             <span className="sub-total">SUB-TOTAL</span>
-            <span className="price">R$ {totalValue.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</span>
+            <span className="price">{totalValue.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</span>
           </section>
           <Button onClick={() => addTable()} className="send-release">
             ENVIAR PEDIDO

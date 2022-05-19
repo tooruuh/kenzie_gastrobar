@@ -33,7 +33,7 @@ function ModalProduct () {
                 </section>
                 <form onSubmit={handleSubmit(onSubmitFunction)}>
                     <input {...register("name")} type="text" placeholder='Nome' />
-                    <input {...register("price")} type="number" placeholder='Preço'/>
+                    <input pattern="[0-9]+([,\.][0-9]+)?" min="0" step="any" name="null" {...register("price")} type="number" placeholder='Preço'/>
                     <select {...register("section")}>
                         <option value='Bedidas'>Bedidas</option>
                         <option value='Comidas'>Comidas</option>
