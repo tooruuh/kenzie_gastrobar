@@ -33,6 +33,7 @@ export default function Routes() {
       <Route exact path='/releases'>
         <ReleasesPage/>
       </Route>
+
     </Switch>
   );
 }
