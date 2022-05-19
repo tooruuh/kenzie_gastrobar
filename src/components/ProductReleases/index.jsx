@@ -8,7 +8,7 @@ function Product({ info, onClick }) {
           <Name>{info.name}</Name>
         </Li>
         <Li>
-          <Price>R$ {info.price}</Price>
+          <Price>R$ {info.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</Price>
         </Li>
       </Ul>
     </Item>

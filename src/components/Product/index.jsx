@@ -10,7 +10,7 @@ function Product ({info}) {
         <Item>
             <ul>
                 <Li><Name>{info.name}</Name></Li>
-                <Li><Price>R$ {info.price}</Price></Li>
+                <Li><Price>R$ {info.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</Price></Li>
             </ul>
             <BsFillTrashFill onClick={() => deleteProduct(info.id)} className='icon-product'/>
         </Item>

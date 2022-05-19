@@ -7,8 +7,6 @@ export const TablesContext = createContext();
 
 export const TablesProvider = ({ children }) => {
   const [tables, setTables] = useState([]);
-  const [productOld, setProductsOld] = useState('')
-
   const userId = localStorage.getItem("@userId");
   const id = localStorage.getItem("@id");
   const { updateEmployee } = useContext(AdminContext);

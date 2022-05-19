@@ -1,5 +1,4 @@
 import { Main } from "./style"
-
 import Header from "../../components/Header"
 import AdminList from "../../components/AdminList"
 import ModalProduct from "../../components/ModalProduct"

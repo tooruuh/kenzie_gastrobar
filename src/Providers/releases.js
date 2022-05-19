@@ -4,7 +4,6 @@ import { api } from "../Services/api";
 export const ReleaseContext = createContext([]);
 
 export const ReleaseProvider = ({ children }) => {
-  const token = localStorage.getItem("@token");
 
   const [productsRealeases, setProductsRealeases] = useState([]);
 
