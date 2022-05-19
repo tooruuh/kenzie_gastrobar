@@ -92,6 +92,16 @@ export const Modal = styled.section`
     }
   }
 
+  p {
+    font-family: Source Sans Pro;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--red);
+    margin-left: 10px;
+    list-style-type: circle;
+  }
+
 `
 
 export const ButtonModal = styled.button`
